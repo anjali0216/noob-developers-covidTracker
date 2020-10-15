@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Statewise">
+   <children>
+      <Button fx:id="btn6" layoutX="126.0" layoutY="59.0" mnemonicParsing="false" onAction="#statewise" text="showstate" />
+      <Button fx:id="btn7" layoutX="394.0" layoutY="46.0" mnemonicParsing="false" onAction="#searchstate" text="searchstate" />
+      <TextArea layoutX="78.0" layoutY="128.0" prefHeight="200.0" prefWidth="458.0" />
+   </children>
+</AnchorPane>
