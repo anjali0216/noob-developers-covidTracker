@@ -34,7 +34,7 @@ public class Controller {
         Stage stage=(Stage)btn1.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("showsites.fxml"));
         stage.setTitle("COVID19 SITES");
-        stage.setScene(new Scene(root, 300, 275));
+        stage.setScene(new Scene(root, 600, 575));
         stage.show();
 
     }
