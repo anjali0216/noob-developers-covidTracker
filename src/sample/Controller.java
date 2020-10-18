@@ -17,7 +17,7 @@ public class Controller {
         Stage stage=(Stage)btn1.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("stats.fxml"));
         stage.setTitle("COVID19 STATS");
-        stage.setScene(new Scene(root, 300, 275));
+        stage.setScene(new Scene(root, 500, 500));
         stage.show();
 
     }
@@ -25,7 +25,7 @@ public class Controller {
         Stage stage=(Stage)btn1.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("symptom.fxml"));
         stage.setTitle("SYMPTOMS");
-        stage.setScene(new Scene(root, 300, 275));
+        stage.setScene(new Scene(root, 500, 500));
         stage.show();
 
 
@@ -34,7 +34,7 @@ public class Controller {
         Stage stage=(Stage)btn1.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("showsites.fxml"));
         stage.setTitle("COVID19 SITES");
-        stage.setScene(new Scene(root, 300, 275));
+        stage.setScene(new Scene(root, 500, 500));
         stage.show();
 
     }

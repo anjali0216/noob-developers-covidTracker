@@ -1,14 +1,14 @@
 package models;
 public class Questions {
     public String question[]={
-            "hiw are you",
-            "what is your name",
-            "hhow nmauny children you are planning",
+            "Are you having any of the following symptoms",
+            "Have you ever had any of the following?",
+            "Which of the following apply to you?",
     };
     public String[][] options={
-            {"sexy","hot","breilliant","awesome"},
-            {"anu","payal","bhavna","mummy"},
-            {"10","20","30","40"},
+            {"Cough","Fever","Difficulty in breathing","Loss of sense of smell and taste","None"},
+            {"Diabetes","Hypertension","Lungs Disease","Heart Disease","None"},
+            {"Travelled internationally in last 14 days","Recently interacted with a person who had been tested positive with corona virus","Attended a function with a large gathering","Are you a health care worker","None "},
     };
     char[] answer={
             'a','b','c'
@@ -21,5 +21,6 @@ public class Questions {
     int correct_guess=0;
     int total_ques= question.length;
     int result;
+
 
 }
