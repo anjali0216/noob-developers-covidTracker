@@ -6,24 +6,14 @@ public class stateRoot{
     public Data data;
     public  String lastRefreshed;
     public  String lastOriginUpdate;
-
-
-
 }
+
 class Summary{
     public int total;
     public int confirmedCasesIndian;
     public int confirmedCasesForeign;
     public int discharged;
     public int confirmedButLocationUnidentified;
-    Summary(int total,int confirmedCasesIndian,int confirmedCasesForeign,int discharged,int confirmedButLocationUnidentified)
-    {
-        this.total=total;
-        this.confirmedButLocationUnidentified=confirmedButLocationUnidentified;
-        this.discharged=discharged;
-        this.confirmedCasesForeign=confirmedCasesForeign;
-        this.confirmedCasesIndian=confirmedCasesIndian;
-    }
 }
 
 class UnofficialSummary{
@@ -31,13 +21,6 @@ class UnofficialSummary{
     public int total;
     public int recovered;
     public int active;
-    UnofficialSummary( String source,int total,int active,int recovered)
-    {
-        this.total=total;
-        this.recovered=recovered;
-        this.active=active;
-        this.source=source;
-    }
 }
 
 class Regional{

@@ -8,11 +8,15 @@ import javafx.scene.control.Label;
 import javafx.event.ActionEvent;
 import javafx.stage.Stage;
 
+import javax.swing.*;
+
 public class Controller {
+    driver object=new driver();
     public Label label1;
     public Button btn1;
     public Button btn2;
     public Button btn3;
+    public Button refbtn;
     public void stats(ActionEvent actionEvent)throws Exception{
         Stage stage=(Stage)btn1.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("stats.fxml"));
@@ -37,6 +41,15 @@ public class Controller {
         stage.setScene(new Scene(root, 500, 500));
         stage.show();
 
+    }
+    public void Refresh(ActionEvent actionEvent) {
+        updateFiles ob=new updateFiles();
+        try {
+            ob.updateStatestats();
+            ob.updateDistrictstats();
+        }catch(Exception e){
+            object.displayDialog("You are not connected to the internet! Reconnect and try again.");
+        }
     }
 
 
