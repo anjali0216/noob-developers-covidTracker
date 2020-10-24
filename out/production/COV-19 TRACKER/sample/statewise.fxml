@@ -2,16 +2,12 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="293.0" prefWidth="364.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Statewise">
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Statewise">
    <children>
-      <Button fx:id="btn6" layoutX="305.0" layoutY="54.0" mnemonicParsing="false" onAction="#searchstate" text="Search" />
-      <TextField fx:id="stname" layoutX="14.0" layoutY="54.0" prefHeight="25.0" prefWidth="287.0" promptText="Enter a state/territory to get the latest updates" />
-      <Button fx:id="prevpg" layoutX="214.0" layoutY="21.0" mnemonicParsing="false" onAction="#goPrevpg" text="&lt;- Go To Previous Page" />
-      <Label fx:id="recordDisplay" contentDisplay="CENTER" layoutX="14.0" layoutY="88.0" lineSpacing="2.0" prefHeight="205.0" prefWidth="343.0">
-         <font>
-            <Font name="Times New Roman Bold" size="14.0" />
-         </font></Label>
+      <Button fx:id="btn6" layoutX="126.0" layoutY="59.0" mnemonicParsing="false" onAction="#statewise" text="showstate" />
+      <Button fx:id="btn7" layoutX="394.0" layoutY="46.0" mnemonicParsing="false" onAction="#searchstate" text="searchstate" />
+      <TextArea layoutX="78.0" layoutY="128.0" prefHeight="200.0" prefWidth="458.0" />
    </children>
 </AnchorPane>
