@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="479.0" prefWidth="497.0" style="-fx-background-color: linear-gradient(to right top, #03e5db, #00e5e4, #00e5ec, #00e5f4, #04e4fb);" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Result">
+   <children>
+      <TextArea fx:id="textresult" layoutX="81.0" layoutY="33.0" prefHeight="220.0" prefWidth="434.0" wrapText="true" AnchorPane.leftAnchor="33.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="33.0">
+         <font>
+            <Font name="Monotype Corsiva" size="29.0" />
+         </font></TextArea>
+      <Button fx:id="home" layoutX="197.0" layoutY="324.0" mnemonicParsing="false" onAction="#gohome" style="-fx-background-color: linear-gradient(to right top, #0de503, #0beb05, #08f208, #05f80a, #02ff0d);" text="HOME">
+         <font>
+            <Font name="Algerian" size="26.0" />
+         </font></Button>
+   </children>
+</AnchorPane>
