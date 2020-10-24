@@ -15,7 +15,7 @@
    <children>
       <Pane prefHeight="399.0" prefWidth="439.0">
          <children>
-            <Label fx:id="label1" alignment="CENTER" layoutX="34.0" layoutY="5.0" prefHeight="70.0" prefWidth="351.0" style="-fx-font-family: Monotype Corsiva;" text="COVID TRACKER" textAlignment="CENTER" textFill="#4e3197" textOverrun="CLIP">
+            <Label fx:id="label1" alignment="CENTER" layoutX="43.0" layoutY="49.0" prefHeight="70.0" prefWidth="351.0" style="-fx-font-family: Monotype Corsiva;" text="COVID TRACKER" textAlignment="CENTER" textFill="#4e3197" textOverrun="CLIP">
                <font>
                   <Font name="Algerian" size="40.0" />
                </font>
@@ -29,25 +29,17 @@
                      </light>
                   </Lighting>
                </effect></Label>
-            <Button fx:id="btn1" layoutX="14.0" layoutY="250.0" mnemonicParsing="false" onAction="#showsites" prefHeight="33.0" prefWidth="117.0" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="COVID SITES">
+            <Button fx:id="btn1" layoutX="19.0" layoutY="289.0" mnemonicParsing="false" onAction="#showsites" prefHeight="33.0" prefWidth="117.0" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="COVID SITES">
                <font>
                   <Font name="Georgia Bold Italic" size="13.0" />
                </font></Button>
-            <Button fx:id="btn2" layoutX="161.0" layoutY="250.0" mnemonicParsing="false" onAction="#stats" prefHeight="33.0" prefWidth="97.0" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="STATS">
+            <Button fx:id="btn2" layoutX="166.0" layoutY="289.0" mnemonicParsing="false" onAction="#stats" prefHeight="33.0" prefWidth="97.0" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="STATS">
                <font>
                   <Font name="Georgia Bold" size="18.0" />
                </font></Button>
-            <Button fx:id="btn3" layoutX="282.0" layoutY="250.0" mnemonicParsing="false" onAction="#symptom" prefHeight="33.0" prefWidth="117.0" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="SELF ANALYSIS" textOverrun="WORD_ELLIPSIS">
+            <Button fx:id="btn3" layoutX="286.0" layoutY="289.0" mnemonicParsing="false" onAction="#symptom" prefHeight="33.0" prefWidth="117.0" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="SELF ANALYSIS" textOverrun="WORD_ELLIPSIS">
                <font>
                   <Font name="Georgia Bold" size="11.0" />
-               </font></Button>
-            <Button fx:id="advisoriesbutton" layoutX="115.0" layoutY="307.0" mnemonicParsing="false" onAction="#viewadvisories" prefHeight="25.0" prefWidth="196.0" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="View Covid-19 Advisories" textFill="#000000f5">
-               <font>
-                  <Font name="Georgia Bold" size="12.0" />
-               </font></Button>
-            <Button fx:id="helplinebutton" layoutX="115.0" layoutY="342.0" mnemonicParsing="false" onAction="#viewhelpline" prefHeight="25.0" prefWidth="196.0" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="View Covid-19 helplines">
-               <font>
-                  <Font name="Georgia Bold" size="12.0" />
                </font></Button>
          </children>
       </Pane>

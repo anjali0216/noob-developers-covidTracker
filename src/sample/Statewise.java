@@ -5,22 +5,30 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class Statewise {
     public Button btn6;
-    public Button btn7;
+    public Button prevpg;
+    public TextField stname;
+    public Label recordDisplay;
 
-    public void statewise(ActionEvent actionEvent){
-
-    }
-    public void searchstate(ActionEvent actionEvent) throws IOException {
-        Stage stage=(Stage)btn6.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("searchstat.fxml"));
-        stage.setTitle("Searchstate");
-        stage.setScene(new Scene(root, 300, 275));
-        stage.show(); }
-
+    public void searchstate() throws IOException {
+        Searchstat obj=new Searchstat();
+        String state=stname.getText();
+        String stats=obj.searchst(state);
+        recordDisplay.setText(stats);
 }
+
+    public void goPrevpg(ActionEvent actionEvent) throws IOException {
+        Stage stage=(Stage)prevpg.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("stats.fxml"));
+        stage.setScene(new Scene(root, 500, 500));
+        stage.show();
+    }
+    }
+/* */
