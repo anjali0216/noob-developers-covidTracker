@@ -12,12 +12,14 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("COVID19 TRACKER");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.setScene(new Scene(root, 500, 500));
         primaryStage.show();
     }
 
 
     public static void main(String[] args) {
+        Thread t= new Thread(new updateFiles());
+        t.start();
         launch(args);
     }
 }
