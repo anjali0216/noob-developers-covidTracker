@@ -15,6 +15,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import models.Questions;
 
 import java.io.IOException;
 import java.net.URL;
@@ -22,35 +23,19 @@ import java.util.ResourceBundle;
 
 public class Result implements Initializable  {
     public TextArea textresult;
+    public TextArea textpercent;
     public Button home;
+    Questions ques=new Questions();
     BackgroundFill red=new BackgroundFill(Color.RED, CornerRadii.EMPTY, Insets.EMPTY);
     BackgroundFill green=new BackgroundFill(Color.GREEN, CornerRadii.EMPTY, Insets.EMPTY);
     Background bgred=new Background(red);
     Background bggreen=new Background(green);
-
-
-
-
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        textresult.setFont(Font.font("Georgia",20.0));
-        if(Quiz.score>=15)
-        {
-            textresult.setText("You have high risk of being infected with covid 19."+"\n"+"Please consult to a medical doctor");
-            textresult.setBackground(bgred);
-        }
-        else if(Quiz.score>=10&&Quiz.score<15)
-        {
-            textresult.setBackground(bggreen);
-            textresult.setText("You have less risk of being infected with covid 19 "+"\n" +"try to remain in quaratine for few days and check the symptoms.");
-        }
-        else
-        {
-            textresult.setBackground(bggreen);
-            textresult.setText("Chinta mtkr bhai sb mst h");
-        }
-        textresult.setEditable(false);
+
+        String s=String.format("%.2g",ques.getpercentage());
+        textpercent.setText("Your score is "+s+"%\n");
+       textresult.setText(ques.getscore());
     }
 
     public void gohome(ActionEvent actionEvent) throws IOException {

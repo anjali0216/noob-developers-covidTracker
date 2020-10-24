@@ -30,7 +30,7 @@ public class Quiz implements Initializable {
 
     public Button next;
     static int index=0;
-    static int score=0;
+
 
     Questions ques=new Questions();
     Text text=new Text();
@@ -39,9 +39,6 @@ public class Quiz implements Initializable {
     public void initialize(URL location, ResourceBundle resources){
         textfield1.setFont(Font.font("Monotype Corsiva",25.0));
         text.setFill(Color.WHITE);
-
-
-
         textfield1.setText(ques.question[index]);
         textfield1.setEditable(false);
         rad1.setText(ques.options[index][0]);
@@ -49,60 +46,14 @@ public class Quiz implements Initializable {
         rad3.setText(ques.options[index][2]);
         rad4.setText(ques.options[index][3]);
         rad5.setText(ques.options[index][4]);
-
-
         if(index==2)
             next.setText("SUBMIT AND SHOW RESULT");
     }
 
 
     public void nextfun(ActionEvent actionEvent) throws IOException {
-        textfield1.setFont(Font.font("Monotype Corsiva",25.0));
-        text.setFill(Color.WHITE);
-        if (index == 0) {
-            if (rad1.isSelected() == true) {
-                score += 5;
-            }
-            if (rad2.isSelected() == true) {
-                score += 10;
-            }
-            if (rad3.isSelected() == true) {
-                score += 15;
-            }
-            if (rad4.isSelected() == true) {
-                score += 15;
-            }
-        }
-        else if (index == 1) {
-                if (rad1.isSelected() == true) {
-                    score += 1;
-                }
-                if (rad2.isSelected() == true) {
-                    score += 1;
-                }
-                if (rad3.isSelected() == true) {
-                    score += 1;
-                }
-                if (rad4.isSelected() == true) {
-                    score += 1;
-                }
-            }
-        else if (index == 2) {
-                if (rad1.isSelected() == true) {
-                    score += 1;
-                }
-                if (rad2.isSelected() == true) {
-                    score += 2;
-                }
-                if (rad3.isSelected() == true) {
-                    score += 1;
-                }
-
-            }
+        ques.calucalatescore(index, rad1.isSelected(), rad2.isSelected(),rad3.isSelected(),rad4.isSelected());
             index++;
-
-
-            System.out.println(score+" "+index);
             Stage stage = (Stage) rad1.getScene().getWindow();
             if (index == 3) {
                 Parent root = null;
