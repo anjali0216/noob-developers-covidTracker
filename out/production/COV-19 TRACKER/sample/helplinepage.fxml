@@ -5,7 +5,6 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Helplinepage">
    <children>
-      <TextArea fx:id="displayarea2" layoutX="40.0" layoutY="65.0" prefHeight="312.0" prefWidth="410.0" />
       <Button fx:id="homebtn2" layoutX="300.0" layoutY="28.0" mnemonicParsing="false" onAction="#backhome" text="Go back to HOME" />
    </children>
 </AnchorPane>
