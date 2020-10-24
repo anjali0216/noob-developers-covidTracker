@@ -1,0 +1,22 @@
+<component name="libraryTable">
+  <library name="javafx-swt2">
+    <CLASSES>
+      <root url="jar://$PATH_TO_FX$/javafx-swt.jar!/" />
+      <root url="jar://$PATH_TO_FX$/javafx.base.jar!/" />
+      <root url="jar://$PATH_TO_FX$/javafx.controls.jar!/" />
+      <root url="jar://$PATH_TO_FX$/javafx.fxml.jar!/" />
+      <root url="jar://$PATH_TO_FX$/javafx.graphics.jar!/" />
+      <root url="jar://$PATH_TO_FX$/javafx.media.jar!/" />
+      <root url="jar://$PATH_TO_FX$/javafx.swing.jar!/" />
+      <root url="jar://$PATH_TO_FX$/javafx.web.jar!/" />
+      <root url="file://$USER_HOME$/Downloads" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$USER_HOME$/Downloads/noob-developers-covidTracker-ANUBHAV/noob-developers-covidTracker-ANUBHAV/src" />
+      <root url="file://$USER_HOME$/Downloads" />
+    </SOURCES>
+    <jarDirectory url="file://$USER_HOME$/Downloads" recursive="false" />
+    <jarDirectory url="file://$USER_HOME$/Downloads" recursive="false" type="SOURCES" />
+  </library>
+</component>
