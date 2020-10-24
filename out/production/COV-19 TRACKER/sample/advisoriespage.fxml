@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Advisoriespage">
+   <children>
+      <TextArea fx:id="displayarea" layoutX="17.0" layoutY="68.0" prefHeight="325.0" prefWidth="457.0" />
+      <Button fx:id="homebtn" layoutX="383.0" layoutY="29.0" mnemonicParsing="false" onAction="#takemehome" text="Go back to HOME" />
+   </children>
+</AnchorPane>

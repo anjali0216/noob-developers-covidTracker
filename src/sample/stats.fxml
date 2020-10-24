@@ -3,10 +3,10 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="527.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Stats">
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Stats">
    <children>
       <Button fx:id="btn4" layoutX="112.0" layoutY="92.0" mnemonicParsing="false" onAction="#showstate" prefHeight="25.0" prefWidth="275.0" text="STATEWISE DATA" />
       <Button fx:id="btn5" layoutX="115.0" layoutY="188.0" mnemonicParsing="false" onAction="#showdistrict" prefHeight="25.0" prefWidth="275.0" text="DISTRICTWISE DATA" />
-      <Button fx:id="homebtn" layoutX="387.0" layoutY="14.0" mnemonicParsing="false" onAction="#goBackHome" text="&lt;- Back To Home" />
    </children>
 </AnchorPane>
