@@ -49,10 +49,11 @@
                <font>
                   <Font name="Georgia Bold" size="12.0" />
                </font></Button>
-            <Button fx:id="refbtn" layoutX="347.0" layoutY="342.0" mnemonicParsing="false" onAction="#Refresh" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="Refresh" >
+            <Button fx:id="refbtn" layoutX="347.0" layoutY="342.0" mnemonicParsing="false" onAction="#Refresh" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="Refresh">
             <font>
                <Font name="Georgia Bold" size="12.0" />
             </font></Button>
+            <Button fx:id="shownews" layoutX="47.0" layoutY="320.0" mnemonicParsing="false" onAction="#showNews" text="News" />
          </children>
       </Pane>
    </children>
