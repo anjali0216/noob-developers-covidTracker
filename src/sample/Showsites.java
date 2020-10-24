@@ -79,7 +79,7 @@ public class Showsites {
     public void gotohome(ActionEvent actionEvent) throws IOException {
         Stage stage=(Stage)homebutton.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        stage.setScene(new Scene(root, 300, 275));
+        stage.setScene(new Scene(root, 500, 500));
         stage.show();
     }
 }
