@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -13,6 +14,14 @@ public class Stats {
     public Button btn4;
     public Button btn5;
     public Button homebtn;
+    public Label totalcaselabel;
+   /* public void displayall() {
+        totalcase totall = new totalcase();
+        String totally = totall.displaytotal();
+        //System.out.println(totally);
+        totalcaselabel.setText(totally);
+    }*/
+
 
 
     public void showstate(ActionEvent actionEvent) throws IOException {

@@ -19,19 +19,26 @@ import java.net.URL;
 import java.util.Scanner;
 
 public class Controller {
-    driver object=new driver();
+
     public Label label1;
+    //public Label totalcaselabel;
     public Button btn1;
     public Button btn2;
     public Button btn3;
     public Button refbtn;
     public Button advisoriesbutton;
+
     public void stats(ActionEvent actionEvent)throws Exception{
         Stage stage=(Stage)btn1.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("stats.fxml"));
+
         stage.setTitle("COVID19 STATS");
+
         stage.setScene(new Scene(root, 500, 500));
+
         stage.show();
+
+
 
     }
     public void symptom(ActionEvent actionEvent)throws Exception{
@@ -54,6 +61,7 @@ public class Controller {
 
     public void Refresh(ActionEvent actionEvent) {
         updateFiles ob=new updateFiles();
+        driver object=new driver();
         try {
             ob.updateStatestats();
             ob.updateDistrictstats();
@@ -62,7 +70,7 @@ public class Controller {
         }
     }
 
-//view advisories is the on action for the view advisories button in sample.fxml
+
     public void viewadvisories(ActionEvent actionEvent) throws IOException {
 
 
@@ -100,7 +108,7 @@ public class Controller {
                 //System.out.println("data: " +jobj.get("data"));
                 JSONObject jobj1=(JSONObject)jobj.get("data");
                 JSONArray arr1 = (JSONArray) jobj1.get("notifications");
-                for(int i=0;i<arr1.size();i++){ //is line pe keh ra h ki arr1 could be null but yaha exception handle krne ka msg hi nhi aa rha
+                for(int i=0;i<arr1.size();i++){
                     JSONObject jsonobj=(JSONObject)arr1.get(i);
                     System.out.println("title:" +jsonobj.get("title"));
                     System.out.println("link:" +jsonobj.get("link"));
