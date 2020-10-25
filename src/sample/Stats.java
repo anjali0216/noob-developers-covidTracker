@@ -12,6 +12,7 @@ import java.io.IOException;
 public class Stats {
     public Button btn4;
     public Button btn5;
+    public  Button showstatedata;
     public Button homebtn;
 
 
@@ -19,6 +20,15 @@ public class Stats {
         Stage stage=(Stage)btn4.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("statewise.fxml"));
         stage.setTitle("STATE DATA");
+        stage.setScene(new Scene(root, 500, 500));
+        stage.show();
+
+    }
+
+    public void showStateData (ActionEvent actionEvent) throws IOException {
+        Stage stage=(Stage)btn4.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("statetable.fxml"));
+        stage.setTitle("STATE TABLE DATA");
         stage.setScene(new Scene(root, 500, 500));
         stage.show();
 
