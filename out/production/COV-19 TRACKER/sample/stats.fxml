@@ -8,6 +8,6 @@
       <Button fx:id="btn4" layoutX="104.0" layoutY="268.0" mnemonicParsing="false" onAction="#showstate" prefHeight="25.0" prefWidth="275.0" text="STATEWISE DATA" />
       <Button fx:id="btn5" layoutX="104.0" layoutY="321.0" mnemonicParsing="false" onAction="#showdistrict" prefHeight="25.0" prefWidth="275.0" text="DISTRICTWISE DATA" />
       <Button fx:id="homebtn" layoutX="387.0" layoutY="14.0" mnemonicParsing="false" onAction="#goBackHome" text="&lt;- Back To Home" />
-      <Label fx:id="totalcaselabel" layoutX="119.0" layoutY="101.0" prefHeight="114.0" prefWidth="251.0" />
+      <TextArea fx:id="totalcaselabel" layoutX="111.0" layoutY="50.0" prefHeight="200.0" prefWidth="266.0" />
    </children>
 </AnchorPane>

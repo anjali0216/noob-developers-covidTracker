@@ -76,7 +76,8 @@ public class Controller {
         stage.setScene(new Scene(root, 500, 500));
         stage.show();
 
-        String line = "";
+       /* String line = "";
+        String advisory="";
         URL url = new URL("https://api.rootnet.in/covid19-in/notifications");
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
         try {
@@ -104,16 +105,17 @@ public class Controller {
             JSONArray arr1 = (JSONArray) jobj1.get("notifications");
             for (int i = 0; i < arr1.size(); i++) { //is line pe keh ra h ki arr1 could be null but yaha exception handle krne ka msg hi nhi aa rha
                 JSONObject jsonobj = (JSONObject) arr1.get(i);
-                System.out.println("title:" + jsonobj.get("title"));
-                System.out.println("link:" + jsonobj.get("link"));
-                System.out.println("\n");
+                advisory +="title: " + jsonobj.get("title") +"\n"+"link: " + jsonobj.get("link")+"\n";
+                //System.out.println("title:" + jsonobj.get("title"));
+                //System.out.println("link:" + jsonobj.get("link"));
+                //System.out.println("\n");
                 con.disconnect();
             }
         } catch (ParseException e) {
             e.printStackTrace();
         }
 
-
+ return advisory;*/
     }
 
     public void viewhelpline(ActionEvent actionEvent) throws IOException {

@@ -2,19 +2,30 @@ package sample;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
+import models.advisoryapi;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class Stats {
+public class Stats implements Initializable{
     public Button btn4;
     public Button btn5;
     public Button homebtn;
-    public Label totalcaselabel;
+    public TextArea totalcaselabel;
+    totalcase objj=new totalcase();
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        totalcaselabel.setText(objj.displaytotal());
+    }
    /* public void displayall() {
         totalcase totall = new totalcase();
         String totally = totall.displaytotal();
