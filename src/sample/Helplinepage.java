@@ -5,12 +5,19 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class Helplinepage {
     public Button homebtn2;
+  public TextArea helplinearea;
+
+
+
+
+
 
     public void backhome(ActionEvent actionEvent) throws IOException {
         Stage stage=(Stage)homebtn2.getScene().getWindow();
@@ -18,4 +25,5 @@ public class Helplinepage {
         stage.setScene(new Scene(root, 500, 500));
         stage.show();
     }
+
 }

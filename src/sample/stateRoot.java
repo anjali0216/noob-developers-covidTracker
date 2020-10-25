@@ -14,6 +14,8 @@ class Summary{
     public int confirmedCasesForeign;
     public int discharged;
     public int confirmedButLocationUnidentified;
+    public int deaths;
+    public int confirmedButLocationunidentified;
 }
 
 class UnofficialSummary{
