@@ -3,11 +3,15 @@ package sample;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
+import models.Newsgson;
+import models.advisoryapi;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -18,12 +22,27 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
+import java.util.ResourceBundle;
 import java.util.Scanner;
 
 
-public class Advisoriespage {
+public class Advisoriespage implements Initializable {
     public Button homebtn;
     public TextArea displayarea;
+
+    advisoryapi ad=new advisoryapi();
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        try {
+            displayarea.setText(ad.getadvisory());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
 
     public void takemehome(ActionEvent actionEvent) throws IOException {
 
