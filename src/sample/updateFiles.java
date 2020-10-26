@@ -4,10 +4,7 @@ import com.google.gson.Gson;
 import org.json.simple.parser.JSONParser;
 
 import javax.swing.*;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URL;
@@ -25,7 +22,7 @@ public class updateFiles implements Runnable {
             while (true) {
                 updateStatestats();
                 updateDistrictstats();
-                Thread.sleep(1000 * 60 * 60);
+                updateTotalStats();
             }
         } catch (Exception e) {
             //System.out.println("prob");
@@ -70,4 +67,25 @@ public class updateFiles implements Runnable {
             pw.close();
         }
     }
+    public void updateTotalStats() throws IOException {
+        String data="";
+        int code=ob.checkURL("https://api.covid19india.org/data.json");
+        if(code!=200){
+            throw new RuntimeException();
+        }
+        else{
+            Scanner sc=new Scanner(new URL("https://api.covid19india.org/data.json").openStream());
+            StringBuilder inLine=new StringBuilder();
+            while(sc.hasNext()){
+                inLine.append(sc.nextLine());
+            }
+            data=inLine.toString();
+//            System.out.println(data);
+            String path=ob.path+"\\totalStats.txt";
+            FileWriter pw = new FileWriter(new File(path));
+            pw.write(data);
+            pw.close();
+        }
+    }
+
 }
