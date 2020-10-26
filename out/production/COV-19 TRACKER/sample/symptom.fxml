@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="501.0" prefWidth="500.0" style="-fx-background-color: linear-gradient(to right top, #1638da, #006bf2, #008df0, #00a9e0, #1ec1d1);" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Symptom">
+<AnchorPane prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: linear-gradient(to right top, #1638da, #006bf2, #008df0, #00a9e0, #1ec1d1);" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Symptom">
    <children>
       <TextArea fx:id="textArea2" layoutY="48.0" prefHeight="148.0" prefWidth="500.0" promptText="SYMPTOM CHECKER" style="-fx-background-color: linear-gradient(to right top, #1638da, #006bf2, #008df0, #00a9e0, #1ec1d1);" text="          Symptom &#10;            Checker" wrapText="true" AnchorPane.bottomAnchor="305.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="48.0">
          <font>

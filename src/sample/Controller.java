@@ -20,7 +20,6 @@ import java.util.Scanner;
 
 public class Controller {
     driver object = new driver();
-    public Label label1;
     public Button btn1;
     public Button btn2;
     public Button btn3;
@@ -31,7 +30,6 @@ public class Controller {
     public void stats(ActionEvent actionEvent) throws Exception {
         Stage stage = (Stage) btn1.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("stats.fxml"));
-        stage.setTitle("COVID19 STATS");
         stage.setScene(new Scene(root, 500, 500));
         stage.show();
 
@@ -40,7 +38,6 @@ public class Controller {
     public void symptom(ActionEvent actionEvent) throws Exception {
         Stage stage = (Stage) btn1.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("symptom.fxml"));
-        stage.setTitle("SYMPTOMS");
         stage.setScene(new Scene(root, 500, 500));
         stage.show();
 
@@ -50,7 +47,6 @@ public class Controller {
     public void showsites(ActionEvent actionEvent) throws Exception {
         Stage stage = (Stage) btn1.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("showsites.fxml"));
-        stage.setTitle("COVID19 SITES");
         stage.setScene(new Scene(root, 500, 500));
         stage.show();
 
