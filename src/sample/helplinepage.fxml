@@ -6,6 +6,6 @@
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Helplinepage">
    <children>
       <Button fx:id="homebtn2" layoutX="300.0" layoutY="28.0" mnemonicParsing="false" onAction="#backhome" text="Go back to HOME" />
-      <TextArea fx:id="helplinearea" layoutX="69.0" layoutY="100.0" prefHeight="279.0" prefWidth="402.0" />
+      <TextArea fx:id="helplinearea" layoutX="41.0" layoutY="84.0" prefHeight="276.0" prefWidth="370.0" />
    </children>
 </AnchorPane>
