@@ -16,8 +16,9 @@ public class Statewise {
     public Button prevpg;
     public TextField stname;
     public Label recordDisplay;
+    public Button display;
 
-    public void searchstate() throws IOException {
+    public void searchstate() {
         Searchstat obj=new Searchstat();
         String state=stname.getText();
         String stats=obj.searchst(state);
@@ -27,6 +28,13 @@ public class Statewise {
     public void goPrevpg(ActionEvent actionEvent) throws IOException {
         Stage stage=(Stage)prevpg.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("stats.fxml"));
+        stage.setScene(new Scene(root, 500, 500));
+        stage.show();
+    }
+
+    public void displayList(ActionEvent actionEvent) throws IOException {
+        Stage stage=(Stage)display.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("DisplayStateStats.fxml"));
         stage.setScene(new Scene(root, 500, 500));
         stage.show();
     }
