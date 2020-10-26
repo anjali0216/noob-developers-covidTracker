@@ -28,6 +28,7 @@ public class Searchstat {
             var gson = new Gson();
 
             stateRoot root = gson.fromJson(inLine, stateRoot.class);
+
             for (int i = 0; i < root.data.regional.size(); i++) {
                 if (root.data.regional.get(i).loc.equalsIgnoreCase(state)) {
                     found=true;

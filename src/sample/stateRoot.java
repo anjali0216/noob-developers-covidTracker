@@ -33,7 +33,7 @@ class Regional{
     public int totalConfirmed;
     public int deaths;
 
-    Regional(String loc,int confirmedCasesForeign,int confirmedCasesIndian,int discharged,int deaths,int totalConfirmed) {
+    public Regional(String loc,int confirmedCasesForeign,int confirmedCasesIndian,int discharged,int deaths,int totalConfirmed) {
         this.loc = loc;
         this.confirmedCasesForeign=confirmedCasesForeign;
         this.confirmedCasesIndian=confirmedCasesIndian;

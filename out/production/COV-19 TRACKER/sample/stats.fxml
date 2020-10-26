@@ -21,5 +21,6 @@
             <Font name="Algerian" size="24.0" />
          </font>
       </Label>
+      <Button fx:id="calendar" layoutX="187.0" layoutY="442.0" mnemonicParsing="false" onAction="#showCalendar" prefHeight="25.0" prefWidth="109.0" text="CALENDAR" />
    </children>
 </AnchorPane>
