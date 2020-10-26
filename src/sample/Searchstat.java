@@ -22,16 +22,9 @@ public class Searchstat {
     public String searchst(String state){
         String stats="";
         boolean found=false;
-        File file=new File(ob.path+"\\stateStats.txt");
         try {
-            Scanner sc=new Scanner(file);
-            String inLine;
-            StringBuilder data=new StringBuilder();
-            while(sc.hasNext()){
-                data.append(sc.nextLine());
-            }
-            inLine= data.toString();
 
+            String inLine=ob.JsonToString(ob.path+"\\stateStats.txt");
             var gson = new Gson();
 
             stateRoot root = gson.fromJson(inLine, stateRoot.class);
@@ -61,30 +54,24 @@ public class Searchstat {
     public String searchdt(String state,String district){
         String stats="";
         boolean found=false;
-        File file=new File(ob.path+"\\districtStats.txt");
         try{
-            Scanner sc=new Scanner(file);
-            String inLine;
-            StringBuilder data=new StringBuilder();
-            while(sc.hasNext()){
-                data.append(sc.nextLine());
-            }
-            inLine= data.toString();
+            String inLine=ob.JsonToString(ob.path+"\\districtStats.txt");
             JSONParser parse = new JSONParser();
             JSONArray jsonarr1 = (JSONArray) parse.parse(inLine);
             for (Object o : jsonarr1) {
                 JSONObject jobj1 = (JSONObject) o;
+                if (((String) jobj1.get("state")).equalsIgnoreCase(state)) {
                 JSONArray jsonarr2 = (JSONArray) jobj1.get("districtData");
                 for (Object value : jsonarr2) {
-
-                    if (((String) jobj1.get("state")).equalsIgnoreCase(state)) {
-                        JSONObject jobj2 = (JSONObject) value;
+                    JSONObject jobj2 = (JSONObject) value;
                         if (((String) jobj2.get("district")).equalsIgnoreCase(district)) {
                             found=true;
                             stats="Confirmed: " + jobj2.get("confirmed") + "\nActive: " + jobj2.get("active") + "\ndeceased: " + jobj2.get("deceased") + "\nrecovered: " + jobj2.get("recovered");
+                            break;
                         }
                     }
-
+                    if(found==true)
+                        break;
                 }
                 if(found==false) {
                     stats="No such record found!";

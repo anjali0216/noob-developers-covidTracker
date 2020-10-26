@@ -26,19 +26,11 @@ public class Stats implements Initializable{
     public void initialize(URL location, ResourceBundle resources) {
         totalcaselabel.setText(objj.displaytotal());
     }
-   /* public void displayall() {
-        totalcase totall = new totalcase();
-        String totally = totall.displaytotal();
-        //System.out.println(totally);
-        totalcaselabel.setText(totally);
-    }*/
-
 
 
     public void showstate(ActionEvent actionEvent) throws IOException {
         Stage stage=(Stage)btn4.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("statewise.fxml"));
-        stage.setTitle("STATE DATA");
         stage.setScene(new Scene(root, 500, 500));
         stage.show();
 
@@ -47,7 +39,6 @@ public class Stats implements Initializable{
     public void showdistrict(ActionEvent actionEvent) throws IOException {
         Stage stage=(Stage)btn4.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("districtwise.fxml"));
-        stage.setTitle("DISTRICT DATA");
         stage.setScene(new Scene(root, 500, 500));
         stage.show();
 
