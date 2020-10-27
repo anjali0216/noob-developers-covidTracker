@@ -1,0 +1,88 @@
+package others;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+import sample.driver;
+
+import java.awt.*;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class Helplinepage implements Initializable {
+    driver obj=new driver();
+    public static String inLine;
+    static ObservableList<Helpline> list= FXCollections.observableArrayList();
+    public Button homebtn2;
+    public Label cnop;
+    public Label tno;
+    public Label email;
+    public Hyperlink linkT;
+    public Hyperlink linkF;
+    public static JSONObject jobj,jobj1,jobj2,jobj3;
+
+    @FXML
+    TableView<Helpline> table;
+    @FXML
+    TableColumn<Helpline, Integer> sno;
+    @FXML
+    TableColumn<Helpline, String> loc;
+    @FXML
+    TableColumn<Helpline, String> cno;
+
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        cnop.setText(jobj3.get("number").toString());
+        tno.setText(jobj3.get("number-tollfree").toString());
+        email.setText(jobj3.get("email").toString());
+        linkT.setText(jobj3.get("twitter").toString());
+        linkF.setText(jobj3.get("facebook").toString());
+        linkT.setOnAction(obj.open(linkT));
+        linkF.setOnAction(obj.open(linkF));
+        sno.setCellValueFactory(new PropertyValueFactory<Helpline, Integer>("sno"));
+        loc.setCellValueFactory(new PropertyValueFactory<Helpline, String>("loc"));
+        cno.setCellValueFactory(new PropertyValueFactory<Helpline, String>("cno"));
+        table.setItems(list);
+    }
+
+    public static void createList() throws ParseException {
+        JSONParser parse = new JSONParser();
+        jobj = (JSONObject) parse.parse(inLine);
+        jobj1 = (JSONObject) jobj.get("data");
+        jobj2 = (JSONObject) jobj1.get("contacts");
+        jobj3 = (JSONObject) jobj2.get("primary");
+        JSONArray arr1 = (JSONArray) jobj2.get("regional");
+        int i=1;
+        for (Object o : arr1){
+            JSONObject value = (JSONObject) o;
+            Helpline hp=new Helpline(i++,value.get("loc").toString(),value.get("number").toString());
+            list.add(hp);
+        }
+    }
+
+    public void backhome() throws IOException {
+        Stage stage=(Stage)homebtn2.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        stage.setScene(new Scene(root, 500, 500));
+        stage.show();
+    }
+
+}

@@ -4,19 +4,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.event.ActionEvent;
 import javafx.stage.Stage;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
-
+import others.Helplinepage;
+import others.Shownews;
 import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.Scanner;
 
 public class Controller {
     driver object = new driver();
@@ -27,7 +18,7 @@ public class Controller {
     public Button shownews;
     public Button advisoriesbutton;
 
-    public void stats(ActionEvent actionEvent) throws Exception {
+    public void stats() throws Exception {
         Stage stage = (Stage) btn1.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("stats.fxml"));
         stage.setScene(new Scene(root, 500, 500));
@@ -35,7 +26,7 @@ public class Controller {
 
     }
 
-    public void symptom(ActionEvent actionEvent) throws Exception {
+    public void symptom() throws Exception {
         Stage stage = (Stage) btn1.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("symptom.fxml"));
         stage.setScene(new Scene(root, 500, 500));
@@ -44,15 +35,15 @@ public class Controller {
 
     }
 
-    public void showsites(ActionEvent actionEvent) throws Exception {
+    public void showsites() throws Exception {
         Stage stage = (Stage) btn1.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("showsites.fxml"));
-        stage.setScene(new Scene(root, 500, 500));
+        stage.setScene(new Scene(root, 500, 400));
         stage.show();
 
     }
 
-    public void Refresh(ActionEvent actionEvent) {
+    public void Refresh() {
         updateFiles ob = new updateFiles();
         try {
             ob.updateStatestats();
@@ -63,7 +54,7 @@ public class Controller {
     }
 
 
-    public void viewadvisories(ActionEvent actionEvent) throws IOException {
+    public void viewadvisories() throws IOException {
 
 
         Stage stage = (Stage) advisoriesbutton.getScene().getWindow();
@@ -75,20 +66,29 @@ public class Controller {
 
     }
 
-    public void viewhelpline(ActionEvent actionEvent) throws IOException {
-        Stage stage = (Stage) advisoriesbutton.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("helplinepage.fxml"));
-        stage.setTitle("Advisories and Guidelines");
-        stage.setScene(new Scene(root, 500, 500));
-        stage.show();
+    public void viewhelpline() {
+        try {
+            Helplinepage.inLine=object.JsonToString(object.path + "\\Helpline.txt");
+            Helplinepage.createList();
+            Stage stage = (Stage) advisoriesbutton.getScene().getWindow();
+            Parent root = FXMLLoader.load(getClass().getResource("helplinepage.fxml"));
+            stage.setScene(new Scene(root, 500, 500));
+            stage.show();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }
 
-    public void showNews(ActionEvent event) throws IOException, InterruptedException {
-        Stage stage = (Stage) btn1.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("shownews.fxml"));
-        stage.setTitle("NEWS");
-        stage.setScene(new Scene(root, 500, 500));
-        stage.show();
+    public void showNews() {
+        try {
+            Shownews.inLine=new Shownews().getnews();
+            Stage stage = (Stage) btn1.getScene().getWindow();
+            Parent root = FXMLLoader.load(getClass().getResource("shownews.fxml"));
+            stage.setScene(new Scene(root, 500, 500));
+            stage.show();
+        }catch(Exception e){
+            object.displayDialog("You are not connected to the internet! Reconnect and try again.");
+        }
 
     }
 }
