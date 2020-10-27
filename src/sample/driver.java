@@ -1,14 +1,21 @@
 package sample;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.control.Hyperlink;
+
 import javax.swing.*;
+import java.awt.*;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.net.HttpURLConnection;
+import java.net.URI;
 import java.net.URL;
 import java.util.Scanner;
 
 public class driver {
-    String path = System.getProperty("user.dir");
+    public String path = System.getProperty("user.dir");
     public int checkURL(String link){
         int response=0;
         try{
@@ -37,5 +44,20 @@ public class driver {
         }
         inLine= data.toString();
         return inLine;
+    }
+
+    public EventHandler<ActionEvent> open(Hyperlink link){
+        Desktop d=Desktop.getDesktop();
+        EventHandler e=new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                try {
+                    d.browse(URI.create(link.getText()));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+        return e;
     }
 }
