@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="others.Advisoriespage">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Advisoriespage">
    <children>
       <Button fx:id="homebtn" layoutX="383.0" layoutY="29.0" mnemonicParsing="false" onAction="#takemehome" text="Go back to HOME" />
       <TextArea fx:id="displayarea" layoutX="21.0" layoutY="60.0" prefHeight="315.0" prefWidth="443.0" />
