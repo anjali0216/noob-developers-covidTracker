@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: linear-gradient(to right top, #1703e5, #0069ff, #0099ff, #00c0f7, #57e1e7);" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="statFiles.Statewise">
+   <children>
+      <Button fx:id="btn6" layoutX="370.0" layoutY="181.0" mnemonicParsing="false" onAction="#searchstate" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="Search">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <TextField fx:id="stname" layoutX="73.0" layoutY="183.0" prefHeight="25.0" prefWidth="287.0" promptText="Enter a state/territory to get the latest updates" />
+      <Button fx:id="prevpg" layoutX="340.0" layoutY="458.0" mnemonicParsing="false" onAction="#goPrevpg" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="&lt;- Go To Previous Page">
+         <font>
+            <Font name="Bell MT" size="14.0" />
+         </font></Button>
+      <Label fx:id="recordDisplay" alignment="CENTER" contentDisplay="CENTER" layoutX="78.0" layoutY="240.0" lineSpacing="2.0" prefHeight="205.0" prefWidth="343.0" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);">
+         <font>
+            <Font name="Bell MT Bold" size="16.0" />
+         </font></Label>
+      <Button fx:id="display" layoutX="222.0" layoutY="109.0" mnemonicParsing="false" onAction="#displayList" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="Display">
+         <font>
+            <Font name="Bell MT" size="14.0" />
+         </font></Button>
+      <Label alignment="CENTER" layoutY="81.0" prefHeight="22.0" prefWidth="523.0" text="To display the state-wise stats..Click on the button below" textAlignment="CENTER">
+         <font>
+            <Font name="Bell MT" size="18.0" />
+         </font></Label>
+      <Label alignment="CENTER" layoutY="142.0" prefHeight="17.0" prefWidth="523.0" text="To display the stats of a particular state, Search below">
+         <font>
+            <Font name="Bell MT" size="18.0" />
+         </font></Label>
+      <Label alignment="CENTER" layoutX="88.0" layoutY="23.0" prefHeight="48.0" prefWidth="331.0" text="STATE-WISE STATS">
+         <font>
+            <Font name="Algerian" size="36.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

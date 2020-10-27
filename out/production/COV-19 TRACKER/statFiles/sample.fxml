@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane alignment="center" hgap="10" prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: linear-gradient(to right top, #1703e5, #0069ff, #0099ff, #00c0f7, #57e1e7);" vgap="10" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <Pane prefHeight="500.0" prefWidth="500.0">
+         <children>
+            <Button fx:id="btn1" alignment="CENTER" layoutX="117.0" layoutY="223.0" mnemonicParsing="false" onAction="#showsites" prefHeight="33.0" prefWidth="255.0" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="COVID SITES">
+               <font>
+                  <Font name="Algerian" size="18.0" />
+               </font></Button>
+            <Button fx:id="btn2" layoutX="117.0" layoutY="120.0" mnemonicParsing="false" onAction="#stats" prefHeight="33.0" prefWidth="255.0" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="STATS">
+               <font>
+                  <Font name="Algerian" size="18.0" />
+               </font></Button>
+            <Button fx:id="btn3" layoutX="117.0" layoutY="170.0" mnemonicParsing="false" onAction="#symptom" prefHeight="33.0" prefWidth="255.0" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="SELF ANALYSIS" textOverrun="WORD_ELLIPSIS">
+               <font>
+                  <Font name="Algerian" size="18.0" />
+               </font></Button>
+            <Button fx:id="advisoriesbutton" layoutX="119.0" layoutY="320.0" mnemonicParsing="false" onAction="#viewadvisories" prefHeight="33.0" prefWidth="255.0" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="View Covid-19 Advisories" textFill="#000000f5">
+               <font>
+                  <Font name="Algerian" size="18.0" />
+               </font></Button>
+            <Button fx:id="helplinebutton" layoutX="117.0" layoutY="271.0" mnemonicParsing="false" onAction="#viewhelpline" prefHeight="33.0" prefWidth="255.0" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="View Covid-19 helplines">
+               <font>
+                  <Font name="Algerian" size="18.0" />
+               </font></Button>
+            <Button fx:id="refbtn" layoutX="119.0" layoutY="421.0" mnemonicParsing="false" onAction="#Refresh" prefHeight="33.0" prefWidth="255.0" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="REFRESH">
+               <font>
+                  <Font name="Algerian" size="18.0" />
+               </font></Button>
+            <Button fx:id="shownews" layoutX="117.0" layoutY="370.0" mnemonicParsing="false" onAction="#showNews" prefHeight="33.0" prefWidth="255.0" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="NEWS">
+               <font>
+                  <Font name="Algerian" size="18.0" />
+               </font></Button>
+            <Label alignment="CENTER" layoutX="60.0" layoutY="21.0" prefHeight="86.0" prefWidth="369.0" text="COVID TRACKER">
+               <font>
+                  <Font name="Algerian" size="48.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</GridPane>

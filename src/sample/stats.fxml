@@ -4,23 +4,34 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Stats">
+<AnchorPane prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: linear-gradient(to right top, #1703e5, #0069ff, #0099ff, #00c0f7, #57e1e7);" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="statFiles.Stats">
    <children>
-      <Button fx:id="btn4" layoutX="104.0" layoutY="331.0" mnemonicParsing="false" onAction="#showstate" prefHeight="37.0" prefWidth="283.0" text="STATE-WISE DATA">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="161.0" layoutY="25.0" prefHeight="53.0" prefWidth="168.0" text="STATS">
          <font>
-            <Font name="Algerian" size="14.0" />
-         </font></Button>
-      <Button fx:id="btn5" layoutX="104.0" layoutY="386.0" mnemonicParsing="false" onAction="#showdistrict" prefHeight="37.0" prefWidth="283.0" text="DISTRICT-WISE DATA">
-      <font>
-         <Font name="Algerian" size="14.0" />
-      </font></Button>
-      <Button fx:id="homebtn" layoutX="388.0" layoutY="454.0" mnemonicParsing="false" onAction="#goBackHome" text="&lt;- Back To Home" />
-      <TextArea fx:id="totalcaselabel" layoutX="103.0" layoutY="88.0" prefHeight="200.0" prefWidth="283.0" />
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="196.0" layoutY="29.0" prefHeight="37.0" prefWidth="86.0" text="STATS">
-         <font>
-            <Font name="Algerian" size="24.0" />
+            <Font name="Algerian" size="36.0" />
          </font>
       </Label>
-      <Button fx:id="calendar" layoutX="187.0" layoutY="442.0" mnemonicParsing="false" onAction="#showCalendar" prefHeight="25.0" prefWidth="109.0" text="CALENDAR" />
+      <Label fx:id="totalcaselabel" alignment="CENTER" contentDisplay="CENTER" layoutX="103.0" layoutY="88.0" lineSpacing="2.0" prefHeight="200.0" prefWidth="283.0" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" wrapText="true">
+         <font>
+            <Font name="Bell MT Bold" size="16.0" />
+         </font></Label>
+
+      <Button fx:id="btn4" layoutX="103.0" layoutY="306.0" mnemonicParsing="false" onAction="#showstate" prefHeight="37.0" prefWidth="283.0" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="STATE-WISE DATA">
+         <font>
+            <Font name="Algerian" size="18.0" />
+         </font></Button>
+      <Button fx:id="btn5" layoutX="103.0" layoutY="361.0" mnemonicParsing="false" onAction="#showdistrict" prefHeight="37.0" prefWidth="283.0" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="DISTRICT-WISE DATA">
+      <font>
+         <Font name="Algerian" size="18.0" />
+      </font></Button>
+      <Button fx:id="homebtn" layoutX="362.0" layoutY="465.0" mnemonicParsing="false" onAction="#goBackHome" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="&lt;- Back To Home">
+         <font>
+            <Font name="Bell MT" size="14.0" />
+         </font></Button>
+
+      <Button fx:id="calendar" layoutX="103.0" layoutY="415.0" mnemonicParsing="false" onAction="#showCalendar" prefHeight="37.0" prefWidth="283.0" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="DAILY UPDATES">
+         <font>
+            <Font name="Algerian" size="18.0" />
+         </font></Button>
    </children>
 </AnchorPane>
