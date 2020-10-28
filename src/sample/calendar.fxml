@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Calendar">
+   <children>
+      <Label fx:id="date" layoutX="121.0" layoutY="207.0" prefHeight="145.0" prefWidth="257.0" text=" " />
+      <DatePicker fx:id="picker" layoutX="118.0" layoutY="108.0" prefHeight="26.0" prefWidth="324.0" promptText="Pick a date" />
+      <Button fx:id="showdate" layoutX="221.0" layoutY="165.0" mnemonicParsing="false" onAction="#displaydate" text="Show stats" />
+   </children>
+</AnchorPane>
