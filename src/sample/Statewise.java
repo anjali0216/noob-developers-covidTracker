@@ -17,6 +17,7 @@ public class Statewise {
     public TextField stname;
     public Label recordDisplay;
     public Button display;
+    public Button stategraph;
 
     public void searchstate() {
         Searchstat obj=new Searchstat();
@@ -36,6 +37,17 @@ public class Statewise {
         Stage stage=(Stage)display.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("DisplayStateStats.fxml"));
         stage.setScene(new Scene(root, 500, 500));
+        stage.show();
+    }
+
+ public void viewstategraph(ActionEvent actionEvent) throws IOException {
+
+        Stage stage=(Stage)stategraph.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("stategraph.fxml"));
+       // Stategraph graph1=new Stategraph();
+        //graph1.initialize();
+        stage.setScene(new Scene( root,700, 700));
+        stage.setMaximized(true);
         stage.show();
     }
 }

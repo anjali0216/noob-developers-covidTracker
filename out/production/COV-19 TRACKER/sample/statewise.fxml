@@ -16,5 +16,6 @@
       <Button fx:id="display" layoutX="222.0" layoutY="85.0" mnemonicParsing="false" onAction="#displayList" text="Display" />
       <Label layoutX="102.0" layoutY="58.0" text="To display the state-wise stats..Click on the button below" />
       <Label layoutX="108.0" layoutY="142.0" text="To display the stats of a particular state, Search below" />
+      <Button fx:id="stategraph" layoutX="131.0" layoutY="332.0" mnemonicParsing="false" onAction="#viewstategraph" text="View Graph for Statewise Statisitcs of India" />
    </children>
 </AnchorPane>
