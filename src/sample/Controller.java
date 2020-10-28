@@ -26,6 +26,7 @@ public class Controller {
     public Button refbtn;
     public Button shownews;
     public Button advisoriesbutton;
+    public Button graphbtn;
 
     public void stats(ActionEvent actionEvent) throws Exception {
         Stage stage = (Stage) btn1.getScene().getWindow();
@@ -90,5 +91,13 @@ public class Controller {
         stage.setScene(new Scene(root, 500, 500));
         stage.show();
 
+    }
+
+    public void showgraph(ActionEvent actionEvent) throws IOException {
+        Stage stage = (Stage) graphbtn.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("allgraph.fxml"));
+        stage.setTitle("GRAPHICAL ANALYSIS");
+        stage.setScene(new Scene(root, 500, 500));
+        stage.show();
     }
 }

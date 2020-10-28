@@ -23,9 +23,10 @@ public class updateFiles implements Runnable {
                 updateStatestats();
                 updateDistrictstats();
                 updateTotalStats();
+                updateWorldstats();
             }
         } catch (Exception e) {
-            //System.out.println("prob");
+
         }
     }
 
@@ -80,12 +81,39 @@ public class updateFiles implements Runnable {
                 inLine.append(sc.nextLine());
             }
             data=inLine.toString();
-//            System.out.println(data);
+         //System.out.println(data);
             String path=ob.path+"\\totalStats.txt";
             FileWriter pw = new FileWriter(new File(path));
             pw.write(data);
             pw.close();
         }
     }
+
+
+
+    public void updateWorldstats() throws IOException {
+        String data="";
+        int code=ob.checkURL("https://akashraj.tech/corona/api");
+        if(code!=200){
+           // System.out.println("boo");
+            throw new RuntimeException("HttpResponseCode:" + code);
+        }
+        else{
+            Scanner sc=new Scanner(new URL("https://akashraj.tech/corona/api").openStream());
+            StringBuilder inLine=new StringBuilder();
+            while(sc.hasNext()){
+                inLine.append(sc.nextLine());
+            }
+            data=inLine.toString();
+            //System.out.println(data);
+            String path=ob.path+"\\worldStats.txt";
+            PrintWriter pw = new PrintWriter(new File(path));
+            pw.write(data);
+            pw.close();
+        }
+    }
+
+
+
 
 }
