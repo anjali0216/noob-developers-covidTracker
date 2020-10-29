@@ -26,19 +26,19 @@
                <font>
                   <Font name="Georgia Bold" size="14.0" />
                </font></Button>
-            <Button fx:id="advisoriesbutton" layoutX="151.0" layoutY="324.0" mnemonicParsing="false" onAction="#viewadvisories" prefHeight="33.0" prefWidth="189.0" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="View Covid-19 Advisories" textFill="#000000f5">
+            <Button fx:id="advisoriesbutton" layoutX="269.0" layoutY="276.0" mnemonicParsing="false" onAction="#viewadvisories" prefHeight="33.0" prefWidth="189.0" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="View Covid-19 Advisories" textFill="#000000f5">
                <font>
                   <Font name="Georgia Bold" size="12.0" />
                </font></Button>
-            <Button fx:id="helplinebutton" layoutX="151.0" layoutY="273.0" mnemonicParsing="false" onAction="#viewhelpline" prefHeight="33.0" prefWidth="189.0" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="View Covid-19 helplines">
+            <Button fx:id="helplinebutton" layoutX="24.0" layoutY="276.0" mnemonicParsing="false" onAction="#viewhelpline" prefHeight="33.0" prefWidth="189.0" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="View Covid-19 helplines">
                <font>
                   <Font name="Georgia Bold" size="12.0" />
                </font></Button>
-            <Button fx:id="refbtn" layoutX="197.0" layoutY="429.0" mnemonicParsing="false" onAction="#Refresh" prefHeight="33.0" prefWidth="97.0" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="REFRESH">
+            <Button fx:id="refbtn" layoutX="171.0" layoutY="429.0" mnemonicParsing="false" onAction="#Refresh" prefHeight="33.0" prefWidth="157.0" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="REFRESH">
             <font>
                <Font name="Georgia Bold" size="12.0" />
             </font></Button>
-            <Button fx:id="shownews" layoutX="213.0" layoutY="374.0" mnemonicParsing="false" onAction="#showNews" prefHeight="33.0" prefWidth="65.0" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="NEWS">
+            <Button fx:id="shownews" layoutX="173.0" layoutY="326.0" mnemonicParsing="false" onAction="#showNews" prefHeight="33.0" prefWidth="147.0" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="NEWS">
                <font>
                   <Font name="Georgia Bold" size="12.0" />
                </font></Button>
@@ -47,6 +47,10 @@
                   <Font name="Algerian" size="36.0" />
                </font>
             </Label>
+            <Button fx:id="graphbtn" layoutX="168.0" layoutY="377.0" mnemonicParsing="false" onAction="#showgraph" prefHeight="33.0" prefWidth="157.0" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="Graphical Analysis">
+               <font>
+                  <Font name="Georgia Bold" size="14.0" />
+               </font></Button>
          </children>
       </Pane>
    </children>

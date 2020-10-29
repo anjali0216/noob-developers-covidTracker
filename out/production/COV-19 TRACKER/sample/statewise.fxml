@@ -9,13 +9,12 @@
       <Button fx:id="btn6" layoutX="371.0" layoutY="181.0" mnemonicParsing="false" onAction="#searchstate" text="Search" />
       <TextField fx:id="stname" layoutX="78.0" layoutY="181.0" prefHeight="25.0" prefWidth="287.0" promptText="Enter a state/territory to get the latest updates" />
       <Button fx:id="prevpg" layoutX="344.0" layoutY="14.0" mnemonicParsing="false" onAction="#goPrevpg" text="&lt;- Go To Previous Page" />
-      <Label fx:id="recordDisplay" contentDisplay="CENTER" layoutX="71.0" layoutY="242.0" lineSpacing="2.0" prefHeight="205.0" prefWidth="343.0">
+      <Label fx:id="recordDisplay" contentDisplay="CENTER" layoutX="71.0" layoutY="242.0" lineSpacing="2.0" prefHeight="173.0" prefWidth="343.0">
          <font>
             <Font name="Times New Roman Bold" size="14.0" />
          </font></Label>
       <Button fx:id="display" layoutX="222.0" layoutY="85.0" mnemonicParsing="false" onAction="#displayList" text="Display" />
       <Label layoutX="102.0" layoutY="58.0" text="To display the state-wise stats..Click on the button below" />
       <Label layoutX="108.0" layoutY="142.0" text="To display the stats of a particular state, Search below" />
-      <Button fx:id="stategraph" layoutX="131.0" layoutY="332.0" mnemonicParsing="false" onAction="#viewstategraph" text="View Graph for Statewise Statisitcs of India" />
    </children>
 </AnchorPane>

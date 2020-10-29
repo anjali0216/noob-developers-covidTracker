@@ -15,8 +15,8 @@
          <Font name="Algerian" size="14.0" />
       </font></Button>
       <Button fx:id="homebtn" layoutX="388.0" layoutY="454.0" mnemonicParsing="false" onAction="#goBackHome" text="&lt;- Back To Home" />
-      <TextArea fx:id="totalcaselabel" layoutX="103.0" layoutY="88.0" prefHeight="200.0" prefWidth="283.0" />
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="196.0" layoutY="29.0" prefHeight="37.0" prefWidth="86.0" text="STATS">
+      <TextArea fx:id="totalcaselabel" layoutX="123.0" layoutY="78.0" prefHeight="172.0" prefWidth="271.0" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="204.0" layoutY="28.0" prefHeight="37.0" prefWidth="109.0" text="STATS">
          <font>
             <Font name="Algerian" size="24.0" />
          </font>

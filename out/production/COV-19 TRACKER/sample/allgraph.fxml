@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Allgraph">
+   <children>
+      <Button fx:id="worldgraph" layoutX="182.0" layoutY="66.0" mnemonicParsing="false" onAction="#viewworldgraph" text="View Overall Covid-19 Stats for the World" />
+      <Button fx:id="indiagraph" layoutX="183.0" layoutY="120.0" mnemonicParsing="false" onAction="#viewindiagraph" prefHeight="25.0" prefWidth="237.0" text="View Overall  Covid-19 Stats for India" />
+      <Button fx:id="statewisegraph" layoutX="180.0" layoutY="167.0" mnemonicParsing="false" onAction="#viewstategraph" prefHeight="25.0" prefWidth="237.0" text="View Statewise Stats for India" />
+      <Button fx:id="growthchart" layoutX="180.0" layoutY="224.0" mnemonicParsing="false" onAction="#viewgrowthchart" prefHeight="25.0" prefWidth="237.0" text="View GrowthChart of covid in India" />
+   </children>
+</AnchorPane>
