@@ -6,6 +6,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.geometry.Side;
+import javafx.scene.Parent;
 import javafx.scene.chart.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
@@ -21,18 +22,18 @@ import java.io.IOException;
 
 public class graphcollection {
 
-    public static BorderPane setGraph(){
+    public static BorderPane setGraph() {
 
-        BorderPane bp1=new BorderPane();
-        PieChart pctotal1=new PieChart();
+        BorderPane bp1 = new BorderPane();
+        PieChart pctotal1 = new PieChart();
         driver objec = new driver();
-        String inline="";
+        String inline = "";
 
         pctotal1.setTitle("CoronaVirus Statistics for India");
 
 
         try {
-            inline=objec.JsonToString(objec.path+"\\stateStats.txt");
+            inline = objec.JsonToString(objec.path + "\\stateStats.txt");
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -42,38 +43,31 @@ public class graphcollection {
         var gson = new Gson();
         stateRoot root = gson.fromJson(inline, stateRoot.class);
         ObservableList<PieChart.Data> ol = FXCollections.observableArrayList(
-                new PieChart.Data("Total Confirmed",root.data.summary.total),
-                new PieChart.Data("Confirmed Cases Indian",root.data.summary.confirmedCasesIndian),
-                new PieChart.Data("Confirmed Cases Foreign",root.data.summary.confirmedCasesForeign),
-                new PieChart.Data("Discharged",root.data.summary.discharged),
-                new PieChart.Data("Deaths",root.data.summary.deaths),
-                new PieChart.Data("Confirmed But Location Unidentified",root.data.summary.confirmedButLocationUnidentified)
+                new PieChart.Data("Total Confirmed", root.data.summary.total),
+                new PieChart.Data("Confirmed Cases Indian", root.data.summary.confirmedCasesIndian),
+                new PieChart.Data("Confirmed Cases Foreign", root.data.summary.confirmedCasesForeign),
+                new PieChart.Data("Discharged", root.data.summary.discharged),
+                new PieChart.Data("Deaths", root.data.summary.deaths),
+                new PieChart.Data("Confirmed But Location Unidentified", root.data.summary.confirmedButLocationUnidentified)
         );
         //System.out.println("hello"+ root.data.summary.total);
         pctotal1.setData(ol);
         bp1.setCenter(pctotal1);
 
 
-
-
-
-
-
-
-
         pctotal1.setLegendSide(Side.LEFT);
-        FadeTransition f = new FadeTransition(Duration.seconds(2),pctotal1);
+        FadeTransition f = new FadeTransition(Duration.seconds(2), pctotal1);
         f.setFromValue(0);
         f.setToValue(1);
         f.play();
 
-        for (PieChart.Data data : pctotal1.getData()){
+        for (PieChart.Data data : pctotal1.getData()) {
 
-            data.nameProperty().set(data.getName()+ " : "+(int)data.getPieValue()+ " cases");
+            data.nameProperty().set(data.getName() + " : " + (int) data.getPieValue() + " cases");
             data.getNode().addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
                         @Override
                         public void handle(MouseEvent event) {
-                            JOptionPane.showMessageDialog(null,data.getName()+ "\n Cases -->" +(int)data.getPieValue());
+                            JOptionPane.showMessageDialog(null, data.getName() + "\n Cases -->" + (int) data.getPieValue());
 
                         }
                     }
@@ -84,32 +78,28 @@ public class graphcollection {
     }
 
 
-
-
-
-
     public static BorderPane viewworlgraph() throws IOException, ParseException {
 
-        BorderPane bp2=new BorderPane();
-        CategoryAxis xAxis=new CategoryAxis();
+        BorderPane bp2 = new BorderPane();
+        CategoryAxis xAxis = new CategoryAxis();
         xAxis.setLabel("Countries");
-        NumberAxis yAxis=new NumberAxis();
+        NumberAxis yAxis = new NumberAxis();
         yAxis.setLabel("Covid-19 Cases");
-        BarChart bc=new BarChart(xAxis,yAxis);
-        XYChart.Series dataseries1=new XYChart.Series();
+        BarChart bc = new BarChart(xAxis, yAxis);
+        XYChart.Series dataseries1 = new XYChart.Series();
         dataseries1.setName("Total confirmed cases");
-        XYChart.Series dataseries2=new XYChart.Series();
+        XYChart.Series dataseries2 = new XYChart.Series();
         dataseries2.setName("Active Cases");
-        XYChart.Series dataseries3=new XYChart.Series();
+        XYChart.Series dataseries3 = new XYChart.Series();
         dataseries3.setName("Total Recovered");
 
-        XYChart.Series dataseries4=new XYChart.Series();
+        XYChart.Series dataseries4 = new XYChart.Series();
         dataseries4.setName("Serious Critical");
-        XYChart.Series dataseries5=new XYChart.Series();
+        XYChart.Series dataseries5 = new XYChart.Series();
         dataseries5.setName("Deaths");
         // ObservableList<BarChart.Data> ol = FXCollections.observableArrayList();
         driver obje = new driver();
-        String inLine="";
+        String inLine = "";
         //String line="";
         //line = obje.JsonToString(obje.path + "\\worldStats.txt");
 
@@ -143,11 +133,11 @@ public class graphcollection {
             e.printStackTrace();
         }
 
-        JSONParser parse=new JSONParser();
+        JSONParser parse = new JSONParser();
 
-        JSONArray arr1=(JSONArray)parse.parse(inLine);
-        for(int i=1;i<50;i++){
-            JSONObject jsonobj=(JSONObject)arr1.get(i);
+        JSONArray arr1 = (JSONArray) parse.parse(inLine);
+        for (int i = 1; i < 50; i++) {
+            JSONObject jsonobj = (JSONObject) arr1.get(i);
             //System.out.println("Hello");
             dataseries1.getData().add(new XYChart.Data(jsonobj.get("country"), jsonobj.get("cases")));
             dataseries2.getData().add(new XYChart.Data(jsonobj.get("country"), jsonobj.get("active")));
@@ -157,7 +147,6 @@ public class graphcollection {
 
 
         }
-
 
 
         bc.getData().add(dataseries1);
@@ -229,37 +218,31 @@ public class graphcollection {
         }*/
 
 
-
-
-
-
         return bp2;
     }
 
-    public static BorderPane showstategraph(){
+    public static BorderPane showstategraph() {
 
-        BorderPane bp=new BorderPane();
-
-
+        BorderPane bp = new BorderPane();
 
 
-        CategoryAxis xAxis=new CategoryAxis();
+        CategoryAxis xAxis = new CategoryAxis();
         xAxis.setLabel("States");
-        NumberAxis yAxis=new NumberAxis();
+        NumberAxis yAxis = new NumberAxis();
         yAxis.setLabel("Total Confirmed Cases");
-        BarChart pcstate=new BarChart(xAxis,yAxis);
-        XYChart.Series dataseries1=new XYChart.Series();
+        BarChart pcstate = new BarChart(xAxis, yAxis);
+        XYChart.Series dataseries1 = new XYChart.Series();
         dataseries1.setName("Total confirmed cases");
-        XYChart.Series dataseries2=new XYChart.Series();
+        XYChart.Series dataseries2 = new XYChart.Series();
         dataseries2.setName("Discharged");
-        XYChart.Series dataseries3=new XYChart.Series();
+        XYChart.Series dataseries3 = new XYChart.Series();
         dataseries3.setName("Deaths");
-        XYChart.Series dataseries4=new XYChart.Series();
+        XYChart.Series dataseries4 = new XYChart.Series();
         dataseries4.setName("Active Cases");
 
         // ObservableList<BarChart.Data> ol = FXCollections.observableArrayList();
         driver obje = new driver();
-        String inLine="";
+        String inLine = "";
 
         {
             try {
@@ -271,12 +254,13 @@ public class graphcollection {
                     dataseries1.getData().add(new XYChart.Data(root.data.regional.get(i).loc, root.data.regional.get(i).totalConfirmed));
                     dataseries2.getData().add(new XYChart.Data(root.data.regional.get(i).loc, root.data.regional.get(i).discharged));
                     dataseries3.getData().add(new XYChart.Data(root.data.regional.get(i).loc, root.data.regional.get(i).deaths));
-                    dataseries4.getData().add(new XYChart.Data(root.data.regional.get(i).loc, (root.data.regional.get(i).totalConfirmed-(root.data.regional.get(i).discharged +root.data.regional.get(i).deaths))));
+                    dataseries4.getData().add(new XYChart.Data(root.data.regional.get(i).loc, (root.data.regional.get(i).totalConfirmed - (root.data.regional.get(i).discharged + root.data.regional.get(i).deaths))));
                 }
 
                 pcstate.getData().add(dataseries1);
                 pcstate.getData().add(dataseries2);
                 pcstate.getData().add(dataseries4);
+
                 pcstate.getData().add(dataseries3);
 
                 bp.setCenter(pcstate);
@@ -308,13 +292,34 @@ public class graphcollection {
         }
 
 
-
-
-
-
         return bp;
     }
 
 
+    public static BorderPane showdategraph() throws FileNotFoundException, ParseException {
+        BorderPane bp = new BorderPane();
+        CategoryAxis x = new CategoryAxis();
+        x.setLabel("Date");
+        NumberAxis y = new NumberAxis();
+        y.setLabel("Total Confiemed Cases");
+        LineChart lc = new LineChart(x, y);
+        lc.setTitle("GrowthRate Chart of Covid-19 in India");
+        XYChart.Series java = new XYChart.Series();
+        java.setName("Date");
+        driver obje = new driver();
+        String inLine = "";
+        inLine = obje.JsonToString(obje.path + "\\totalStats.txt");
+        JSONParser parse = new JSONParser();
+        JSONObject jobj = (JSONObject) parse.parse(inLine);
+        JSONArray arr1 = (JSONArray) jobj.get("cases_time_series");
+        for (int i = 0; i < arr1.size(); i++) {
+            JSONObject jsonobj = (JSONObject) arr1.get(i);
+            java.getData().add(new XYChart.Data(jsonobj.get("dateymd"), Integer.parseInt((String) jsonobj.get("totalconfirmed"))));
+
+        }
+        lc.getData().add(java);
+        bp.setCenter(lc);
+        return bp;
+    }
 }
 

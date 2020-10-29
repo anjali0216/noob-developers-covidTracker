@@ -17,6 +17,7 @@ public class Allgraph {
     public Button indiagraph;
     public Button statewisegraph;
     public Button growthchart;
+    public Button hmbtn;
     public void viewworldgraph(ActionEvent actionEvent) throws IOException {
         worldgraph.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -88,13 +89,31 @@ public class Allgraph {
     }
 
     public void viewgrowthchart(ActionEvent actionEvent) throws IOException {
-        Stage stage=(Stage)indiagraph.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("totalgraph.fxml"));
-        // Stategraph graph1=new Stategraph();
-        //graph1.initialize();
-        stage.setScene(new Scene( root,500, 500));
-        stage.setMaximized(true);
-        stage.show();
 
+        growthchart.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                Stage stage=new Stage();
+                stage.setTitle("Graphical Analysis");
+                Scene sc= null;
+                try {
+                    sc = new Scene(graphcollection.showdategraph(),500,500);
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+                stage.setScene(sc);
+                stage.setMaximized(true);
+                stage.show();
+            }
+        });
+    }
+
+    public void backhome1(ActionEvent actionEvent) throws IOException {
+        Stage stage=(Stage)hmbtn.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        stage.setScene(new Scene(root, 500, 500));
+        stage.show();
     }
 }
