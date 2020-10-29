@@ -2,11 +2,27 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Calendar">
+<AnchorPane prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: linear-gradient(to right top, #1703e5, #0069ff, #0099ff, #00c0f7, #57e1e7);" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Calendar">
    <children>
-      <Label fx:id="date" layoutX="121.0" layoutY="207.0" prefHeight="145.0" prefWidth="257.0" text=" " />
-      <DatePicker fx:id="picker" layoutX="118.0" layoutY="108.0" prefHeight="26.0" prefWidth="324.0" promptText="Pick a date" />
-      <Button fx:id="showdate" layoutX="221.0" layoutY="165.0" mnemonicParsing="false" onAction="#displaydate" text="Show stats" />
+      <Label fx:id="date" alignment="CENTER" layoutX="102.0" layoutY="201.0" prefHeight="187.0" prefWidth="299.0" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text=" ">
+         <font>
+            <Font name="Bell MT Bold" size="16.0" />
+         </font></Label>
+      <DatePicker fx:id="picker" layoutX="88.0" layoutY="103.0" prefHeight="32.0" prefWidth="324.0" promptText="Pick a date" />
+      <Button fx:id="showdate" layoutX="213.0" layoutY="157.0" mnemonicParsing="false" onAction="#displaydate" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="Show Stats">
+         <font>
+            <Font name="Bell MT" size="14.0" />
+         </font></Button>
+      <Label alignment="CENTER" layoutY="31.0" prefHeight="17.0" prefWidth="503.0" text="DAILY UPDATES">
+         <font>
+            <Font name="Algerian" size="36.0" />
+         </font>
+      </Label>
+      <Button fx:id="prev" layoutX="346.0" layoutY="417.0" mnemonicParsing="false" onAction="#prevPg" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="&lt;- Go Back To Home">
+         <font>
+            <Font name="Bell MT" size="14.0" />
+         </font></Button>
    </children>
 </AnchorPane>
