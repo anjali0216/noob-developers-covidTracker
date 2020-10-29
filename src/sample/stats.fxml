@@ -15,12 +15,12 @@
          <Font name="Algerian" size="14.0" />
       </font></Button>
       <Button fx:id="homebtn" layoutX="388.0" layoutY="454.0" mnemonicParsing="false" onAction="#goBackHome" text="&lt;- Back To Home" />
-      <TextArea fx:id="totalcaselabel" layoutX="123.0" layoutY="78.0" prefHeight="172.0" prefWidth="271.0" />
+      <TextArea fx:id="totalcaselabel" editable="false" layoutX="123.0" layoutY="78.0" prefHeight="172.0" prefWidth="271.0" />
       <Label alignment="CENTER" contentDisplay="CENTER" layoutX="204.0" layoutY="28.0" prefHeight="37.0" prefWidth="109.0" text="STATS">
          <font>
             <Font name="Algerian" size="24.0" />
          </font>
       </Label>
-      <Button fx:id="calendar" layoutX="187.0" layoutY="442.0" mnemonicParsing="false" onAction="#showCalendar" prefHeight="25.0" prefWidth="109.0" text="CALENDAR" />
+      <Button fx:id="calendar" layoutX="150.0" layoutY="441.0" mnemonicParsing="false" onAction="#showCalendar" prefHeight="25.0" prefWidth="191.0" text="Daily Stats Updates" />
    </children>
 </AnchorPane>
