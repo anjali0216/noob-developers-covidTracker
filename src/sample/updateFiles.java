@@ -24,6 +24,8 @@ public class updateFiles implements Runnable {
                 updateDistrictstats();
                 updateTotalStats();
                 updateWorldstats();
+                updateHelpline();
+                Thread.sleep(60*60*1000);
             }
         } catch (Exception e) {
 
@@ -72,6 +74,7 @@ public class updateFiles implements Runnable {
         String data="";
         int code=ob.checkURL("https://api.covid19india.org/data.json");
         if(code!=200){
+
             throw new RuntimeException();
         }
         else{
@@ -88,24 +91,42 @@ public class updateFiles implements Runnable {
             pw.close();
         }
     }
-
-
-
-    public void updateWorldstats() throws IOException {
+    public void updateHelpline() throws IOException {
         String data="";
-        int code=ob.checkURL("https://akashraj.tech/corona/api");
+        int code=ob.checkURL("https://api.rootnet.in/covid19-in/contacts");
         if(code!=200){
-           // System.out.println("boo");
-            throw new RuntimeException("HttpResponseCode:" + code);
+            throw new RuntimeException();
         }
         else{
-            Scanner sc=new Scanner(new URL("https://akashraj.tech/corona/api").openStream());
+            Scanner sc=new Scanner(new URL("https://api.rootnet.in/covid19-in/contacts").openStream());
             StringBuilder inLine=new StringBuilder();
             while(sc.hasNext()){
                 inLine.append(sc.nextLine());
             }
             data=inLine.toString();
-            //System.out.println(data);
+            String path=ob.path+"\\Helpline.txt";
+            PrintWriter pw = new PrintWriter(new File(path));
+            pw.write(data);
+            pw.close();
+        }
+    }
+
+
+    public void updateWorldstats() throws IOException {
+        String data="";
+        int code=ob.checkURL("https://coronavirus-19-api.herokuapp.com/countries");
+        if(code!=200){
+            //System.out.println("boo");
+            throw new RuntimeException("HttpResponseCode:" + code);
+        }
+        else{
+            Scanner sc=new Scanner(new URL("https://coronavirus-19-api.herokuapp.com/countries").openStream());
+            StringBuilder inLine=new StringBuilder();
+            while(sc.hasNext()){
+                inLine.append(sc.nextLine());
+            }
+            data=inLine.toString();
+           // System.out.println(data);
             String path=ob.path+"\\worldStats.txt";
             PrintWriter pw = new PrintWriter(new File(path));
             pw.write(data);

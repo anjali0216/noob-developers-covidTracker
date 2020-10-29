@@ -76,12 +76,17 @@ public class Controller {
 
     }
 
-    public void viewhelpline(ActionEvent actionEvent) throws IOException {
-        Stage stage = (Stage) advisoriesbutton.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("helplinepage.fxml"));
-        stage.setTitle("Advisories and Guidelines");
-        stage.setScene(new Scene(root, 500, 500));
-        stage.show();
+    public void viewhelpline() {
+        try {
+            Helplinepage.inLine=object.JsonToString(object.path + "\\Helpline.txt");
+            Helplinepage.createList();
+            Stage stage = (Stage) advisoriesbutton.getScene().getWindow();
+            Parent root = FXMLLoader.load(getClass().getResource("helplinepage.fxml"));
+            stage.setScene(new Scene(root, 500, 500));
+            stage.show();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }
 
     public void showNews(ActionEvent event) throws IOException, InterruptedException {
