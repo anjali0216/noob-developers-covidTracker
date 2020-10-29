@@ -136,7 +136,7 @@ public class graphcollection {
         JSONParser parse = new JSONParser();
 
         JSONArray arr1 = (JSONArray) parse.parse(inLine);
-        for (int i = 1; i < 50; i++) {
+        for (int i = 1; i < 51; i++) {
             JSONObject jsonobj = (JSONObject) arr1.get(i);
             //System.out.println("Hello");
             dataseries1.getData().add(new XYChart.Data(jsonobj.get("country"), jsonobj.get("cases")));
@@ -320,6 +320,55 @@ public class graphcollection {
         lc.getData().add(java);
         bp.setCenter(lc);
         return bp;
+    }
+
+    public static BorderPane showworldgraph() throws FileNotFoundException, ParseException {
+        BorderPane bp3 = new BorderPane();
+        PieChart pc3 = new PieChart();
+        pc3.setTitle("CoronaVirus Statistics for world");
+        driver obj = new driver();
+        String inLine = "";
+        inLine = obj.JsonToString(obj.path + "\\worldStats.txt");
+        JSONParser parse = new JSONParser();
+
+        JSONArray arr1 = (JSONArray) parse.parse(inLine);
+        JSONObject jsonobj = (JSONObject) arr1.get(0);
+        ObservableList<PieChart.Data> ol = FXCollections.observableArrayList(
+
+
+          new PieChart.Data("Total Confirmed Cases",(long)jsonobj.get("cases")),
+
+                new PieChart.Data("Total Active Cases",(long)jsonobj.get("active")),
+                new PieChart.Data("Total Recovered Cases",(long) jsonobj.get("recovered")),
+                new PieChart.Data("Total Critical Cases",(long)jsonobj.get("critical")),
+                new PieChart.Data("Total Death Cases",(long) jsonobj.get("deaths"))
+        );
+
+        pc3.setData(ol);
+        bp3.setCenter(pc3);
+
+
+        pc3.setLegendSide(Side.LEFT);
+        FadeTransition f = new FadeTransition(Duration.seconds(2), pc3);
+        f.setFromValue(0);
+        f.setToValue(1);
+        f.play();
+
+        for (PieChart.Data data : pc3.getData()) {
+
+            data.nameProperty().set(data.getName() + " : " + (long) data.getPieValue());
+            data.getNode().addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
+                        @Override
+                        public void handle(MouseEvent event) {
+                            JOptionPane.showMessageDialog(null, data.getName());//+ (long) data.getPieValue());
+
+                        }
+                    }
+            );
+        }
+
+
+return  bp3;
     }
 }
 
