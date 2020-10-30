@@ -20,8 +20,6 @@ public class Main extends Application {
 
 
     public static void main(String[] args) {
-        Thread t= new Thread(new updateFiles());
-        t.start();
         launch(args);
     }
 }
