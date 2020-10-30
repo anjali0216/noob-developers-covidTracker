@@ -67,10 +67,10 @@ public class Questions {
             }
         }
     }
-
-    public double getpercentage(){
-        return (score/  45.0*100);
-    }
+//
+//    public double getpercentage(){
+//        return (score/  45.0*100);
+//    }
 
 
     public String getscore(){
@@ -90,6 +90,10 @@ public class Questions {
         return str;
     }
 
+    public double getpercentage()
+    {
+        return score/70.0*100;
+    }
 
 
 }
