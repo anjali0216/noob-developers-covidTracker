@@ -1,6 +1,7 @@
 package sample;
 
 import com.google.gson.Gson;
+import javafx.application.Platform;
 import org.json.simple.parser.JSONParser;
 
 import javax.swing.*;
@@ -11,10 +12,16 @@ import java.net.URL;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
-public class updateFiles implements Runnable {
+public class updateFiles extends Controller implements Runnable {
     driver ob=new driver();
+    static int check=0;
+    DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+    LocalDateTime now;
+    String time;
 
     @Override
     public void run() {
@@ -25,10 +32,22 @@ public class updateFiles implements Runnable {
                 updateTotalStats();
                 updateWorldstats();
                 updateHelpline();
+                now = LocalDateTime.now();
+                time=dtf.format(now);
+                Platform.runLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        s_label.setText("Last Updated At: "+time);
+                    }
+                });
+
+                check=0;
                 Thread.sleep(60*60*1000);
             }
         } catch (Exception e) {
-
+            if(check==1){
+                ob.displayDialog("You are not connected to the internet! Reconnect and try again.");
+            }
         }
     }
 
@@ -84,7 +103,6 @@ public class updateFiles implements Runnable {
                 inLine.append(sc.nextLine());
             }
             data=inLine.toString();
-         //System.out.println(data);
             String path=ob.path+"\\totalStats.txt";
             FileWriter pw = new FileWriter(new File(path));
             pw.write(data);
@@ -116,7 +134,6 @@ public class updateFiles implements Runnable {
         String data="";
         int code=ob.checkURL("https://coronavirus-19-api.herokuapp.com/countries");
         if(code!=200){
-            //System.out.println("boo");
             throw new RuntimeException("HttpResponseCode:" + code);
         }
         else{
@@ -126,7 +143,6 @@ public class updateFiles implements Runnable {
                 inLine.append(sc.nextLine());
             }
             data=inLine.toString();
-           // System.out.println(data);
             String path=ob.path+"\\worldStats.txt";
             PrintWriter pw = new PrintWriter(new File(path));
             pw.write(data);
