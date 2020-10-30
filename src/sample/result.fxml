@@ -6,7 +6,7 @@
 
 <AnchorPane prefHeight="479.0" prefWidth="497.0" style="-fx-background-color: linear-gradient(to right top, #03e5db, #00e5e4, #00e5ec, #00e5f4, #04e4fb);" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Result">
    <children>
-      <TextArea fx:id="textresult" layoutX="32.0" layoutY="172.0" prefHeight="140.0" prefWidth="434.0" wrapText="true" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="31.0" AnchorPane.topAnchor="172.0">
+      <TextArea fx:id="textresult" layoutX="32.0" layoutY="172.0" opacity="0.71" prefHeight="140.0" prefWidth="434.0" wrapText="true" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="31.0" AnchorPane.topAnchor="172.0">
          <font>
             <Font name="Monotype Corsiva" size="29.0" />
          </font></TextArea>
@@ -14,7 +14,7 @@
          <font>
             <Font name="Algerian" size="26.0" />
          </font></Button>
-      <TextArea fx:id="textpercent" layoutX="32.0" layoutY="29.0" prefHeight="118.0" prefWidth="434.0" wrapText="true">
+      <TextArea fx:id="textpercent" layoutX="32.0" layoutY="29.0" opacity="0.76" prefHeight="118.0" prefWidth="434.0" wrapText="true">
          <font>
             <Font name="Algerian" size="22.0" />
          </font>

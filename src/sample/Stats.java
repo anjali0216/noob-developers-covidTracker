@@ -42,6 +42,7 @@ public class Stats implements Initializable{
     public void initialize(URL location, ResourceBundle resources) {
 
         totalcaselabel.setText(objj.displaytotal());
+
     }
 
 
@@ -74,7 +75,7 @@ public class Stats implements Initializable{
 
     public void goBackHome(ActionEvent actionEvent) throws IOException {
         Stage stage=(Stage)homebtn.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("firststatspage.fxml"));
         stage.setScene(new Scene(root, 500, 500));
         stage.show();
     }

@@ -2,10 +2,22 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Advisoriespage">
    <children>
-      <Button fx:id="homebtn" layoutX="383.0" layoutY="29.0" mnemonicParsing="false" onAction="#takemehome" text="Go back to HOME" />
-      <TextArea fx:id="displayarea" layoutX="21.0" layoutY="60.0" prefHeight="315.0" prefWidth="443.0" />
+      <Button fx:id="homebtn" layoutX="433.0" layoutY="373.0" mnemonicParsing="false" onAction="#takemehome" text="Go back to HOME" />
+      <TableView fx:id="table" layoutY="43.0" prefHeight="328.0" prefWidth="585.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="15.0">
+        <columns>
+          <TableColumn fx:id="sno" minWidth="0.0" prefWidth="52.66667175292969" text="SNo." />
+            <TableColumn fx:id="title" prefWidth="309.33331298828125" text="TITLE" />
+            <TableColumn fx:id="link" prefWidth="219.00003051757812" text="LINK" />
+        </columns>
+      </TableView>
+      <Label layoutX="203.0" layoutY="14.0" prefHeight="25.0" prefWidth="193.0" text="HELPLINES FOR COVID-19">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

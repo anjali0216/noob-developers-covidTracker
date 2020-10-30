@@ -1,14 +1,16 @@
 package sample;
 
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import models.Newsgson;
 import models.advisoryapi;
@@ -17,6 +19,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -27,21 +30,63 @@ import java.util.Scanner;
 
 
 public class Advisoriespage implements Initializable {
+    driver obj=new driver();
     public Button homebtn;
-    public TextArea displayarea;
+
 
     advisoryapi ad=new advisoryapi();
+    @FXML
+    TableView<Advisory> table;
+    @FXML
+    TableColumn<Advisory,Integer> sno;
+    @FXML
+    TableColumn<Advisory,String> title;
+    @FXML
+    TableColumn<Advisory,Hyperlink> link;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+       sno.setCellValueFactory(new PropertyValueFactory<Advisory, Integer>("sno"));
+        title.setCellValueFactory(new PropertyValueFactory<Advisory, String>("title"));
+        link.setCellValueFactory(new PropertyValueFactory<Advisory, Hyperlink>("link"));
         try {
+            table.setItems(addlist());
+        } catch (FileNotFoundException e) {
+            //System.out.println("welcome");
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        /*try {
             displayarea.setText(ad.getadvisory());
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
+
     }
 
+    public ObservableList<Advisory> addlist() throws FileNotFoundException, ParseException {
+        ObservableList<Advisory> list= FXCollections.observableArrayList();
+        String inLine = obj.JsonToString(obj.path + "\\advisory.txt");
 
+        JSONParser parse = new JSONParser();
+
+        JSONObject jobj = (JSONObject) parse.parse(inLine);
+
+        JSONObject jobj1 = (JSONObject) jobj.get("data");
+        JSONArray arr1 = (JSONArray) jobj1.get("notifications");
+        int i;
+        for (i = 0; i < arr1.size(); i++) {
+
+
+            JSONObject jsonobj = (JSONObject) arr1.get(i);
+
+            Advisory ad=new Advisory(i+1,(String)jsonobj.get("title"),(Hyperlink)jsonobj.get("link"));
+
+            list.add(ad);
+        }
+        return list;
+    }
 
 
     public void takemehome(ActionEvent actionEvent) throws IOException {

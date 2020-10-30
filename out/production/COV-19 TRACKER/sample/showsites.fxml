@@ -4,34 +4,73 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<SplitPane fx:id="splitpane" dividerPositions="0.48494983277591974" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Showsites">
+<SplitPane fx:id="splitpane" dividerPositions="0.48494983277591974" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(to right top, #1703e5, #0069ff, #0099ff, #00c0f7, #57e1e7);" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Showsites">
   <items>
     <AnchorPane fx:id="anchorpane1" minHeight="0.0" minWidth="0.0" prefHeight="360.0" prefWidth="287.0">
          <children>
-            <Label fx:id="labelhead1" alignment="CENTER" layoutX="18.0" layoutY="26.0" prefHeight="35.0" prefWidth="238.0" text="Visit Covid-19 related websites:">
+            <Label fx:id="labelhead1" alignment="CENTER" layoutX="18.0" layoutY="26.0" prefHeight="35.0" prefWidth="255.0" text="Visit Covid-19 related websites:" underline="true">
+               <font>
+                  <Font name="Algerian" size="15.0" />
+               </font></Label>
+            <Label fx:id="WHOlabel" layoutX="20.0" layoutY="72.0" prefHeight="17.0" prefWidth="43.0" text="W.H.O:" underline="true">
                <font>
                   <Font name="Algerian" size="14.0" />
                </font></Label>
-            <Label fx:id="WHOlabel" layoutX="20.0" layoutY="72.0" prefHeight="17.0" prefWidth="43.0" text="W.H.O:" />
-            <Label fx:id="mygovLabel" layoutX="20.0" layoutY="146.0" prefHeight="17.0" prefWidth="106.0" text="mygov.in/covid-19:" />
-            <Button fx:id="whobutton" layoutX="18.0" layoutY="100.0" mnemonicParsing="false" onAction="#clickWHO" prefHeight="25.0" prefWidth="129.0" text="https://www.who.int/" />
-            <Button fx:id="mygovbutton" layoutX="14.0" layoutY="173.0" mnemonicParsing="false" onAction="#clickmygov" prefHeight="25.0" prefWidth="187.0" text="https://www.mygov.in/covid-19" />
-            <Label fx:id="label2" layoutX="14.0" layoutY="226.0" prefHeight="17.0" prefWidth="138.0" text="Testing Centres near you:" />
-            <Button fx:id="testbutton" layoutX="17.0" layoutY="252.0" mnemonicParsing="false" onAction="#testingcentres" text="https://Testingcentres-state-UT" />
-            <Button fx:id="helpline1" layoutX="16.0" layoutY="336.0" mnemonicParsing="false" onAction="#helpconsult" prefHeight="25.0" prefWidth="187.0" text="Helpline and consultation" />
-            <Label fx:id="helplabel" layoutX="17.0" layoutY="312.0" text="Helpline for covid-19" />
+            <Label fx:id="mygovLabel" layoutX="20.0" layoutY="146.0" prefHeight="17.0" prefWidth="130.0" text="mygov.in/covid-19:" underline="true">
+               <font>
+                  <Font name="Algerian" size="13.0" />
+               </font></Label>
+            <Button fx:id="whobutton" alignment="CENTER" layoutX="18.0" layoutY="100.0" mnemonicParsing="false" onAction="#clickWHO" prefHeight="25.0" prefWidth="159.0" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="https://www.who.int/">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="mygovbutton" alignment="CENTER" layoutX="14.0" layoutY="173.0" mnemonicParsing="false" onAction="#clickmygov" prefHeight="25.0" prefWidth="195.0" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="https://www.mygov.in/covid-19">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="12.0" />
+               </font></Button>
+            <Label fx:id="label2" layoutX="14.0" layoutY="220.0" prefHeight="23.0" prefWidth="166.0" text="Testing Centres near you:" underline="true">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="13.0" />
+               </font></Label>
+            <Button fx:id="testbutton" alignment="CENTER" layoutX="17.0" layoutY="252.0" mnemonicParsing="false" onAction="#testingcentres" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="https://Testingcentres-state-UT">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="helpline1" alignment="CENTER" layoutX="16.0" layoutY="336.0" mnemonicParsing="false" onAction="#helpconsult" prefHeight="25.0" prefWidth="187.0" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="Helpline and consultation">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="12.0" />
+               </font></Button>
+            <Label fx:id="helplabel" layoutX="17.0" layoutY="304.0" prefHeight="23.0" prefWidth="153.0" text="Helpline for covid-19" underline="true">
+               <font>
+                  <Font name="Algerian" size="13.0" />
+               </font></Label>
          </children></AnchorPane>
     <AnchorPane fx:id="anchorpane2" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
          <children>
-            <Label fx:id="label3" alignment="CENTER" layoutX="14.0" layoutY="28.0" prefHeight="35.0" prefWidth="231.0" text="See Covid-19 related Headlines">
+            <Label fx:id="label3" alignment="CENTER" layoutX="14.0" layoutY="28.0" prefHeight="35.0" prefWidth="255.0" text="See Covid-19 related Headlines" underline="true">
                <font>
-                  <Font name="Algerian" size="14.0" />
+                  <Font name="Algerian" size="15.0" />
                </font></Label>
-            <Button fx:id="toibutton" layoutX="77.0" layoutY="109.0" mnemonicParsing="false" onAction="#toinews" prefHeight="25.0" prefWidth="152.0" text="Times of India Updates" />
-            <Button fx:id="htbutton" layoutX="77.0" layoutY="165.0" mnemonicParsing="false" onAction="#htnews" text="Hindustan Times Updates" />
-            <Button fx:id="ecobutton" layoutX="73.0" layoutY="216.0" mnemonicParsing="false" onAction="#econews" prefHeight="25.0" prefWidth="159.0" text="Economics TImes Updates" />
-            <Button fx:id="worldbutton" layoutX="73.0" layoutY="265.0" mnemonicParsing="false" onAction="#worldnews" prefHeight="25.0" prefWidth="159.0" text="World Updates" />
-            <Button fx:id="homebutton" layoutX="86.0" layoutY="326.0" mnemonicParsing="false" onAction="#gotohome" text="&lt;- Go back to Home" />
+            <Button fx:id="toibutton" alignment="CENTER" layoutX="77.0" layoutY="109.0" mnemonicParsing="false" onAction="#toinews" prefHeight="25.0" prefWidth="159.0" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="Times of India Updates">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="htbutton" alignment="CENTER" layoutX="77.0" layoutY="165.0" mnemonicParsing="false" onAction="#htnews" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="Hindustan Times Updates">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="ecobutton" layoutX="73.0" layoutY="216.0" mnemonicParsing="false" onAction="#econews" prefHeight="25.0" prefWidth="173.0" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="Economics TImes Updates">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="worldbutton" alignment="CENTER" layoutX="73.0" layoutY="265.0" mnemonicParsing="false" onAction="#worldnews" prefHeight="25.0" prefWidth="173.0" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="World Updates">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="homebutton" alignment="CENTER" layoutX="14.0" layoutY="352.0" mnemonicParsing="false" onAction="#gotohome" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="&lt;- Go back to Home">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="12.0" />
+               </font></Button>
          </children></AnchorPane>
   </items>
 </SplitPane>
