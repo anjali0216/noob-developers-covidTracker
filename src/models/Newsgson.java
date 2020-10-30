@@ -1,6 +1,10 @@
 package models;
 
 import com.google.gson.Gson;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.control.Button;
+
 import java.io.*;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -16,16 +20,31 @@ public class Newsgson {
         var response = client.send(request, HttpResponse.BodyHandlers.ofString());
         String s = response.body();
 
-        Gson gson = new Gson();
-        News covidnews = gson.fromJson(s, News.class);
-        StringBuilder s1=new StringBuilder();
-
-        for (int i = 0; i < covidnews.getArticles().size(); i++) {
-            s1.append("TITLE : \n"+covidnews.getArticles().get(i).getTitle()+"\n");
-            s1.append("Description :  \n"+covidnews.getArticles().get(i).getDescription()+"\n");
-            s1.append("----------------------------------------------------------------------------------------------\n\n");
-        }
-        return s1.toString();
+//        Gson gson = new Gson();
+//        News covidnews = gson.fromJson(s, News.class);
+//        StringBuilder s1=new StringBuilder();
+//
+//        for (int i = 0; i < covidnews.getArticles().size(); i++) {
+//            s1.append("TITLE : \n"+covidnews.getArticles().get(i).getTitle()+"\n");
+//            s1.append("Description :  \n"+covidnews.getArticles().get(i).getDescription()+"\n");
+//            s1.append("----------------------------------------------------------------------------------------------\n\n");
+//        }
+        return s;
     }
+
+    public ObservableList<Getnews> newsList() throws IOException, InterruptedException {
+        ObservableList<Getnews> list= FXCollections.observableArrayList();
+        String inline=getnews();
+        Gson gson=new Gson();
+        News covidnews=gson.fromJson(inline,News.class);
+        for(int i=0;i<covidnews.getArticles().size();i++)
+        {
+            list.add(new Getnews(covidnews.getArticles().get(i).getTitle(),covidnews.getArticles().get(i).getDescription()));
+        }
+        return list;
+
+    }
+
+
 
 }
