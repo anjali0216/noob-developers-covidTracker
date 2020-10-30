@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Allgraph">
+   <children>
+      <Button fx:id="worldgraph" layoutX="128.0" layoutY="103.0" mnemonicParsing="false" onAction="#viewworldgraph" text="View Covid-19 Cases for Major Countries" />
+      <Button fx:id="indiagraph" layoutX="126.0" layoutY="152.0" mnemonicParsing="false" onAction="#viewindiagraph" prefHeight="25.0" prefWidth="237.0" text="View Overall  Covid-19 Stats for India" />
+      <Button fx:id="statewisegraph" layoutX="126.0" layoutY="200.0" mnemonicParsing="false" onAction="#viewstategraph" prefHeight="25.0" prefWidth="237.0" text="View Statewise Stats for India" />
+      <Button fx:id="growthchart" layoutX="126.0" layoutY="254.0" mnemonicParsing="false" onAction="#viewgrowthchart" prefHeight="25.0" prefWidth="237.0" text="View GrowthChart of covid in India" />
+      <Button fx:id="hmbtn" layoutX="261.0" layoutY="340.0" mnemonicParsing="false" onAction="#backhome1" text="&lt;- Back TO HOME" />
+      <Button fx:id="wholestats" layoutX="126.0" layoutY="56.0" mnemonicParsing="false" onAction="#showwholestats" text="View Overall Covid-19 Stats for the World" />
+   </children>
+</AnchorPane>

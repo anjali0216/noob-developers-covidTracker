@@ -18,6 +18,7 @@ public class Statewise {
     public Label recordDisplay;
     public Button display;
 
+
     public void searchstate() {
         Searchstat obj=new Searchstat();
         String state=stname.getText();
@@ -38,5 +39,7 @@ public class Statewise {
         stage.setScene(new Scene(root, 500, 500));
         stage.show();
     }
+
+
 }
 /* */
