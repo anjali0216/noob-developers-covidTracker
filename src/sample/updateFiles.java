@@ -21,7 +21,7 @@ public class updateFiles extends Controller implements Runnable {
     static int check=0;
     DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
     LocalDateTime now;
-    String time;
+    static String time;
 
     @Override
     public void run() {
@@ -47,7 +47,17 @@ public class updateFiles extends Controller implements Runnable {
         } catch (Exception e) {
             if(check==1){
                 ob.displayDialog("You are not connected to the internet! Reconnect and try again.");
+
             }
+            Platform.runLater(new Runnable() {
+                @Override
+                public void run() {
+                    if(time!=null)
+                    s_label.setText("Last Updated At: "+time);
+                    else
+                        s_label.setText("You are not connected to the internet.");
+                }
+            });
         }
     }
 

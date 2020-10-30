@@ -55,6 +55,5 @@
             <Label fx:id="updated" layoutX="269.0" layoutY="478.0" />
          </children>
       </Pane>
-      <Label text="Label" />
    </children>
 </GridPane>
