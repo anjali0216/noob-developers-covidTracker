@@ -1,6 +1,7 @@
 package sample;
 
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -88,6 +89,17 @@ public class Controller {
         Parent root = FXMLLoader.load(getClass().getResource("shownews.fxml"));
         stage.setTitle("NEWS");
         stage.setScene(new Scene(root, 500, 500));
+
+        stage.show();
+
+    }
+
+    public void showBookNews(ActionEvent event) throws IOException {
+        Stage stage = (Stage) btn1.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("showbooknews.fxml"));
+        stage.setTitle("BOOKMARK NEWS");
+        stage.setScene(new Scene(root, 500, 500));
+
         stage.show();
 
     }

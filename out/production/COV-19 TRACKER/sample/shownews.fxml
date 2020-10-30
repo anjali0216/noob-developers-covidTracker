@@ -3,8 +3,15 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Shownews">
+<AnchorPane prefHeight="500.0" prefWidth="503.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Shownews">
    <children>
-      <TextArea fx:id="textnews" layoutY="14.0" prefHeight="474.0" prefWidth="560.0" wrapText="true" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+      <TableView fx:id="newstable" layoutX="-3.0" layoutY="-4.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="48.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columns>
+            <TableColumn fx:id="actionbookmark" prefWidth="76.0" resizable="false" text="Bookmark" />
+          <TableColumn fx:id="article" editable="false" prefWidth="430.0" resizable="false" text="Articles" />
+        </columns>
+      </TableView>
+      <Button fx:id="addbookmarks" layoutX="81.0" layoutY="461.0" mnemonicParsing="false" onAction="#addBookmarks" prefHeight="25.0" prefWidth="142.0" text="Add to Bookmarks" AnchorPane.bottomAnchor="14.0" AnchorPane.topAnchor="461.0" />
+      <Button fx:id="gohome1" layoutX="321.0" layoutY="461.0" mnemonicParsing="false" onAction="#goHome1" text="Home" />
    </children>
 </AnchorPane>

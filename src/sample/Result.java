@@ -32,6 +32,7 @@ public class Result implements Initializable  {
     Background bggreen=new Background(green);
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        Quiz.index=0;
 
         String s=String.format("%.2g",ques.getpercentage());
         textpercent.setText("Your score is "+s+"%\n");

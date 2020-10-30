@@ -47,6 +47,7 @@
                   <Font name="Algerian" size="36.0" />
                </font>
             </Label>
+            <Button fx:id="showbooknews" layoutX="224.0" layoutY="82.0" mnemonicParsing="false" onAction="#showBookNews" text="BookMarks" />
          </children>
       </Pane>
    </children>
