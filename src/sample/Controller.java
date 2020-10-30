@@ -28,6 +28,8 @@ public class Controller {
     public Button shownews;
     public Button advisoriesbutton;
     public Button graphbtn;
+    public Button showbookmarks;
+
 
     public void stats(ActionEvent actionEvent) throws Exception {
         Stage stage = (Stage) btn1.getScene().getWindow();
@@ -117,4 +119,14 @@ public class Controller {
         stage.setScene(new Scene(root, 500, 500));
         stage.show();
     }
+
+    public void showBookmarks(ActionEvent actionEvent) throws IOException {
+        Stage stage = (Stage) graphbtn.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("showbooknews.fxml"));
+        stage.setTitle("Bookmarked articles");
+        stage.setScene(new Scene(root, 500, 500));
+        stage.show();
+    }
+
+
 }

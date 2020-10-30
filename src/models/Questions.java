@@ -90,6 +90,10 @@ public class Questions {
         return str;
     }
 
+    public double getpercentage()
+    {
+        return score/70.0*100;
+    }
 
 
 }
