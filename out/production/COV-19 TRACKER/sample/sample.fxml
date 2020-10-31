@@ -51,13 +51,12 @@
                <font>
                   <Font name="Georgia Bold" size="14.0" />
                </font></Button>
-            <Button fx:id="showbookmarks" layoutX="269.0" layoutY="345.0" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" mnemonicParsing="false" onAction="#showBookmarks" prefHeight="33.0" prefWidth="182.0" text="View BookMarked News">
+            <Button fx:id="showbookmarks" layoutX="269.0" layoutY="345.0" mnemonicParsing="false" onAction="#showBookmarks" prefHeight="33.0" prefWidth="182.0" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="View BookMarked News">
                <font>
                   <Font name="Georgia Bold" size="12.0" />
                </font></Button>
             <Label fx:id="updated" layoutX="269.0" layoutY="478.0" />
          </children>
       </Pane>
-      <Label text="Label" />
    </children>
 </GridPane>

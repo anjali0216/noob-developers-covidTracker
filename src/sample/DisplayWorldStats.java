@@ -33,26 +33,26 @@ public class DisplayWorldStats implements Initializable {
     @FXML
     TableColumn<World, String> coun;
     @FXML
-    TableColumn<World, Long> con;
+    TableColumn<World, String> con;
     @FXML
-    TableColumn<World, Long> act;
+    TableColumn<World, String> act;
     @FXML
-    TableColumn<World, Long> rec;
+    TableColumn<World, String> rec;
     @FXML
-    TableColumn<World, Long> crit;
+    TableColumn<World, String> crit;
     @FXML
-    TableColumn<World, Long> death;
+    TableColumn<World, String> death;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         sno.setCellValueFactory(new PropertyValueFactory<World, Integer>("sno"));
         coun.setCellValueFactory(new PropertyValueFactory<World, String>("country"));
-        con.setCellValueFactory(new PropertyValueFactory<World, Long>("cases"));
-        act.setCellValueFactory(new PropertyValueFactory<World, Long>("active"));
-        rec.setCellValueFactory(new PropertyValueFactory<World, Long>("recovered"));
-        crit.setCellValueFactory(new PropertyValueFactory<World, Long>("critical"));
-        death.setCellValueFactory(new PropertyValueFactory<World, Long>("deaths"));
+        con.setCellValueFactory(new PropertyValueFactory<World, String>("cases"));
+        act.setCellValueFactory(new PropertyValueFactory<World, String>("active"));
+        rec.setCellValueFactory(new PropertyValueFactory<World, String>("recovered"));
+        crit.setCellValueFactory(new PropertyValueFactory<World, String>("critical"));
+        death.setCellValueFactory(new PropertyValueFactory<World, String>("deaths"));
         try {
             table.setItems(createlist());
         } catch (FileNotFoundException e) {
@@ -74,10 +74,39 @@ public class DisplayWorldStats implements Initializable {
         JSONArray arr1 = (JSONArray) parse.parse(inLine);
          int i;
         for (i = 1; i < arr1.size(); i++) {
-
+            String totalcases;
+            String activecases;
+            String recoveredcases;
+            String criticalcases;
+            String deathcases;
 
             JSONObject jsonobj = (JSONObject) arr1.get(i);
-            World w=new World(i,(String)jsonobj.get("country"),(long)jsonobj.get("cases"),(long)jsonobj.get("active"),(long)jsonobj.get("recovered"),(long)jsonobj.get("critical"),(long)jsonobj.get("deaths"));
+            if(jsonobj.get("cases")==null)
+                totalcases="Data Not Available";
+            else
+                totalcases=jsonobj.get("cases").toString();
+
+            if(jsonobj.get("active")==null)
+                activecases="Data Not Available";
+            else
+                activecases=jsonobj.get("active").toString();
+
+            if(jsonobj.get("recovered")==null)
+                recoveredcases="Data Not Available";
+            else
+                recoveredcases=jsonobj.get("recovered").toString();
+
+            if(jsonobj.get("critical")==null)
+                criticalcases="Data Not Available";
+            else
+                criticalcases=jsonobj.get("critical").toString();
+
+            if(jsonobj.get("deaths")==null)
+                deathcases="Data Not Available";
+            else
+                deathcases=jsonobj.get("deaths").toString();
+
+            World w=new World(i,(String)jsonobj.get("country"),totalcases,activecases,recoveredcases,criticalcases,deathcases);
           // System.out.println(jsonobj.get("country"));
             list.add(w);
         }

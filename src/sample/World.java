@@ -3,8 +3,9 @@ package sample;
 public class World {
     int sno;
     String country;
-    long cases,active,recovered,critical,deaths;
-    public World(int sno, String country, long cases, long active, long recovered, long critical, long deaths) {
+    String cases,active,recovered,critical,deaths;
+
+    public World(int sno, String country, String cases, String active, String recovered, String critical, String deaths) {
         this.sno = sno;
         this.country = country;
         this.cases = cases;
@@ -22,27 +23,25 @@ public class World {
         return country;
     }
 
-    public long getCases() {
+    public String getCases() {
         return cases;
     }
 
-    public long getActive() {
+    public String getActive() {
         return active;
     }
 
-    public long getRecovered() {
+    public String getRecovered() {
         return recovered;
     }
 
-    public long getCritical() {
+    public String getCritical() {
         return critical;
     }
 
-    public long getDeaths() {
+    public String getDeaths() {
         return deaths;
     }
-
-
 
     public void setSno(int sno) {
         this.sno = sno;
@@ -52,23 +51,23 @@ public class World {
         this.country = country;
     }
 
-    public void setCases(long cases) {
+    public void setCases(String cases) {
         this.cases = cases;
     }
 
-    public void setActive(long active) {
+    public void setActive(String active) {
         this.active = active;
     }
 
-    public void setRecovered(long recovered) {
+    public void setRecovered(String recovered) {
         this.recovered = recovered;
     }
 
-    public void setCritical(long critical) {
+    public void setCritical(String critical) {
         this.critical = critical;
     }
 
-    public void setDeaths(long deaths) {
+    public void setDeaths(String deaths) {
         this.deaths = deaths;
     }
 }

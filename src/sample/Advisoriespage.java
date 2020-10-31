@@ -11,7 +11,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.util.Callback;
+import models.Getnews;
 import models.Newsgson;
 import models.advisoryapi;
 import org.json.simple.JSONArray;
@@ -49,25 +52,16 @@ public class Advisoriespage implements Initializable {
        sno.setCellValueFactory(new PropertyValueFactory<Advisory, Integer>("sno"));
         title.setCellValueFactory(new PropertyValueFactory<Advisory, String>("title"));
         link.setCellValueFactory(new PropertyValueFactory<Advisory, Hyperlink>("link"));
-        try {
-            table.setItems(addlist());
-        } catch (FileNotFoundException e) {
-            //System.out.println("welcome");
-            e.printStackTrace();
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        /*try {
-            displayarea.setText(ad.getadvisory());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }*/
-
+        table.setItems(addlist());
+        
     }
 
-    public ObservableList<Advisory> addlist() throws FileNotFoundException, ParseException {
+    public ObservableList<Advisory> addlist() {
         ObservableList<Advisory> list= FXCollections.observableArrayList();
-        String inLine = obj.JsonToString(obj.path + "\\advisory.txt");
+        String inLine = null;
+        try {
+            inLine = obj.JsonToString(obj.path + "\\advisory.txt");
+
 
         JSONParser parse = new JSONParser();
 
@@ -76,14 +70,18 @@ public class Advisoriespage implements Initializable {
         JSONObject jobj1 = (JSONObject) jobj.get("data");
         JSONArray arr1 = (JSONArray) jobj1.get("notifications");
         int i;
+
         for (i = 0; i < arr1.size(); i++) {
-
-
+            Hyperlink add=new Hyperlink();
             JSONObject jsonobj = (JSONObject) arr1.get(i);
-
-            Advisory ad=new Advisory(i+1,(String)jsonobj.get("title"),(Hyperlink)jsonobj.get("link"));
+            add.setText(jsonobj.get("link").toString());
+            add.setOnAction(obj.open(add));
+            Advisory ad=new Advisory(i+1,(String)jsonobj.get("title"),add);
 
             list.add(ad);
+        }
+        } catch (FileNotFoundException | ParseException e) {
+            obj.displayDialog("Something went wrong. Refresh, and try again!");
         }
         return list;
     }

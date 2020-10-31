@@ -37,6 +37,7 @@ public class Result implements Initializable  {
         String s=String.format("%.2g",ques.getpercentage());
         textpercent.setText("Your score is "+s+"%\n");
        textresult.setText(ques.getscore());
+       textresult.setEditable(false);
     }
 
     public void gohome(ActionEvent actionEvent) throws IOException {
