@@ -32,6 +32,7 @@ public class updateFiles extends Controller implements Runnable {
                 updateTotalStats();
                 updateWorldstats();
                 updateHelpline();
+                updateAdvisory();
                 now = LocalDateTime.now();
                 time=dtf.format(now);
                 Platform.runLater(new Runnable() {
@@ -128,6 +129,32 @@ public class updateFiles extends Controller implements Runnable {
             pw.close();
         }
     }
+
+
+    public void updateAdvisory() throws IOException {
+        String data="";
+        int code=ob.checkURL("https://api.rootnet.in/covid19-in/notifications");
+        if(code!=200){
+            throw new RuntimeException();
+        }
+        else{
+            Scanner sc=new Scanner(new URL("https://api.rootnet.in/covid19-in/notifications").openStream());
+            StringBuilder inLine=new StringBuilder();
+            while(sc.hasNext()){
+                inLine.append(sc.nextLine());
+            }
+            data=inLine.toString();
+            String path=ob.path+"\\advisory.txt";
+            PrintWriter pw = new PrintWriter(new File(path));
+            pw.write(data);
+            pw.close();
+        }
+    }
+
+
+
+
+
 
 
     public void updateWorldstats() throws IOException {

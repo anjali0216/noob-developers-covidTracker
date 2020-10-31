@@ -57,6 +57,23 @@ public class totalcase{
         }
         return stats;
     }
+    public String displayworldtotal() throws FileNotFoundException, ParseException {
+        String inLine = "";
+        String stats2="";
+        inLine = obj.JsonToString(obj.path + "\\worldStats.txt");
+        JSONParser parse = new JSONParser();
+
+        JSONArray arr1 = (JSONArray) parse.parse(inLine);
+        JSONObject jsonobj = (JSONObject) arr1.get(0);
+        long totalcase=(long)jsonobj.get("cases");
+        long totalactive=(long)jsonobj.get("active");
+        long totalrecovered=(long)jsonobj.get("recovered");
+        long totalcritical=(long)jsonobj.get("critical");
+        long totaldeaths=(long)jsonobj.get("deaths");
+        stats2="\nTotal Confirmed Cases:\t"+totalcase+"\n"+"Total active Cases:\t"+totalactive+"\n"+"Total Recovered Cases:\t"+totalrecovered+"\n" +
+                "Total Critical Cases:\t"+totalcritical+"\nTotal Death Cases:\t"+totaldeaths;
+        return  stats2;
+    }
 
 
 }
