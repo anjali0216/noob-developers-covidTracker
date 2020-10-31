@@ -16,7 +16,7 @@ public class totalcase{
     driver obj=new driver();
 
     //function to display the overall stats for india
-    public String displaytotal(){
+    String displaytotal(){
         String stats="";
         boolean found=false;
         File file=new File(obj.path+"\\stateStats.txt");
@@ -49,7 +49,7 @@ public class totalcase{
     }
 
     //function to display the overall stats for world
-    public String displayworldtotal() throws FileNotFoundException, ParseException {
+    String displayworldtotal() throws FileNotFoundException, ParseException {
         String inLine = "";
         String stats2="";
         inLine = obj.JsonToString(obj.path + "\\worldStats.txt");

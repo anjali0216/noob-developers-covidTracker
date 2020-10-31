@@ -4,36 +4,36 @@ import java.util.List;
 //a class which designs the framework of a similar type to that of the api from which the data is being stored
 
 public class stateRoot{
-    public boolean success;
+    private boolean success;
     public Data data;
-    public  String lastRefreshed;
-    public  String lastOriginUpdate;
+    private  String lastRefreshed;
+    private String lastOriginUpdate;
 }
 
 class Summary{
-    public int total;
-    public int confirmedCasesIndian;
-    public int confirmedCasesForeign;
-    public int discharged;
-    public int confirmedButLocationUnidentified;
-    public int deaths;
-    public int confirmedButLocationunidentified;
+     int total;
+     int confirmedCasesIndian;
+     int confirmedCasesForeign;
+     int discharged;
+     int confirmedButLocationUnidentified;
+     int deaths;
+     int confirmedButLocationunidentified;
 }
 
 class UnofficialSummary{
-    public String source;
-    public int total;
-    public int recovered;
-    public int active;
+     String source;
+    int total;
+     int recovered;
+    int active;
 }
 
 class Regional{
-    public String loc;
-    public int confirmedCasesIndian;
-    public int confirmedCasesForeign;
-    public int discharged;
-    public int totalConfirmed;
-    public int deaths;
+     String loc;
+     int confirmedCasesIndian;
+     int confirmedCasesForeign;
+     int discharged;
+     int totalConfirmed;
+     int deaths;
 
     public Regional(String loc,int confirmedCasesForeign,int confirmedCasesIndian,int discharged,int deaths,int totalConfirmed) {
         this.loc = loc;
@@ -46,9 +46,9 @@ class Regional{
 }
 
 class Data{
-    public Summary summary;
-    public List<UnofficialSummary> unofficial_summary;
-    public List<Regional> regional;
+    Summary summary;
+     List<UnofficialSummary> unofficial_summary;
+     List<Regional> regional;
 
 
 }

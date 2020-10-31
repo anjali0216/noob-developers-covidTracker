@@ -23,7 +23,7 @@ import java.io.IOException;
 
 public class graphcollection {
 
-    public static BorderPane setGraph() {//function creates graph for covid-19 stats of
+     static BorderPane setGraph() {//function creates graph for covid-19 stats of
         // india sets it to borderpane and returns that borderpane to corresponding calling function
 
         BorderPane bp1 = new BorderPane();//creating new borderpane
@@ -90,7 +90,7 @@ public class graphcollection {
     }//end of method
 
 
-    public static BorderPane viewworlgraph() throws IOException, ParseException {//function creates
+    static BorderPane viewworlgraph() throws IOException, ParseException {//function creates
         // graph for covid-19 stats of world sets it to borderpane and returns
         // that borderpane to corresponding calling function
 
@@ -135,16 +135,10 @@ public class graphcollection {
         f.setFromValue(0);
         f.setToValue(1);
         f.play();
-
-
-
-
-
-
         return bp2;//return borderpane with graph
     }
 
-    public static BorderPane showstategraph() {//shows graph for the different states of india
+    static BorderPane showstategraph() {//shows graph for the different states of india
 
         BorderPane bp = new BorderPane();
 
@@ -208,7 +202,7 @@ public class graphcollection {
     }//end of method
 
     //function shows the chart for growthrate of covid in india over time
-    public static BorderPane showdategraph() throws FileNotFoundException, ParseException {
+    static BorderPane showdategraph() throws FileNotFoundException, ParseException {
         BorderPane bp = new BorderPane();
         //setting axes
         CategoryAxis x = new CategoryAxis();
@@ -255,7 +249,7 @@ public class graphcollection {
         return bp;
     }
     //shows covid-19 cases stats for the world
-    public static BorderPane showworldgraph() throws FileNotFoundException, ParseException {
+    static BorderPane showworldgraph() throws FileNotFoundException, ParseException {
         BorderPane bp3 = new BorderPane();
         PieChart pc3 = new PieChart();//new piechart
         pc3.setTitle("CoronaVirus Statistics for world");

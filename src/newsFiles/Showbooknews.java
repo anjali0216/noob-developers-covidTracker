@@ -33,10 +33,8 @@ public class Showbooknews implements Initializable {
                 s.append(contentLine+"\n");
                 contentLine=br.readLine();
             }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            ob.displayDialog("You don't have any bookmarks yet!");
         }
         textnews.setText(s.toString());
     }

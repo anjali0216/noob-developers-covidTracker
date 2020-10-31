@@ -14,7 +14,7 @@ public class Newsgson {
 
     /*function for getting news from API*/
 
-    public String getnews() throws IOException, InterruptedException {
+    String getnews() throws IOException, InterruptedException {
         var url = "https://newsapi.org/v2/everything?q=covid19&apiKey=24402ddd2ca644e8b12ef256927ad15c";
         var request = HttpRequest.newBuilder().GET().uri(URI.create(url)).build();   //sending a request
         var client = HttpClient.newBuilder().build();
