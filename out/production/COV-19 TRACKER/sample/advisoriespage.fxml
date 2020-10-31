@@ -14,7 +14,7 @@
         <columns>
           <TableColumn fx:id="sno" minWidth="0.0" prefWidth="52.66667175292969" text="SNo." />
             <TableColumn fx:id="title" prefWidth="309.33331298828125" text="TITLE" />
-            <TableColumn fx:id="link" prefWidth="300" text="LINK" />
+            <TableColumn fx:id="link" prefWidth="350" text="LINK" />
         </columns>
       </TableView>
       <Label layoutX="143.0" layoutY="14.0" prefHeight="25.0" prefWidth="214.0" text="ADVISORIES  FOR COVID-19">

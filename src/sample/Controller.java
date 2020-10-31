@@ -60,6 +60,7 @@ public class Controller implements Initializable {
     }
 
     public void Refresh(ActionEvent actionEvent) {
+        updated.setText("Updating");
         updateFiles.check=1;
         t= new Thread(new updateFiles());
         t.start();
@@ -129,6 +130,7 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        updated.setText("Updating");
         t= new Thread(new updateFiles());
         t.start();
         s_label=updated;
