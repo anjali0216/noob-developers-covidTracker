@@ -16,7 +16,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library">
+    <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
           <root url="jar://$USER_HOME$/Downloads/json-simple-1.1.jar!/" />
@@ -40,6 +40,16 @@
       <library>
         <CLASSES>
           <root url="jar://$USER_HOME$/Downloads/json-simple-1.1.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="javafx-swt1" level="project" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Downloads/gson-2.8.6.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
