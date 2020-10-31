@@ -35,6 +35,10 @@ public class Quiz implements Initializable {
     Questions ques=new Questions();
     driver ob=new driver();
 
+    /*Setting options and Questions for self analysis test
+    where index increments as we proceed to different screen
+     */
+
     @Override
     public void initialize(URL location, ResourceBundle resources){
         textfield1.setFont(Font.font("Monotype Corsiva",25.0));
@@ -44,21 +48,27 @@ public class Quiz implements Initializable {
         rad3.setText(ques.options[index][2]);
         rad4.setText(ques.options[index][3]);
         rad5.setText(ques.options[index][4]);
-        if(index==2)
+        if(index==2)                                       //for last question
             next.setText("SUBMIT AND SHOW RESULT");
     }
 
 
     public void nextfun(ActionEvent actionEvent) throws IOException {
+
+        /*Displaying dialogue box if no option is selected*/
         if(rad1.isSelected()==false&&rad2.isSelected()==false&&rad3.isSelected()==false&&rad4.isSelected()==false&&rad5.isSelected()==false)
             ob.displayDialog("Please choose a valid option");
+
+        /*Displaying dialog box if any option along with none is selected*/
         else if((rad5.isSelected()==true)&&(rad1.isSelected()==true||rad2.isSelected()==true||rad3.isSelected()==true||rad4.isSelected()==true))
         ob.displayDialog("Please choose a valid option");
+
+
         else{
         ques.calculatescore(index, rad1.isSelected(), rad2.isSelected(),rad3.isSelected(),rad4.isSelected());
             index++;
             Stage stage = (Stage) rad1.getScene().getWindow();
-            if (index == 3) {
+            if (index == 3) {                                          //Loading the result screen
                 Parent root = null;
                 root = FXMLLoader.load(getClass().getResource("result.fxml"));
                 stage.setTitle("QUIZ");

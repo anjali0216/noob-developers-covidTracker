@@ -11,7 +11,6 @@ import javafx.stage.Stage;
 
 import java.io.*;
 import java.net.URL;
-import java.nio.Buffer;
 import java.util.ResourceBundle;
 
 public class Showbooknews implements Initializable {
@@ -19,7 +18,7 @@ public class Showbooknews implements Initializable {
     public Button gohome;
     driver ob=new driver();
 
-
+    /*retieving data from Bookmarks.txt file*/
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         StringBuilder s=new StringBuilder();
@@ -39,9 +38,10 @@ public class Showbooknews implements Initializable {
             e.printStackTrace();
         }
         textnews.setText(s.toString());
-
     }
 
+
+    /*Function for returning back to home screen*/
     public  void goHome(ActionEvent e) throws IOException {
         Stage stage=(Stage)gohome.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));

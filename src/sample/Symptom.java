@@ -19,13 +19,12 @@ public class Symptom implements Initializable {
 
 
 
-    public void quiz(ActionEvent actionEvent) throws IOException {
+    public void quiz(ActionEvent actionEvent) throws IOException {       //loading quiz screen
         Stage stage=(Stage)btn8.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("quiz.fxml"));
         stage.setTitle("QUIZ");
         stage.setScene(new Scene(root, 500, 500));
         stage.show();
-
     }
 
     @Override

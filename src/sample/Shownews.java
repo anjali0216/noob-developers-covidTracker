@@ -1,6 +1,5 @@
 package sample;
 
-import com.google.gson.Gson;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -36,22 +35,24 @@ public class Shownews implements Initializable {
     TableColumn<Getnews, Button> actionbookmark;
     ObservableList<Getnews> list=FXCollections.observableArrayList();
 
+    /*
+    function for creating a list having one column as bookmark radiobutton and other
+     having details about the articles related to covid-19.
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
-        article.setCellValueFactory(new PropertyValueFactory<Getnews, String>("description"));
-        actionbookmark.setCellValueFactory(new PropertyValueFactory<Getnews, Button>("button"));
-
+        article.setCellValueFactory(new PropertyValueFactory<Getnews, String>("description"));  //creating news article column
+        actionbookmark.setCellValueFactory(new PropertyValueFactory<Getnews, Button>("button"));  //creating bookmark event column .
         try {
             list=news.newsList();
-            newstable.setItems(list);
-
+            newstable.setItems(list);                               //setting the items into the table
         } catch (IOException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
+        //enabling wrapping text property for table cells having news about covid 19.
         article.setCellFactory(new Callback<TableColumn<Getnews,String>, TableCell<Getnews,String>>() {
             @Override
             public TableCell<Getnews, String> call( TableColumn<Getnews, String> param) {
@@ -72,8 +73,10 @@ public class Shownews implements Initializable {
         });
     }
 
+    /*
+    Function for adding bookmarked news  to a file.
+     */
     public  void addBookmarks(ActionEvent event) throws IOException {
-
         FileWriter fw=new FileWriter(new File(ob.path+"\\bookmarks.txt"));
         StringBuilder s1=new StringBuilder();
         for(var obj:list)
@@ -88,6 +91,8 @@ public class Shownews implements Initializable {
         fw.write(s1.toString());
         fw.close();
     }
+
+    /*function for returning to home screen*/
 
     public  void goHome1(ActionEvent e) throws IOException {
         Stage stage=(Stage)gohome1.getScene().getWindow();

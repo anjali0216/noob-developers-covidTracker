@@ -1,18 +1,18 @@
 package models;
 
-import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 
+/*Class for storing information related to bookmark news*/
 public class Getnews {
     private String title;
     private String description;
     private RadioButton rdbtn;
 
-
-
+    //default constructor
     public Getnews() {
     }
 
+    //parameterised constructor
     public Getnews(String title, String description) {
 
         this.title = title;

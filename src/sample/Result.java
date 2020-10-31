@@ -30,16 +30,20 @@ public class Result implements Initializable  {
     BackgroundFill green=new BackgroundFill(Color.GREEN, CornerRadii.EMPTY, Insets.EMPTY);
     Background bgred=new Background(red);
     Background bggreen=new Background(green);
+
+    /*Function for setting the score of the Self analysis
+     test and showing further recommendations for the user.
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         Quiz.index=0;
-
         String s=String.format("%.2g",ques.getpercentage());
         textpercent.setText("Your score is "+s+"%\n");
-       textresult.setText(ques.getscore());
-       textresult.setEditable(false);
+        textresult.setText(ques.getscore());
+        textresult.setEditable(false);
     }
 
+    /*Function for returning to the home screen.*/
     public void gohome(ActionEvent actionEvent) throws IOException {
         Stage stage=(Stage)home.getScene().getWindow();
         Parent root = null;
