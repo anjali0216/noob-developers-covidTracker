@@ -26,21 +26,19 @@ public class Quiz implements Initializable {
     public RadioButton rad3;
     public RadioButton rad4;
     public RadioButton rad5;
-//    public Button res;
+
 
     public Button next;
     static int index=0;
 
 
     Questions ques=new Questions();
-    Text text=new Text();
+    driver ob=new driver();
 
     @Override
     public void initialize(URL location, ResourceBundle resources){
         textfield1.setFont(Font.font("Monotype Corsiva",25.0));
-        text.setFill(Color.WHITE);
         textfield1.setText(ques.question[index]);
-        textfield1.setEditable(false);
         rad1.setText(ques.options[index][0]);
         rad2.setText(ques.options[index][1]);
         rad3.setText(ques.options[index][2]);
@@ -52,7 +50,12 @@ public class Quiz implements Initializable {
 
 
     public void nextfun(ActionEvent actionEvent) throws IOException {
-        ques.calucalatescore(index, rad1.isSelected(), rad2.isSelected(),rad3.isSelected(),rad4.isSelected());
+        if(rad1.isSelected()==false&&rad2.isSelected()==false&&rad3.isSelected()==false&&rad4.isSelected()==false&&rad5.isSelected()==false)
+            ob.displayDialog("Please choose a valid option");
+        else if((rad5.isSelected()==true)&&(rad1.isSelected()==true||rad2.isSelected()==true||rad3.isSelected()==true||rad4.isSelected()==true))
+        ob.displayDialog("Please choose a valid option");
+        else{
+        ques.calculatescore(index, rad1.isSelected(), rad2.isSelected(),rad3.isSelected(),rad4.isSelected());
             index++;
             Stage stage = (Stage) rad1.getScene().getWindow();
             if (index == 3) {
@@ -69,4 +72,6 @@ public class Quiz implements Initializable {
                 stage.show();
             }
         }
+    }
+
     }

@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class  Districtwise {
+
     public TextField stateds;
     public TextField district;
     public Button search;
@@ -19,6 +20,7 @@ public class  Districtwise {
     public Button prev;
     public TextField statedw;
     public Button display;
+
     public void searchdistrict() {
         Searchstat obj=new Searchstat();
         String state=stateds.getText();
