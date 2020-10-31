@@ -5,8 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="502.0" prefWidth="501.0" xmlns="http://javafx.com/javafx/11.0.2"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="symAnalyser.Quiz">
+<AnchorPane prefHeight="502.0" prefWidth="501.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="symAnalyser.Quiz">
    <children>
       <VBox fx:id="btn9" layoutY="2.0" prefHeight="342.0" prefWidth="600.0" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="2.0">
          <children>
@@ -44,7 +43,7 @@
                      </font></RadioButton>
                </children>
             </VBox>
-            <Button fx:id="next" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#nextfun" prefHeight="38.0" prefWidth="205.0" text="NEXT">
+            <Button fx:id="next" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#nextfun" prefHeight="38.0" prefWidth="281.0" text="NEXT">
                <VBox.margin>
                   <Insets left="20.0" right="20.0" top="20.0" />
                </VBox.margin>
