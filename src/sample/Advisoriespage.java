@@ -12,8 +12,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import javafx.util.Callback;
 import models.advisoryapi;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -49,7 +51,25 @@ public class Advisoriespage implements Initializable {
         title.setCellValueFactory(new PropertyValueFactory<Advisory, String>("title"));
         link.setCellValueFactory(new PropertyValueFactory<Advisory, Hyperlink>("link"));
         table.setItems(addlist());
-        
+
+        title.setCellFactory(new Callback<TableColumn<Advisory,String>, TableCell<Advisory,String>>() {
+            @Override
+            public TableCell<Advisory, String> call( TableColumn<Advisory, String> param) {
+                final TableCell<Advisory, String> cell = new TableCell<Advisory, String>() {
+                    private Text text;
+                    @Override
+                    public void updateItem(String item, boolean empty) {
+                        super.updateItem(item, empty);
+                        if (!isEmpty()) {
+                            text = new Text(item.toString());
+                            text.setWrappingWidth(300); // Setting the wrapping width to the Text
+                            setGraphic(text);
+                        }
+                    }
+                };
+                return  cell;
+            }
+        });
     }
 
     public ObservableList<Advisory> addlist() {
