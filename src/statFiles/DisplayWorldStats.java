@@ -67,7 +67,7 @@ public class DisplayWorldStats implements Initializable {
 
     }
 
-    public ObservableList<World> createlist() throws FileNotFoundException, ParseException {
+    private ObservableList<World> createlist() throws FileNotFoundException, ParseException {
 
         ObservableList<World> list= FXCollections.observableArrayList();
         String inLine = obj.JsonToString(obj.path + "\\worldStats.txt");

@@ -12,7 +12,7 @@ import java.io.FileNotFoundException;
 public class Searchstat {
     driver ob=new driver();
     //creating a function to search for a particular state
-    public String searchst(String state){
+     String searchst(String state){
         String stats="";
         boolean found=false;
         try {
@@ -46,7 +46,7 @@ public class Searchstat {
     }
 
     //function to search for a particular district in a particular state
-    public String searchdt(String state,String district){
+     String searchdt(String state,String district){
         String stats="";
         boolean found=false;
         try{

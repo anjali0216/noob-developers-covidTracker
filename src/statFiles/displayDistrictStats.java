@@ -27,7 +27,7 @@ import java.util.ResourceBundle;
 
 //class to display the district-wise stats of a particular state
 public class displayDistrictStats implements Initializable {
-    public static String state;
+    static String state;
     driver obj=new driver();
     public Button prev;
     public Label statel;
@@ -65,7 +65,7 @@ public class displayDistrictStats implements Initializable {
 
 
     //a function that creates a list of District class type and return it
-    public ObservableList<District> createList(){
+    private ObservableList<District> createList(){
         ObservableList<District> list= FXCollections.observableArrayList();
                         int i = 1;
                         for (Object value : jsonarr2) {
@@ -77,7 +77,7 @@ public class displayDistrictStats implements Initializable {
                     }
 
 
-        public boolean Search(){
+        boolean Search(){
             try {
                 inLine = obj.JsonToString(obj.path + "\\districtStats.txt");
                 JSONParser parse = new JSONParser();

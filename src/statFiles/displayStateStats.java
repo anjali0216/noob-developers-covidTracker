@@ -51,7 +51,7 @@ public class displayStateStats implements Initializable {
         table.setItems(createList());
     }
 
-    public ObservableList<State> createList(){
+    private ObservableList<State> createList(){
         ObservableList<State> list= FXCollections.observableArrayList();
         try {
             String inLine=obj.JsonToString(obj.path+"\\stateStats.txt");

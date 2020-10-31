@@ -4,9 +4,9 @@ package adHelp;
 import javafx.scene.control.Hyperlink;
 
 public class Advisory {//class corresponding to table of advisory dispaly in advisoriespage class
-    int sno;//memebers of class
-    String title;
-    Hyperlink link;
+    private int sno;//memebers of class
+    private String title;
+    private Hyperlink link;
 
     //parametrized constructor for the class
     public Advisory(int sno, String title, Hyperlink link) {
