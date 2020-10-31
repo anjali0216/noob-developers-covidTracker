@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="500.0" style="-fx-background-color:
+ linear-gradient(to right top,  #0099ff, #00c0f7, #57e1e7);" xmlns="http://javafx.com/javafx/11.0.2"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="adHelp.Advisoriespage">
+   <children>
+      <Button fx:id="homebtn" layoutX="347.0" layoutY="392.0" mnemonicParsing="false" onAction="#takemehome" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="Go back to HOME">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font></Button>
+      <TableView fx:id="table" layoutY="43.0" prefHeight="328.0" prefWidth="515.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <columns>
+          <TableColumn fx:id="sno" minWidth="0.0" prefWidth="52.66667175292969" text="SNo." />
+            <TableColumn fx:id="title" prefWidth="309.33331298828125" text="TITLE" />
+            <TableColumn fx:id="link" prefWidth="350" text="LINK" />
+        </columns>
+      </TableView>
+      <Label layoutX="143.0" layoutY="14.0" prefHeight="25.0" prefWidth="214.0" text="ADVISORIES  FOR COVID-19">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

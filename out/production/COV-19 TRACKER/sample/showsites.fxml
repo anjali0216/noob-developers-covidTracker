@@ -4,7 +4,10 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<SplitPane fx:id="splitpane" dividerPositions="0.48494983277591974" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(to right top, #1703e5, #0069ff, #0099ff, #00c0f7, #57e1e7);" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Showsites">
+<SplitPane fx:id="splitpane" dividerPositions="0.48494983277591974" maxHeight="-Infinity" maxWidth="-Infinity"
+           minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0"
+           style="-fx-background-color: linear-gradient(to right top, #1703e5, #0069ff, #0099ff, #00c0f7, #57e1e7);"
+           xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="adHelp.Showsites">
   <items>
     <AnchorPane fx:id="anchorpane1" minHeight="0.0" minWidth="0.0" prefHeight="360.0" prefWidth="287.0">
          <children>

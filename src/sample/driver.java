@@ -15,7 +15,7 @@ import java.net.URL;
 import java.util.Scanner;
 
 public class driver {
-    String path = System.getProperty("user.dir");
+    public String path = System.getProperty("user.dir");
     public int checkURL(String link){
         int response=0;
         try{

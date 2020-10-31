@@ -4,7 +4,8 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="500.0" prefWidth="503.0" style="-fx-background-color: linear-gradient(to right top, #1703e5, #0069ff, #0099ff, #00c0f7, #57e1e7);" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Shownews">
+<AnchorPane prefHeight="500.0" prefWidth="503.0" style="-fx-background-color: linear-gradient(to right top, #1703e5, #0069ff, #0099ff, #00c0f7, #57e1e7);" xmlns="http://javafx.com/javafx/11.0.2"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="newsFiles.Shownews">
    <children>
       <TableView fx:id="newstable" layoutX="-3.0" layoutY="-4.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: linear-gradient(to right top, #1703e5, #0069ff, #0099ff, #00c0f7, #57e1e7);" AnchorPane.bottomAnchor="48.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columns>

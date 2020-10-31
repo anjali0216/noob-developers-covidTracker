@@ -20,16 +20,6 @@ public class Newsgson {
         var client = HttpClient.newBuilder().build();
         var response = client.send(request, HttpResponse.BodyHandlers.ofString());    //getting the response from the given url
         String s = response.body();
-
-//        Gson gson = new Gson();
-//        News covidnews = gson.fromJson(s, News.class);
-//        StringBuilder s1=new StringBuilder();
-//
-//        for (int i = 0; i < covidnews.getArticles().size(); i++) {
-//            s1.append("TITLE : \n"+covidnews.getArticles().get(i).getTitle()+"\n");
-//            s1.append("Description :  \n"+covidnews.getArticles().get(i).getDescription()+"\n");
-//            s1.append("----------------------------------------------------------------------------------------------\n\n");
-//        }
         return s;
     }
 

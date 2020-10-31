@@ -1,18 +1,15 @@
 package sample;
 
+import adHelp.Helplinepage;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.event.ActionEvent;
 import javafx.stage.Stage;
-
-
 import java.io.IOException;
-
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -29,13 +26,14 @@ public class Controller implements Initializable {
     public Button showbookmarks;
     public Label updated;
     Thread t;
+    static int count=0;
 
     public static Label s_label;
 
 
     public void stats(ActionEvent actionEvent) throws Exception {
         Stage stage = (Stage) btn2.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("firststatspage.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("stats.fxml"));
         stage.setScene(new Scene(root, 500, 500));
         stage.show();
 
@@ -95,22 +93,19 @@ public class Controller implements Initializable {
     public void showNews(ActionEvent event) throws IOException, InterruptedException {
         Stage stage = (Stage) btn1.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("shownews.fxml"));
-        stage.setTitle("NEWS");
         stage.setScene(new Scene(root, 500, 500));
 
         stage.show();
 
     }
 
-    public void showBookNews(ActionEvent event) throws IOException {
+   /*( public void showBookNews(ActionEvent event) throws IOException {
         Stage stage = (Stage) btn1.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("showbooknews.fxml"));
-        stage.setTitle("BOOKMARK NEWS");
         stage.setScene(new Scene(root, 500, 500));
-
         stage.show();
 
-    }
+    }*/
 
     public void showgraph(ActionEvent actionEvent) throws IOException {
         Stage stage = (Stage) graphbtn.getScene().getWindow();
@@ -123,16 +118,25 @@ public class Controller implements Initializable {
     public void showBookmarks(ActionEvent actionEvent) throws IOException {
         Stage stage = (Stage) graphbtn.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("showbooknews.fxml"));
-        stage.setTitle("Bookmarked articles");
         stage.setScene(new Scene(root, 500, 500));
         stage.show();
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        updated.setText("Updating");
-        t= new Thread(new updateFiles());
-        t.start();
+        if(count==0){
+            count++;
+            updated.setText("Updating");
+            t= new Thread(new updateFiles());
+            t.start();
+        }
+        else{
+            if(updateFiles.time!=null)
+                updated.setText("Last Updated At: "+updateFiles.time);
+            else
+                updated.setText("You are not connected to the internet.");
+        }
+
         s_label=updated;
     }
 }
