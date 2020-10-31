@@ -1,5 +1,6 @@
 package sample;
 
+import adHelp.Helplinepage;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
@@ -92,22 +93,19 @@ public class Controller implements Initializable {
     public void showNews(ActionEvent event) throws IOException, InterruptedException {
         Stage stage = (Stage) btn1.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("shownews.fxml"));
-        stage.setTitle("NEWS");
         stage.setScene(new Scene(root, 500, 500));
 
         stage.show();
 
     }
 
-    public void showBookNews(ActionEvent event) throws IOException {
+   /*( public void showBookNews(ActionEvent event) throws IOException {
         Stage stage = (Stage) btn1.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("showbooknews.fxml"));
-        stage.setTitle("BOOKMARK NEWS");
         stage.setScene(new Scene(root, 500, 500));
-
         stage.show();
 
-    }
+    }*/
 
     public void showgraph(ActionEvent actionEvent) throws IOException {
         Stage stage = (Stage) graphbtn.getScene().getWindow();
@@ -120,7 +118,6 @@ public class Controller implements Initializable {
     public void showBookmarks(ActionEvent actionEvent) throws IOException {
         Stage stage = (Stage) graphbtn.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("showbooknews.fxml"));
-        stage.setTitle("Bookmarked articles");
         stage.setScene(new Scene(root, 500, 500));
         stage.show();
     }

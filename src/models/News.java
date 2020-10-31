@@ -3,7 +3,7 @@ package models;
 
 
 import java.util.List;
-
+/*Classes corresponding to  JSON format data coming from API  for news articles related to covid-19*/
 class Article {
     private Source source;
     private String author;

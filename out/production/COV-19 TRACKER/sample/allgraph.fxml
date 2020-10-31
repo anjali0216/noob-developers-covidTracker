@@ -4,7 +4,10 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(to right top, #1703e5, #0069ff, #0099ff, #00c0f7, #57e1e7);" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Allgraph">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color:
+linear-gradient(to right top, #1703e5, #0069ff, #0099ff, #00c0f7, #57e1e7);"
+            xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="graphs.Allgraph">
    <children>
       <Button fx:id="worldgraph" layoutX="128.0" layoutY="103.0" mnemonicParsing="false" onAction="#viewworldgraph" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="View Covid-19 Cases for Major Countries">
          <font>
