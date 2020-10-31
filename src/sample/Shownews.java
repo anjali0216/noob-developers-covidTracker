@@ -15,11 +15,9 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import models.Getnews;
-import models.News;
 import models.Newsgson;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
@@ -40,8 +38,6 @@ public class Shownews implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-//        Stage stage= (Stage) textnews.getScene().getWindow();
-//        newstable.resize(stage.getWidth(),stage.getHeight());
 
         article.setCellValueFactory(new PropertyValueFactory<Getnews, String>("description"));
         actionbookmark.setCellValueFactory(new PropertyValueFactory<Getnews, Button>("button"));
@@ -74,10 +70,6 @@ public class Shownews implements Initializable {
                 return  cell;
             }
         });
-
-
-
-
     }
 
     public  void addBookmarks(ActionEvent event) throws IOException {
