@@ -38,7 +38,7 @@
             <font>
                <Font name="Georgia Bold" size="12.0" />
             </font></Button>
-            <Button fx:id="shownews" layoutX="269.0" layoutY="198.0" mnemonicParsing="false" onAction="#showNews" prefHeight="33.0" prefWidth="182.0" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="NEWS">
+            <Button fx:id="shownews" layoutX="28.0" layoutY="345.0" mnemonicParsing="false" onAction="#showNews" prefHeight="33.0" prefWidth="182.0" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="NEWS">
                <font>
                   <Font name="Georgia Bold" size="12.0" />
                </font></Button>
@@ -47,11 +47,14 @@
                   <Font name="Algerian" size="36.0" />
                </font>
             </Label>
-            <Button fx:id="graphbtn" layoutX="160.0" layoutY="345.0" mnemonicParsing="false" onAction="#showgraph" prefHeight="33.0" prefWidth="157.0" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="Graphical Analysis">
+            <Button fx:id="graphbtn" layoutX="269.0" layoutY="198.0" mnemonicParsing="false" onAction="#showgraph" prefHeight="33.0" prefWidth="182.0" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="Graphical Analysis">
                <font>
                   <Font name="Georgia Bold" size="14.0" />
                </font></Button>
-            <Button fx:id="showbookmarks" layoutX="41.0" layoutY="420.0" mnemonicParsing="false" onAction="#showBookmarks" prefHeight="25.0" prefWidth="84.0" text="Bookmark" />
+            <Button fx:id="showbookmarks" layoutX="269.0" layoutY="345.0" mnemonicParsing="false" onAction="#showBookmarks" prefHeight="33.0" prefWidth="182.0" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="View BookMarked News">
+               <font>
+                  <Font name="Georgia Bold" size="12.0" />
+               </font></Button>
             <Label fx:id="updated" layoutX="269.0" layoutY="478.0" />
          </children>
       </Pane>

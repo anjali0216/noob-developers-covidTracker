@@ -2,16 +2,23 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="500.0" prefWidth="503.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Shownews">
+<AnchorPane prefHeight="500.0" prefWidth="503.0" style="-fx-background-color: linear-gradient(to right top, #1703e5, #0069ff, #0099ff, #00c0f7, #57e1e7);" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Shownews">
    <children>
-      <TableView fx:id="newstable" layoutX="-3.0" layoutY="-4.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="48.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <TableView fx:id="newstable" layoutX="-3.0" layoutY="-4.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: linear-gradient(to right top, #1703e5, #0069ff, #0099ff, #00c0f7, #57e1e7);" AnchorPane.bottomAnchor="48.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columns>
-            <TableColumn fx:id="actionbookmark" prefWidth="76.0" resizable="false" text="Bookmark" />
-          <TableColumn fx:id="article" editable="false" prefWidth="430.0" resizable="false" text="Articles" />
+            <TableColumn fx:id="actionbookmark" prefWidth="76.0" resizable="false" style="-fx-background-color: linear-gradient(to right top, #1703e5, #0069ff, #0099ff, #00c0f7, #57e1e7);" text="Bookmark" />
+          <TableColumn fx:id="article" editable="false" prefWidth="430.0" resizable="false" style="-fx-background-color: linear-gradient(to right top,  #00c0f7, #57e1e7);" text="Articles" />
         </columns>
       </TableView>
-      <Button fx:id="addbookmarks" layoutX="81.0" layoutY="461.0" mnemonicParsing="false" onAction="#addBookmarks" prefHeight="25.0" prefWidth="142.0" text="Add to Bookmarks" AnchorPane.bottomAnchor="14.0" AnchorPane.topAnchor="461.0" />
-      <Button fx:id="gohome1" layoutX="321.0" layoutY="461.0" mnemonicParsing="false" onAction="#goHome1" text="Home" />
+      <Button fx:id="addbookmarks" layoutX="81.0" layoutY="461.0" mnemonicParsing="false" onAction="#addBookmarks" prefHeight="25.0" prefWidth="151.0" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="Add to Bookmarks" AnchorPane.bottomAnchor="14.0" AnchorPane.topAnchor="461.0">
+         <font>
+            <Font name="Algerian" size="13.0" />
+         </font></Button>
+      <Button fx:id="gohome1" layoutX="321.0" layoutY="461.0" mnemonicParsing="false" onAction="#goHome1" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="Home">
+         <font>
+            <Font name="Algerian" size="14.0" />
+         </font></Button>
    </children>
 </AnchorPane>

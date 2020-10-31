@@ -38,10 +38,14 @@ public class Controller implements Initializable {
 
 
     public void stats(ActionEvent actionEvent) throws Exception {
-        Stage stage = (Stage) btn1.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("stats.fxml"));
+        Stage stage = (Stage) btn2.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("firststatspage.fxml"));
         stage.setScene(new Scene(root, 500, 500));
         stage.show();
+        /*Stage stage = (Stage) btn1.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("stats.fxml"));
+        stage.setScene(new Scene(root, 500, 500));
+        stage.show();*/
 
     }
 

@@ -4,17 +4,32 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Statewise">
+<AnchorPane prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: linear-gradient(to right top, #1703e5, #0069ff, #0099ff, #00c0f7, #57e1e7);" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Statewise">
    <children>
-      <Button fx:id="btn6" layoutX="371.0" layoutY="181.0" mnemonicParsing="false" onAction="#searchstate" text="Search" />
+      <Button fx:id="btn6" layoutX="371.0" layoutY="181.0" mnemonicParsing="false" onAction="#searchstate" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="Search">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
       <TextField fx:id="stname" layoutX="78.0" layoutY="181.0" prefHeight="25.0" prefWidth="287.0" promptText="Enter a state/territory to get the latest updates" />
-      <Button fx:id="prevpg" layoutX="344.0" layoutY="14.0" mnemonicParsing="false" onAction="#goPrevpg" text="&lt;- Go To Previous Page" />
+      <Button fx:id="prevpg" layoutX="330.0" layoutY="14.0" mnemonicParsing="false" onAction="#goPrevpg" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="&lt;- Go To Previous Page">
+         <font>
+            <Font name="Algerian" size="13.0" />
+         </font></Button>
       <Label fx:id="recordDisplay" contentDisplay="CENTER" layoutX="71.0" layoutY="242.0" lineSpacing="2.0" prefHeight="173.0" prefWidth="343.0">
          <font>
             <Font name="Times New Roman Bold" size="14.0" />
          </font></Label>
-      <Button fx:id="display" layoutX="222.0" layoutY="85.0" mnemonicParsing="false" onAction="#displayList" text="Display" />
-      <Label layoutX="102.0" layoutY="58.0" text="To display the state-wise stats..Click on the button below" />
-      <Label layoutX="108.0" layoutY="142.0" text="To display the stats of a particular state, Search below" />
+      <Button fx:id="display" layoutX="222.0" layoutY="85.0" mnemonicParsing="false" onAction="#displayList" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="Display">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Button>
+      <Label layoutX="69.0" layoutY="50.0" prefHeight="25.0" prefWidth="373.0" text="To display stats of all states of India, CLICK on the button below">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="82.0" layoutY="142.0" prefHeight="25.0" prefWidth="343.0" text="To display the stats of a particular state, Search below">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font></Label>
    </children>
 </AnchorPane>

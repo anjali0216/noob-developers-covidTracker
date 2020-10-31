@@ -52,7 +52,7 @@ public class advisoryapi {
         } catch (ParseException e) {
             e.printStackTrace();
         }
- System.out.println(advisory);
+ //System.out.println(advisory);
         return advisory;
     }
     }

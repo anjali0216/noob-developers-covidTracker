@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(to right top, #1703e5, #0069ff, #0099ff, #00c0f7, #57e1e7);" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Firststatspage">
+   <children>
+      <TextArea fx:id="worldtextarea" editable="false" layoutX="142.0" layoutY="67.0" prefHeight="141.0" prefWidth="225.0" />
+      <Label layoutX="123.0" layoutY="14.0" prefHeight="53.0" prefWidth="264.0" text=" World Statistics for Covid-19" underline="true">
+         <font>
+            <Font name="Algerian" size="16.0" />
+         </font></Label>
+      <Button fx:id="countrybtn" layoutX="142.0" layoutY="261.0" mnemonicParsing="false" onAction="#showcountrytable" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="View Stats for Different Countries">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="13.0" />
+         </font></Button>
+      <Button fx:id="indiabtn" layoutX="141.0" layoutY="298.0" mnemonicParsing="false" onAction="#showindianstats" prefHeight="26.0" prefWidth="230.0" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="View Covid-19 Stats for INDIA">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="13.0" />
+         </font></Button>
+      <Button fx:id="hmbtn5" layoutX="284.0" layoutY="341.0" mnemonicParsing="false" onAction="#takehome5" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="HOME" underline="true">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font></Button>
+   </children>
+</AnchorPane>

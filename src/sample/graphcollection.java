@@ -305,7 +305,14 @@ public class graphcollection {
         LineChart lc = new LineChart(x, y);
         lc.setTitle("GrowthRate Chart of Covid-19 in India");
         XYChart.Series java = new XYChart.Series();
-        java.setName("Date");
+        XYChart.Series java1 = new XYChart.Series();
+        XYChart.Series java2 = new XYChart.Series();
+        XYChart.Series java3 = new XYChart.Series();
+
+        java.setName("Total Confirmed");
+        java1.setName("Total Deceased");
+        java2.setName("Total Recovered");
+        java3.setName("Total Active");
         driver obje = new driver();
         String inLine = "";
         inLine = obje.JsonToString(obje.path + "\\totalStats.txt");
@@ -315,9 +322,14 @@ public class graphcollection {
         for (int i = 0; i < arr1.size(); i++) {
             JSONObject jsonobj = (JSONObject) arr1.get(i);
             java.getData().add(new XYChart.Data(jsonobj.get("dateymd"), Integer.parseInt((String) jsonobj.get("totalconfirmed"))));
-
+            java1.getData().add(new XYChart.Data(jsonobj.get("dateymd"), Integer.parseInt((String) jsonobj.get("totaldeceased"))));
+            java2.getData().add(new XYChart.Data(jsonobj.get("dateymd"), Integer.parseInt((String) jsonobj.get("totalrecovered"))));
+            java3.getData().add(new XYChart.Data(jsonobj.get("dateymd"), (Integer.parseInt((String) jsonobj.get("totalconfirmed"))-(Integer.parseInt((String) jsonobj.get("totalrecovered"))+Integer.parseInt((String) jsonobj.get("totaldeceased"))))));
         }
         lc.getData().add(java);
+        lc.getData().add(java1);
+        lc.getData().add(java2);
+        lc.getData().add(java3);
         bp.setCenter(lc);
         return bp;
     }

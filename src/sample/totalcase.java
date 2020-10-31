@@ -1,20 +1,12 @@
 package sample;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-
-import javax.swing.*;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
 import java.util.Scanner;
 
 public class totalcase{
@@ -36,9 +28,7 @@ public class totalcase{
             var gson = new Gson();
 
             stateRoot root = gson.fromJson(inLine, stateRoot.class);
-           /* for (int i = 0; i < root.data.regional.size(); i++) {
-                if (root.data.regional.get(i).loc.equalsIgnoreCase(state)) {
-                    found=true;*/
+
                     int confTotal1 = root.data.summary.total;
                     int confIndian1 = root.data.summary.confirmedCasesIndian;
                     int confForeign1 = root.data.summary.confirmedCasesForeign;
@@ -48,14 +38,27 @@ public class totalcase{
                     stats="\nTotal Confirmed: "+confTotal1+"\n"+"Confirmed Cases(Indian): "+confIndian1+"\n"+"Confirmed Cases(Foreign): "+confForeign1+"\n" +
                             "Recovered: "+recovered1+"\nDeaths: "+deaths1+"\nConfirmedButLocationUnidentified: "+confUnidentified1 ;
 
-
-
-
-
         } catch (FileNotFoundException e) {
             obj.displayDialog("Something went wrong. Refresh, and try again!");
         }
         return stats;
+    }
+    public String displayworldtotal() throws FileNotFoundException, ParseException {
+        String inLine = "";
+        String stats2="";
+        inLine = obj.JsonToString(obj.path + "\\worldStats.txt");
+        JSONParser parse = new JSONParser();
+
+        JSONArray arr1 = (JSONArray) parse.parse(inLine);
+        JSONObject jsonobj = (JSONObject) arr1.get(0);
+        long totalcase=(long)jsonobj.get("cases");
+        long totalactive=(long)jsonobj.get("active");
+        long totalrecovered=(long)jsonobj.get("recovered");
+        long totalcritical=(long)jsonobj.get("critical");
+        long totaldeaths=(long)jsonobj.get("deaths");
+        stats2="\nTotal Confirmed Cases:\t"+totalcase+"\n"+"Total active Cases:\t"+totalactive+"\n"+"Total Recovered Cases:\t"+totalrecovered+"\n" +
+                "Total Critical Cases:\t"+totalcritical+"\nTotal Death Cases:\t"+totaldeaths;
+        return  stats2;
     }
 
 
