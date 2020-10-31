@@ -2,24 +2,20 @@ package sample;
 
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Rectangle2D;
+
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.event.ActionEvent;
 import javafx.stage.Stage;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
+
 
 import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
+
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.Scanner;
+
 
 public class Controller implements Initializable {
     driver object = new driver();
@@ -42,10 +38,7 @@ public class Controller implements Initializable {
         Parent root = FXMLLoader.load(getClass().getResource("firststatspage.fxml"));
         stage.setScene(new Scene(root, 500, 500));
         stage.show();
-        /*Stage stage = (Stage) btn1.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("stats.fxml"));
-        stage.setScene(new Scene(root, 500, 500));
-        stage.show();*/
+
 
     }
 
@@ -67,6 +60,7 @@ public class Controller implements Initializable {
     }
 
     public void Refresh(ActionEvent actionEvent) {
+        updated.setText("Updating");
         updateFiles.check=1;
         t= new Thread(new updateFiles());
         t.start();
@@ -136,6 +130,7 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        updated.setText("Updating");
         t= new Thread(new updateFiles());
         t.start();
         s_label=updated;

@@ -11,11 +11,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+
 import javafx.util.Callback;
-import models.Getnews;
-import models.Newsgson;
 import models.advisoryapi;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -24,12 +24,10 @@ import org.json.simple.parser.ParseException;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.ProtocolException;
+
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.Scanner;
+
 
 
 public class Advisoriespage implements Initializable {
@@ -53,7 +51,25 @@ public class Advisoriespage implements Initializable {
         title.setCellValueFactory(new PropertyValueFactory<Advisory, String>("title"));
         link.setCellValueFactory(new PropertyValueFactory<Advisory, Hyperlink>("link"));
         table.setItems(addlist());
-        
+
+        title.setCellFactory(new Callback<TableColumn<Advisory,String>, TableCell<Advisory,String>>() {
+            @Override
+            public TableCell<Advisory, String> call( TableColumn<Advisory, String> param) {
+                final TableCell<Advisory, String> cell = new TableCell<Advisory, String>() {
+                    private Text text;
+                    @Override
+                    public void updateItem(String item, boolean empty) {
+                        super.updateItem(item, empty);
+                        if (!isEmpty()) {
+                            text = new Text(item.toString());
+                            text.setWrappingWidth(300); // Setting the wrapping width to the Text
+                            setGraphic(text);
+                        }
+                    }
+                };
+                return  cell;
+            }
+        });
     }
 
     public ObservableList<Advisory> addlist() {
@@ -108,84 +124,6 @@ public class Advisoriespage implements Initializable {
 
 
 
-    /*
-    String line="";
 
-    URL url;
-
-    {
-        try {
-            url = new URL("https://api.rootnet.in/covid19-in/notifications");
-        } catch (MalformedURLException malformedURLException) {
-            malformedURLException.printStackTrace();
-        }
-    }
-
-    
-
-    {
-        HttpURLConnection  con = null;
-        try {
-            con = (HttpURLConnection) url.openConnection();
-        } catch (IOException ioException) {
-            ioException.printStackTrace();
-        }
-
-        try {
-            con.setRequestMethod("GET");
-        } catch (ProtocolException protocolException) {
-            protocolException.printStackTrace();
-        }
-        try {
-            con.connect();
-        } catch (IOException ioException) {
-            ioException.printStackTrace();
-        }
-        int responsecode = 0;
-        try {
-            responsecode = con.getResponseCode();
-        } catch (IOException ioException) {
-            ioException.printStackTrace();
-        }
-        if (responsecode != 200) {
-            throw new RuntimeException("HttpResponseCode:" + responsecode);
-        } else {
-            Scanner sc = null;
-            try {
-                sc = new Scanner(url.openStream());
-            } catch (IOException ioException) {
-                ioException.printStackTrace();
-            }
-            while (sc.hasNext()) {
-                line += sc.nextLine();
-            }
-            sc.close();
-        }
-        JSONParser parse = new JSONParser();
-
-        JSONObject jobj = null;
-        try {
-            jobj = (JSONObject) parse.parse(line);
-        } catch (ParseException parseException) {
-            parseException.printStackTrace();
-
-        }
-        //System.out.println("success: " +jobj.get("success"));
-        //System.out.println("data: " +jobj.get("data"));
-        JSONObject jobj1 = (JSONObject) jobj.get("data");
-        JSONArray arr1 = (JSONArray) jobj1.get("notifications");
-        for (int i = 0; i < arr1.size(); i++) {
-            JSONObject jsonobj = (JSONObject) arr1.get(i);
-            displayarea.appendText("\n" + "title:" + jsonobj.get("title") + "\n" + "link:" + jsonobj.get("link") + "\n");
-            // System.out.println("title:" +jsonobj.get("title"));
-            //System.out.println("link:" +jsonobj.get("link"));
-            //System.out.println("\n");
-
-        }
-
-        con.disconnect();
-
-    }
-*/
 
 }
