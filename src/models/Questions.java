@@ -58,7 +58,7 @@ public class Questions {
             if (ans4 == true) {
                 score += 1;
             }
-            System.out.println(percentage);
+            //System.out.println(percentage);
             percentage=percentage+(1-percentage)*(score-initscore)/4.0;
         }
         else if (ind == 2) {
@@ -75,7 +75,7 @@ public class Questions {
             percentage=(percentage+(1-percentage)*(score-initscore)/4.0);
 
         }
-        System.out.println(percentage);
+        //System.out.println(percentage);
 
     }
 //
@@ -96,13 +96,14 @@ public class Questions {
         }
         else
         {
-            str="Chinta mtkr bhai sb mst h";
+            str="Lite lo...all is well :)";
         }
         percentage=0;
         score=0;
         return str;
     }
 
+    
     public double getpercentage()
     {
         double ans=percentage*100;

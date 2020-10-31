@@ -1,6 +1,7 @@
 package sample;
 
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -17,9 +18,10 @@ import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ResourceBundle;
 import java.util.Scanner;
 
-public class Controller {
+public class Controller implements Initializable {
     driver object = new driver();
     public Button btn1;
     public Button btn2;
@@ -29,13 +31,21 @@ public class Controller {
     public Button advisoriesbutton;
     public Button graphbtn;
     public Button showbookmarks;
+    public Label updated;
+    Thread t;
+
+    public static Label s_label;
 
 
     public void stats(ActionEvent actionEvent) throws Exception {
-        Stage stage = (Stage) btn1.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("stats.fxml"));
+        Stage stage = (Stage) btn2.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("firststatspage.fxml"));
         stage.setScene(new Scene(root, 500, 500));
         stage.show();
+        /*Stage stage = (Stage) btn1.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("stats.fxml"));
+        stage.setScene(new Scene(root, 500, 500));
+        stage.show();*/
 
     }
 
@@ -57,13 +67,9 @@ public class Controller {
     }
 
     public void Refresh(ActionEvent actionEvent) {
-        updateFiles ob = new updateFiles();
-        try {
-            ob.updateStatestats();
-            ob.updateDistrictstats();
-        } catch (Exception e) {
-            object.displayDialog("You are not connected to the internet! Reconnect and try again.");
-        }
+        updateFiles.check=1;
+        t= new Thread(new updateFiles());
+        t.start();
     }
 
 
@@ -128,5 +134,10 @@ public class Controller {
         stage.show();
     }
 
-
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        t= new Thread(new updateFiles());
+        t.start();
+        s_label=updated;
+    }
 }

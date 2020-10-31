@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.displayDistrictStats">
+<AnchorPane prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: linear-gradient(to right top, #1703e5, #0069ff, #0099ff, #00c0f7, #57e1e7);" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.displayDistrictStats">
    <children>
       
       <Label alignment="CENTER" layoutX="-1.0" layoutY="31.0" prefHeight="16.0" prefWidth="500.0" text="DISTRICT-WISE STATS">
@@ -21,7 +21,10 @@
             <TableColumn fx:id="deceased" prefWidth="80.66668701171875" text="DEATHS" />
          </columns>
       </TableView>
-      <Button fx:id="prev" layoutX="338.0" layoutY="467.0" mnemonicParsing="false" onAction="#prevPg" text="&lt;-Back To Previous Page" />
+      <Button fx:id="prev" layoutX="338.0" layoutY="467.0" mnemonicParsing="false" onAction="#prevPg" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="&lt;-Back To Previous Page">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font></Button>
       <Label fx:id="statel" alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" prefHeight="16.0" prefWidth="500.0" textAlignment="CENTER" wrapText="true">
          <font>
             <Font name="Algerian" size="20.0" />
