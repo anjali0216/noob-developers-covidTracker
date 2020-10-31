@@ -18,12 +18,12 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+//class to display the district-wise stats of a particular state
 public class displayDistrictStats implements Initializable {
     public static String state;
     driver obj=new driver();
@@ -48,6 +48,7 @@ public class displayDistrictStats implements Initializable {
     @FXML
     TableColumn<District, String> deceased;
 
+    //the overriden method which will initialize the fxml items for this class
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         sno.setCellValueFactory(new PropertyValueFactory<District, Integer>("sno"));
@@ -60,6 +61,8 @@ public class displayDistrictStats implements Initializable {
         statel.setText(state);
     }
 
+
+    //a function that creates a list of District class type and return it
     public ObservableList<District> createList(){
         ObservableList<District> list= FXCollections.observableArrayList();
                         int i = 1;

@@ -1,6 +1,8 @@
 package sample;
 import java.util.List;
 
+//a class which designs the framework of a similar type to that of the api from which the data is being stored
+
 public class stateRoot{
     public boolean success;
     public Data data;

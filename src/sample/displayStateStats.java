@@ -14,12 +14,13 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+
+//class to display the state-wise stats for india in a table
 public class displayStateStats implements Initializable {
     driver obj=new driver();
     public Button prev;

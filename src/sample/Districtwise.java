@@ -1,6 +1,5 @@
 package sample;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -8,9 +7,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 
+//a controller-class that contains function to display the district-wise stats for a particular state or
+// search for a particular district in a particular state
 public class  Districtwise {
 
     public TextField stateds;
@@ -31,7 +31,7 @@ public class  Districtwise {
 
     public void prevPg() throws IOException {
         Stage stage=(Stage)prev.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("stats.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("indiastats.fxml"));
         stage.setScene(new Scene(root, 500, 500));
         stage.show();
     }
