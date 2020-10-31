@@ -1,5 +1,7 @@
 package sample;
 
+
+//a class that designs a framework to display the country-wise stats in a table
 public class World {
     int sno;
     String country;

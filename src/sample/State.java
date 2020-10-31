@@ -1,9 +1,12 @@
 package sample;
 
+//a class to design the framework of the table-view of all the states
+
 public class State {
     int sno;
     String loc,totalConfirmed,discharged,deaths;
 
+    //a parameterised constructor to initialize the class variables
     public State(int sno, String loc, String totalConfirmed, String discharged, String deaths) {
         this.sno = sno;
         this.loc = loc;
@@ -11,6 +14,8 @@ public class State {
         this.discharged = discharged;
         this.deaths = deaths;
     }
+
+    //getter and setter methods to initialize and return the values of class variables
 
     public int getSno() {
         return sno;

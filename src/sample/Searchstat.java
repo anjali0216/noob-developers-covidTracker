@@ -1,24 +1,15 @@
 package sample;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
-
-import javax.swing.*;
-import java.io.File;
 import java.io.FileNotFoundException;
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
-import java.util.Scanner;
+
 
 public class Searchstat {
     driver ob=new driver();
+    //creating a function to search for a particular state
     public String searchst(String state){
         String stats="";
         boolean found=false;
@@ -52,6 +43,7 @@ public class Searchstat {
         return stats;
     }
 
+    //function to search for a particular district in a particular state
     public String searchdt(String state,String district){
         String stats="";
         boolean found=false;

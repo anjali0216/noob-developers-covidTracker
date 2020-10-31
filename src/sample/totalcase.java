@@ -9,9 +9,11 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+//a class to display the total stats for india and world
 public class totalcase{
     driver obj=new driver();
 
+    //function to display the overall stats for india
     public String displaytotal(){
         String stats="";
         boolean found=false;
@@ -43,6 +45,8 @@ public class totalcase{
         }
         return stats;
     }
+
+    //function to display the overall stats for world
     public String displayworldtotal() throws FileNotFoundException, ParseException {
         String inLine = "";
         String stats2="";

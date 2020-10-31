@@ -1,5 +1,7 @@
 package sample;
 
+
+//a class that designs the framework to display the district-wise stats of a particular state in a table
 public class District {
     int sno;
     String district,confirmed,active,recovered,deceased;

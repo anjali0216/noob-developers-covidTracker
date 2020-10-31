@@ -11,13 +11,9 @@ import javafx.stage.Stage;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-import sample.driver;
 
-import java.io.File;
 import java.io.IOException;
-import java.sql.Driver;
 import java.time.LocalDate;
-import java.util.Scanner;
 
 public class Calendar {
     driver ob=new driver();
@@ -59,7 +55,7 @@ public class Calendar {
 
     public void prevPg(ActionEvent actionEvent) throws IOException {
         Stage stage=(Stage)prev.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("stats.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("indiastats.fxml"));
         stage.setScene(new Scene(root, 500, 500));
         stage.show();
     }

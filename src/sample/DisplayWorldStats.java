@@ -17,12 +17,13 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+
+//class to display the country-wise stats for world in a table
 public class DisplayWorldStats implements Initializable {
     public Button prevbtn1;
     driver obj=new driver();
@@ -115,7 +116,7 @@ public class DisplayWorldStats implements Initializable {
 
     public void goprev1(ActionEvent actionEvent) throws IOException {
         Stage stage=(Stage)prevbtn1.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("firststatspage.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("stats.fxml"));
         stage.setScene(new Scene(root, 500, 500));
         stage.show();
     }
