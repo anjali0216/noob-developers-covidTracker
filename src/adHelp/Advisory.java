@@ -1,19 +1,20 @@
 package adHelp;
 
+//importing package to include hyperlinks
 import javafx.scene.control.Hyperlink;
 
-public class Advisory {
-    int sno;
+public class Advisory {//class corresponding to table of advisory dispaly in advisoriespage class
+    int sno;//memebers of class
     String title;
     Hyperlink link;
 
-
+    //parametrized constructor for the class
     public Advisory(int sno, String title, Hyperlink link) {
         this.sno = sno;
         this.title = title;
         this.link = link;
     }
-
+    //getter methods
     public int getSno() {
         return sno;
     }
@@ -25,7 +26,7 @@ public class Advisory {
     public Hyperlink getLink() {
         return link;
     }
-
+    //setter methods
     public void setSno(int sno) {
         this.sno = sno;
     }
@@ -37,4 +38,4 @@ public class Advisory {
     public void setLink(Hyperlink link) {
         this.link = link;
     }
-}
+}//end of class
