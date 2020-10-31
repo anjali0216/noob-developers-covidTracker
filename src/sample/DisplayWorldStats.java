@@ -68,7 +68,7 @@ public class DisplayWorldStats implements Initializable {
 
         ObservableList<World> list= FXCollections.observableArrayList();
         String inLine = obj.JsonToString(obj.path + "\\worldStats.txt");
-        //System.out.println(inLine);
+
         JSONParser parse = new JSONParser();
 
         JSONArray arr1 = (JSONArray) parse.parse(inLine);
@@ -107,7 +107,7 @@ public class DisplayWorldStats implements Initializable {
                 deathcases=jsonobj.get("deaths").toString();
 
             World w=new World(i,(String)jsonobj.get("country"),totalcases,activecases,recoveredcases,criticalcases,deathcases);
-          // System.out.println(jsonobj.get("country"));
+
             list.add(w);
         }
         return list;
