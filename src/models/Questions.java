@@ -1,33 +1,26 @@
 package models;
 
-import javafx.scene.text.Font;
-import sample.Quiz;
+
 
 public class Questions {
-    public String question[]={
+    public String question[]={                                       //array of string having questions for self analysis test
             "Are you having any of the following symptoms?",
             "Have you ever had any of the following?",
             "Which of the following apply to you?",
     };
-    public String[][] options={
+    public String[][] options={                                         //strings mas=trix having options.
             {"Cough","Fever","Difficulty in breathing","Loss of sense of smell and taste","None"},
             {"Diabetes","Hypertension","Lungs Disease","Heart Disease","None"},
             {"Travelled internationally in last 14 days","Recently interacted with a person who had been tested positive with corona virus","Attended a function with a large gathering","Are you a health care worker","None "},
     };
-    char[] answer={
-            'a','b','c'
-    };
 
-    char guess;
+
     static double percentage=0;
     int initscore;
-    char ans;
-    int index=0;
     static int score;
-    int correct_guess=0;
-    int total_ques= question.length;
-    int result;
     String str;
+
+    /*Function for calculating score and calculating percentage according to different questions*/
     public void calculatescore(int ind,boolean ans1,boolean ans2,boolean ans3,boolean ans4){
         if (ind == 0) {
             if (ans1 == true) {
@@ -58,7 +51,6 @@ public class Questions {
             if (ans4 == true) {
                 score += 1;
             }
-            //System.out.println(percentage);
             percentage=percentage+(1-percentage)*(score-initscore)/4.0;
         }
         else if (ind == 2) {
@@ -75,15 +67,14 @@ public class Questions {
             percentage=(percentage+(1-percentage)*(score-initscore)/4.0);
 
         }
-        //System.out.println(percentage);
+
 
     }
-//
-//    public double getpercentage(){
-//        return (score/  45.0*100);
-//    }
 
-
+    /*
+    Function for returning different precautionary messages according to different percentages
+    obtained in self analysis test.
+     */
     public String getscore(){
         if(percentage>=0.6)
         {
@@ -103,11 +94,10 @@ public class Questions {
         return str;
     }
 
-    
+    /*function for returning the percentage obtained in self analysis test*/
     public double getpercentage()
     {
         double ans=percentage*100;
-
         return ans;
     }
 

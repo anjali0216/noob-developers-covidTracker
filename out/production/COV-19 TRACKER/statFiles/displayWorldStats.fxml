@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color:
+linear-gradient(to right top, #1703e5, #0069ff, #0099ff, #00c0f7, #57e1e7);"
+            xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="statFiles.DisplayWorldStats">
+   <children>
+      <TableView fx:id="table" layoutX="200.0" layoutY="40.0" prefHeight="331.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
+        <columns>
+          <TableColumn fx:id="sno" prefWidth="34.333343505859375" text="SNo." />
+          <TableColumn fx:id="coun" prefWidth="94.33332443237305" text="COUNTRY" />
+            <TableColumn fx:id="con" prefWidth="95.33331298828125" text="CONFIRMED" />
+            <TableColumn fx:id="act" prefWidth="116.00001525878906" text="ACTIVE" />
+            <TableColumn fx:id="rec" prefWidth="112.66665649414062" text="RECOVERED" />
+            <TableColumn fx:id="crit" prefWidth="71.99996948242188" text="CRITICAL" />
+            <TableColumn fx:id="death" prefWidth="70.3333740234375" text="DEATHS" />
+        </columns>
+      </TableView>
+      <Label layoutX="166.0" prefHeight="42.0" prefWidth="162.0" text="Worldwide Stats">
+         <font>
+            <Font name="Algerian" size="18.0" />
+         </font></Label>
+      <Button fx:id="prevbtn1" layoutX="300.0" layoutY="375.0" mnemonicParsing="false" onAction="#goprev1" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="Previous Page">
+         <font>
+            <Font name="Algerian" size="12.0" />
+         </font></Button>
+   </children>
+</AnchorPane>

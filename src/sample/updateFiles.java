@@ -1,21 +1,15 @@
 package sample;
 
-import com.google.gson.Gson;
-import javafx.application.Platform;
-import org.json.simple.parser.JSONParser;
 
-import javax.swing.*;
+import javafx.application.Platform;
 import java.io.*;
-import java.net.MalformedURLException;
-import java.net.URI;
 import java.net.URL;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
+
+// class to update all the files
 public class updateFiles extends Controller implements Runnable {
     driver ob=new driver();
     static int check=0;
@@ -160,12 +154,6 @@ public class updateFiles extends Controller implements Runnable {
             pw.close();
         }
     }
-
-
-
-
-
-
 
     public void updateWorldstats() throws IOException {
         String data="";
