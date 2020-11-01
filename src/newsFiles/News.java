@@ -1,5 +1,5 @@
 
-package models;
+package newsFiles;
 
 
 import java.util.List;
@@ -97,7 +97,7 @@ class Article {
 }
 
 
-public class News{
+class News{
     private String status;
     private Integer totalResults;
     private List<Article> articles = null;
