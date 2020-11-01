@@ -77,17 +77,11 @@ public class Controller implements Initializable {
 
     }
 
-    public void viewhelpline() {
-        try {
-            Helplinepage.inLine=driver.getInstance().JsonToString(driver.getInstance().path + "\\Helpline.txt");
-            Helplinepage.createList();
+    public void viewhelpline() throws IOException {
             Stage stage = (Stage) advisoriesbutton.getScene().getWindow();
             Parent root = FXMLLoader.load(getClass().getResource("helplinepage.fxml"));
             stage.setScene(new Scene(root, 500, 500));
             stage.show();
-        }catch(Exception e){
-            e.printStackTrace();
-        }
     }
 
     public void showNews(ActionEvent event) throws IOException, InterruptedException {

@@ -30,9 +30,9 @@ public class displayDistrictStats implements Initializable {
     static String state;
     public Button prev;
     public Label statel;
-    boolean found;
-    static String inLine = null;
-    static JSONArray jsonarr2;
+    private boolean found;
+    private static String inLine = null;
+    private static JSONArray jsonarr2;
 
     @FXML
     TableView<District> table;

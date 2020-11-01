@@ -32,6 +32,10 @@ public class Calendar {
     {
         LocalDate localDate=picker.getValue();
         String str1=localDate.toString();
+        dailyStat(str1);
+    }
+
+    private void dailyStat( String str1){
         String res="";
         boolean found=false;
         try{

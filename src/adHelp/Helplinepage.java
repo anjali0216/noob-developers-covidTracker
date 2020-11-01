@@ -22,6 +22,7 @@ import org.json.simple.parser.ParseException;
 import sample.driver;
 
 import java.awt.*;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URL;
@@ -29,9 +30,9 @@ import java.util.ResourceBundle;
 
 public class Helplinepage implements Initializable {//class implements Initializable interface
 
-    public static String inLine;
+    private static String inLine;
     //list of table data
-    static ObservableList<Helpline> list= FXCollections.observableArrayList();
+    private static ObservableList<Helpline> list= FXCollections.observableArrayList();
     //fxml file components
     public Button homebtn2;
     public Label cnop;
@@ -40,7 +41,7 @@ public class Helplinepage implements Initializable {//class implements Initializ
     public Hyperlink linkT;
     public Hyperlink linkF;
     //json objects
-    public static JSONObject jobj,jobj1,jobj2,jobj3;
+    private static JSONObject jobj,jobj1,jobj2,jobj3;
     //table view
     @FXML
     TableView<Helpline> table;
@@ -56,35 +57,42 @@ public class Helplinepage implements Initializable {//class implements Initializ
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         //settings names of table columns
-        cnop.setText(jobj3.get("number").toString());
-        tno.setText(jobj3.get("number-tollfree").toString());
-        email.setText(jobj3.get("email").toString());
-        linkT.setText(jobj3.get("twitter").toString());
-        linkF.setText(jobj3.get("facebook").toString());
-        //setting on action function for links for twitter and facebook(to go to browser)
-        linkT.setOnAction(driver.getInstance().open(linkT));
-        linkF.setOnAction(driver.getInstance().open(linkF));//setting values to be mapped to table columns
         sno.setCellValueFactory(new PropertyValueFactory<Helpline, Integer>("sno"));
         loc.setCellValueFactory(new PropertyValueFactory<Helpline, String>("loc"));
         cno.setCellValueFactory(new PropertyValueFactory<Helpline, String>("cno"));
         //setting these items to table
-        table.setItems(list);
+        table.setItems(createList());
     }
     //creates the list of values to be added to table cells
-    public static void createList() throws ParseException {
-        JSONParser parse = new JSONParser();//parsing json data
-        jobj = (JSONObject) parse.parse(inLine);
-        jobj1 = (JSONObject) jobj.get("data");
-        jobj2 = (JSONObject) jobj1.get("contacts");
-        jobj3 = (JSONObject) jobj2.get("primary");
-        JSONArray arr1 = (JSONArray) jobj2.get("regional");
-        int i=1;
-        for (Object o : arr1){//traversing the json array and retrieving the required data
-            JSONObject value = (JSONObject) o;
-            //setting this data to helpline table
-            Helpline hp=new Helpline(i++,value.get("loc").toString(),value.get("number").toString());
-            list.add(hp);
+    private ObservableList<Helpline> createList() {
+        try {
+            inLine = driver.getInstance().JsonToString(driver.getInstance().path + "\\Helpline.txt");
+            //Helplinepage.createList();
+            JSONParser parse = new JSONParser();//parsing json data
+            jobj = (JSONObject) parse.parse(inLine);
+            jobj1 = (JSONObject) jobj.get("data");
+            jobj2 = (JSONObject) jobj1.get("contacts");
+            jobj3 = (JSONObject) jobj2.get("primary");
+            cnop.setText(jobj3.get("number").toString());
+            tno.setText(jobj3.get("number-tollfree").toString());
+            email.setText(jobj3.get("email").toString());
+            linkT.setText(jobj3.get("twitter").toString());
+            linkF.setText(jobj3.get("facebook").toString());
+            //setting on action function for links for twitter and facebook(to go to browser)
+            linkT.setOnAction(driver.getInstance().open(linkT));
+            linkF.setOnAction(driver.getInstance().open(linkF));//setting values to be mapped to table columns
+            JSONArray arr1 = (JSONArray) jobj2.get("regional");
+            int i = 1;
+            for (Object o : arr1) {//traversing the json array and retrieving the required data
+                JSONObject value = (JSONObject) o;
+                //setting this data to helpline table
+                Helpline hp = new Helpline(i++, value.get("loc").toString(), value.get("number").toString());
+                list.add(hp);
+            }
+        }catch(Exception e){
+            driver.getInstance().displayDialog("Something went wrong. Refresh, and try again!");
         }
+        return list;
     }
     //back button takes us back to home page
     public void backhome() throws IOException {

@@ -57,10 +57,8 @@ public class DisplayWorldStats implements Initializable {
         death.setCellValueFactory(new PropertyValueFactory<World, String>("deaths"));
         try {
             table.setItems(createlist());
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            driver.getInstance().displayDialog("Something went wrong. Refresh, and try again!");
         }
 
 
