@@ -15,9 +15,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import models.Getnews;
-import models.Newsgson;
 import sample.driver;
-
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -48,11 +46,10 @@ public class Shownews implements Initializable {
         try {
             list=news.newsList();
             newstable.setItems(list);                               //setting the items into the table
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            ob.displayDialog("You are not connected to the internet.");
         }
+
 
         //enabling wrapping text property for table cells having news about covid 19.
         article.setCellFactory(new Callback<TableColumn<Getnews,String>, TableCell<Getnews,String>>() {

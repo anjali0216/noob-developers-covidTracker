@@ -13,7 +13,7 @@ import org.json.simple.parser.ParseException;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-public class Allgraph {//class containing function calls to various buttons for displaying graphs
+ public class Allgraph {//class containing function calls to various buttons for displaying graphs
     public Button worldgraph;
     public Button indiagraph;
     public Button statewisegraph;
