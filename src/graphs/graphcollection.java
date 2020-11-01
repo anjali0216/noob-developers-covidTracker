@@ -16,12 +16,11 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import sample.driver;
-
 import javax.swing.*;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-public class graphcollection {
+ class graphcollection {
 
      static BorderPane setGraph() {//function creates graph for covid-19 stats of
         // india sets it to borderpane and returns that borderpane to corresponding calling function
