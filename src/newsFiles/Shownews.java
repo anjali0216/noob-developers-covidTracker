@@ -33,7 +33,7 @@ public class Shownews extends Newsgson implements  Initializable {
     TableColumn<Getnews,String> article;
     @FXML
     TableColumn<Getnews, Button> actionbookmark;
-    ObservableList<Getnews> list=FXCollections.observableArrayList();
+    private ObservableList<Getnews> list=FXCollections.observableArrayList();
 
     /*
     function for creating a list having one column as bookmark radiobutton and other
@@ -43,13 +43,7 @@ public class Shownews extends Newsgson implements  Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         article.setCellValueFactory(new PropertyValueFactory<Getnews, String>("description"));  //creating news article column
         actionbookmark.setCellValueFactory(new PropertyValueFactory<Getnews, Button>("button"));  //creating bookmark event column .
-        try {
-            list=newsList();
-            newstable.setItems(list);                               //setting the items into the table
-        } catch (Exception e) {
-            driver.getInstance().displayDialog("You are not connected to the internet.");
-        }
-
+        newstable.setItems(createList());
 
         //enabling wrapping text property for table cells having news about covid 19.
         article.setCellFactory(new Callback<TableColumn<Getnews,String>, TableCell<Getnews,String>>() {
@@ -72,10 +66,23 @@ public class Shownews extends Newsgson implements  Initializable {
         });
     }
 
+    private ObservableList<Getnews> createList(){
+        try {
+            list=newsList();
+            //setting the items into the table
+        } catch (Exception e) {
+            driver.getInstance().displayDialog("You are not connected to the internet.");
+        }
+        return list;
+    }
     /*
     Function for adding bookmarked news  to a file.
      */
-    public  void addBookmarks(ActionEvent event) throws IOException {
+    public  void addBookmarks(ActionEvent event) throws IOException{
+        bookmarkTxt();
+    }
+
+    private void bookmarkTxt() throws IOException {
         FileWriter fw=new FileWriter(new File(driver.getInstance().path+"\\bookmarks.txt"));
         StringBuilder s1=new StringBuilder();
         for(var obj:list)

@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import org.json.simple.parser.ParseException;
+import sample.driver;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -34,11 +35,8 @@ public class Allgraph {//class containing function calls to various buttons for 
                 try {                              //placing the code in try block for exception handling
                     sc = new Scene(graphcollection.viewworlgraph(), 500, 500);//set the scene
                     // containing the graph to this new stage
-                } catch (FileNotFoundException e) {//file not found exception handling
-                    e.printStackTrace();
-                } catch (ParseException | IOException e) {//possible exception if problems
-                    // arise while parsing
-                    e.printStackTrace();
+                } catch (Exception e) {//file not found exception handling
+                    driver.getInstance().displayDialog("Something went wrong. Refresh, and try again!");
                 }
                 stage.setScene(sc);
                 stage.setMaximized(true);//setting the stage to max window size
@@ -63,7 +61,7 @@ public class Allgraph {//class containing function calls to various buttons for 
 
     }
 
-    public void viewstategraph(ActionEvent actionEvent) throws IOException {//call to statewise
+    public void viewstategraph(ActionEvent actionEvent)  {//call to statewise
         // stats graph
         statewisegraph.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -93,10 +91,8 @@ public class Allgraph {//class containing function calls to various buttons for 
                     sc = new Scene(graphcollection.showdategraph(), 500, 500);//setting
                     // graph to new scene by calling the showdategraph function of
                     // graphcollection class
-                } catch (FileNotFoundException e) {//exception  handling
-                    e.printStackTrace();
-                } catch (ParseException e) {
-                    e.printStackTrace();
+                } catch (Exception e) {//exception  handling
+                    driver.getInstance().displayDialog("Something went wrong. Refresh, and try again!");
                 }
                 stage.setScene(sc);
                 stage.setMaximized(true);
@@ -123,10 +119,8 @@ public class Allgraph {//class containing function calls to various buttons for 
                 Scene sc = null;
                 try {
                     sc = new Scene(graphcollection.showworldgraph(), 500, 500);//setting scene
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                } catch (ParseException | IOException e) {
-                    e.printStackTrace();
+                } catch (Exception e) {
+                    driver.getInstance().displayDialog("Something went wrong. Refresh, and try again!");
                 }
                 stage.setScene(sc);
                 stage.setMaximized(true);

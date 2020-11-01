@@ -12,7 +12,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 //a class to display the total stats for india and world
-public class totalcase{
+class totalcase{
 
     //function to display the overall stats for india
     String displaytotal(){

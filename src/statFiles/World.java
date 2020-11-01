@@ -3,9 +3,9 @@ package statFiles;
 
 //a class that designs a framework to display the country-wise stats in a table
 public class World {
-    int sno;
-    String country;
-    String cases,active,recovered,critical,deaths;
+    private int sno;
+    private String country;
+    private String cases,active,recovered,critical,deaths;
 
     public World(int sno, String country, String cases, String active, String recovered, String critical, String deaths) {
         this.sno = sno;

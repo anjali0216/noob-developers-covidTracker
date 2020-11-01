@@ -19,9 +19,15 @@ public class Showbooknews implements Initializable {
     public Button gohome;
 
 
-    /*retieving data from Bookmarks.txt file*/
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+        textnews.setText(getBookmarks());
+    }
+
+    /*retieving data from Bookmarks.txt file*/
+    private String getBookmarks(){
         StringBuilder s=new StringBuilder();
         try {
             BufferedReader br = new BufferedReader(new FileReader(driver.getInstance().path+"\\bookmarks.txt"));
@@ -36,7 +42,7 @@ public class Showbooknews implements Initializable {
         } catch (Exception e) {
             driver.getInstance().displayDialog("You don't have any bookmarks yet!");
         }
-        textnews.setText(s.toString());
+        return s.toString();
     }
 
 
