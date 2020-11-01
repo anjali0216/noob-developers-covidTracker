@@ -28,7 +28,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class Helplinepage implements Initializable {//class implements Initializable interface
-    driver obj=new driver();
+
     public static String inLine;
     //list of table data
     static ObservableList<Helpline> list= FXCollections.observableArrayList();
@@ -62,8 +62,8 @@ public class Helplinepage implements Initializable {//class implements Initializ
         linkT.setText(jobj3.get("twitter").toString());
         linkF.setText(jobj3.get("facebook").toString());
         //setting on action function for links for twitter and facebook(to go to browser)
-        linkT.setOnAction(obj.open(linkT));
-        linkF.setOnAction(obj.open(linkF));//setting values to be mapped to table columns
+        linkT.setOnAction(driver.getInstance().open(linkT));
+        linkF.setOnAction(driver.getInstance().open(linkF));//setting values to be mapped to table columns
         sno.setCellValueFactory(new PropertyValueFactory<Helpline, Integer>("sno"));
         loc.setCellValueFactory(new PropertyValueFactory<Helpline, String>("loc"));
         cno.setCellValueFactory(new PropertyValueFactory<Helpline, String>("cno"));

@@ -32,7 +32,7 @@ import java.util.ResourceBundle;
 
 //class implements initializble interface to immediately set value to table columns for advisory display
 public class Advisoriespage implements Initializable {
-    driver obj = new driver();
+
     public Button homebtn;
 
 
@@ -80,7 +80,7 @@ public class Advisoriespage implements Initializable {
         ObservableList<Advisory> list = FXCollections.observableArrayList();
         String inLine = null;
         try {
-            inLine = obj.JsonToString(obj.path + "\\advisory.txt");
+            inLine = driver.getInstance().JsonToString(driver.getInstance().path + "\\advisory.txt");
 
 //creating object of json parser to parse data from the json string
             JSONParser parse = new JSONParser();
@@ -98,14 +98,14 @@ public class Advisoriespage implements Initializable {
                 JSONObject jsonobj = (JSONObject) arr1.get(i);
                 add.setText(jsonobj.get("link").toString());
                 //onclicking the link..redirect us to browser
-                add.setOnAction(obj.open(add));
+                add.setOnAction(driver.getInstance().open(add));
                 //adding serial no, title and links of advisory to the table
                 Advisory ad = new Advisory(i + 1, (String) jsonobj.get("title"), add);
 
                 list.add(ad);
             }
         } catch (FileNotFoundException | ParseException e) {//exception handling
-            obj.displayDialog("Something went wrong. Refresh, and try again!");
+            driver.getInstance().displayDialog("Something went wrong. Refresh, and try again!");
         }
         return list;
     }
