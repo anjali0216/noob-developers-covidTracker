@@ -18,8 +18,6 @@ public class IndiaStats implements Initializable{
     public Button btn4;
     public Button btn5;
     public Button calendar;
-
-
     public Button homebtn;
     public TextArea totalcaselabel;
 

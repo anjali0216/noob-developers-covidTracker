@@ -18,7 +18,6 @@ import java.time.LocalDate;
 
 
 public class Calendar {
-    driver ob=new driver();
     public Label date;
     public DatePicker picker;
     public Button showdate;
@@ -36,7 +35,7 @@ public class Calendar {
         String res="";
         boolean found=false;
         try{
-            String inLine= ob.JsonToString(ob.path+"\\totalStats.txt");
+            String inLine= driver.getInstance().JsonToString(driver.getInstance().path+"\\totalStats.txt");
             JSONParser parse = new JSONParser();                                       //using JSON parsing to get date from json string.
             JSONObject jobj = (JSONObject) parse.parse(inLine);
             JSONArray jsonarr1=(JSONArray) jobj.get("cases_time_series");
@@ -51,12 +50,12 @@ public class Calendar {
 
             }
             if(found==false){
-                ob.displayDialog("Please, choose an appropriate date!");
+                driver.getInstance().displayDialog("Please, choose an appropriate date!");
                 return;
             }
             date.setText(res);
         }catch(Exception e){
-            ob.displayDialog("Something went wrong. Refresh and try again.");
+            driver.getInstance().displayDialog("Something went wrong. Refresh and try again.");
         }
     }
 

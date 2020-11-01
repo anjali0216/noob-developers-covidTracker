@@ -27,14 +27,13 @@ import java.io.IOException;
 
         BorderPane bp1 = new BorderPane();//creating new borderpane
         PieChart pctotal1 = new PieChart();//creating new piechart
-        driver objec = new driver();//creating object of driver class
         String inline = "";
 
         pctotal1.setTitle("CoronaVirus Statistics for India");//setting title for piechart
 
 
         try {
-            inline = objec.JsonToString(objec.path + "\\stateStats.txt");//calling data from
+            inline = driver.getInstance().JsonToString(driver.getInstance().path + "\\stateStats.txt");//calling data from
             // statestats file n storing it in string inLine
 
 
@@ -103,11 +102,10 @@ import java.io.IOException;
         XYChart.Series dataseries1 = new XYChart.Series();//setting bar for total confirmed cases
         dataseries1.setName("Total confirmed cases");
         // ObservableList<BarChart.Data> ol = FXCollections.observableArrayList();
-        driver obje = new driver();//creating object of driver class to call its functions
         String inLine = "";
 
         try {
-            inLine = obje.JsonToString(obje.path + "\\worldStats.txt");//accessing data
+            inLine = driver.getInstance().JsonToString(driver.getInstance().path + "\\worldStats.txt");//accessing data
             //from worldstat text file
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -157,13 +155,12 @@ import java.io.IOException;
         XYChart.Series dataseries4 = new XYChart.Series();
         dataseries4.setName("Active Cases");
 
-        // ObservableList<BarChart.Data> ol = FXCollections.observableArrayList();
-        driver obje = new driver();
+
         String inLine = "";
 
         {
             try {
-                inLine = obje.JsonToString(obje.path + "\\stateStats.txt");//accessing data from
+                inLine = driver.getInstance().JsonToString(driver.getInstance().path + "\\stateStats.txt");//accessing data from
                 // stateStats txt file containing the api
                 var gson = new Gson();//gson object to convert json to java object
                 stateRoot root = gson.fromJson(inLine, stateRoot.class);//mapping json data to stateroot class
@@ -221,9 +218,9 @@ import java.io.IOException;
         java1.setName("Total Deceased");
         java2.setName("Total Recovered");
         java3.setName("Total Active");
-        driver obje = new driver();
+
         String inLine = "";
-        inLine = obje.JsonToString(obje.path + "\\totalStats.txt");
+        inLine = driver.getInstance().JsonToString(driver.getInstance().path + "\\totalStats.txt");
         //JSON parser parses the Json data
         JSONParser parse = new JSONParser();
 
@@ -252,9 +249,9 @@ import java.io.IOException;
         BorderPane bp3 = new BorderPane();
         PieChart pc3 = new PieChart();//new piechart
         pc3.setTitle("CoronaVirus Statistics for world");
-        driver obj = new driver();
+
         String inLine = "";
-        inLine = obj.JsonToString(obj.path + "\\worldStats.txt");
+        inLine = driver.getInstance().JsonToString(driver.getInstance().path + "\\worldStats.txt");
         JSONParser parse = new JSONParser();
 
         JSONArray arr1 = (JSONArray) parse.parse(inLine);

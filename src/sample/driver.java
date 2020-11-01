@@ -15,6 +15,16 @@ import java.net.URL;
 import java.util.Scanner;
 
 public class driver {
+
+    static driver obj=new driver();
+    private driver()
+    {
+
+    }
+    public static driver getInstance()
+    {
+        return obj;
+    }
     public String path = System.getProperty("user.dir");
     public int checkURL(String link){
         int response=0;

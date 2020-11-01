@@ -24,7 +24,6 @@ import java.util.ResourceBundle;
 
 //class to display the state-wise stats for india in a table
 public class displayStateStats implements Initializable {
-    driver obj=new driver();
     public Button prev;
 
     @FXML
@@ -40,7 +39,7 @@ public class displayStateStats implements Initializable {
     @FXML
      TableColumn<State, String> deaths;
 
-
+//creating the table
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         sno.setCellValueFactory(new PropertyValueFactory<State, Integer>("sno"));
@@ -54,7 +53,7 @@ public class displayStateStats implements Initializable {
     private ObservableList<State> createList(){
         ObservableList<State> list= FXCollections.observableArrayList();
         try {
-            String inLine=obj.JsonToString(obj.path+"\\stateStats.txt");
+            String inLine=driver.getInstance().JsonToString(driver.getInstance().path+"\\stateStats.txt");
 
             var gson = new Gson();
             stateRoot root = gson.fromJson(inLine, stateRoot.class);
@@ -63,7 +62,7 @@ public class displayStateStats implements Initializable {
                 list.add(st);
             }
         }catch (FileNotFoundException e) {
-            obj.displayDialog("Something went wrong. Refresh, and try again!");
+           driver.getInstance().displayDialog("Something went wrong. Refresh, and try again!");
         }
         return list;
     }

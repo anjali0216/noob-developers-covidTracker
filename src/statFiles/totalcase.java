@@ -13,13 +13,12 @@ import java.util.Scanner;
 
 //a class to display the total stats for india and world
 public class totalcase{
-    driver obj=new driver();
 
     //function to display the overall stats for india
     String displaytotal(){
         String stats="";
         boolean found=false;
-        File file=new File(obj.path+"\\stateStats.txt");
+        File file=new File(driver.getInstance().path+"\\stateStats.txt");
         try {
             Scanner sc=new Scanner(file);
             String inLine;
@@ -43,7 +42,7 @@ public class totalcase{
                             "Recovered: "+recovered1+"\nDeaths: "+deaths1+"\nConfirmedButLocationUnidentified: "+confUnidentified1 ;
 
         } catch (FileNotFoundException e) {
-            obj.displayDialog("Something went wrong. Refresh, and try again!");
+            driver.getInstance().displayDialog("Something went wrong. Refresh, and try again!");
         }
         return stats;
     }
@@ -52,7 +51,7 @@ public class totalcase{
     String displayworldtotal() throws FileNotFoundException, ParseException {
         String inLine = "";
         String stats2="";
-        inLine = obj.JsonToString(obj.path + "\\worldStats.txt");
+        inLine = driver.getInstance().JsonToString(driver.getInstance().path + "\\worldStats.txt");
         JSONParser parse = new JSONParser();
 
         JSONArray arr1 = (JSONArray) parse.parse(inLine);

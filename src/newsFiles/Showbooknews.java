@@ -17,14 +17,14 @@ import java.util.ResourceBundle;
 public class Showbooknews implements Initializable {
     public TextArea textnews;
     public Button gohome;
-    driver ob=new driver();
+
 
     /*retieving data from Bookmarks.txt file*/
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         StringBuilder s=new StringBuilder();
         try {
-            BufferedReader br = new BufferedReader(new FileReader(ob.path+"\\bookmarks.txt"));
+            BufferedReader br = new BufferedReader(new FileReader(driver.getInstance().path+"\\bookmarks.txt"));
 
             String contentLine=br.readLine();
             while (contentLine!=null)
@@ -34,7 +34,7 @@ public class Showbooknews implements Initializable {
                 contentLine=br.readLine();
             }
         } catch (Exception e) {
-            ob.displayDialog("You don't have any bookmarks yet!");
+            driver.getInstance().displayDialog("You don't have any bookmarks yet!");
         }
         textnews.setText(s.toString());
     }
