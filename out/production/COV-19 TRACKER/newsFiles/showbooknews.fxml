@@ -6,7 +6,7 @@
 
 <AnchorPane prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: linear-gradient(to right top, #1703e5, #0069ff, #0099ff, #00c0f7, #57e1e7);" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="newsFiles.Showbooknews">
    <children>
-      <TextArea fx:id="textnews" layoutY="23.0" prefHeight="412.0" prefWidth="500.0" wrapText="true" />
+      <TextArea fx:id="textnews" editable="false" layoutY="23.0" prefHeight="412.0" prefWidth="500.0" wrapText="true" />
       <Button fx:id="gohome" layoutX="284.0" layoutY="435.0" mnemonicParsing="false" onAction="#goHome" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="Home">
          <font>
             <Font name="Algerian" size="15.0" />

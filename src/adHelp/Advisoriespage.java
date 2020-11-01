@@ -17,7 +17,6 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import javafx.util.Callback;
-import models.advisoryapi;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -37,7 +36,6 @@ public class Advisoriespage implements Initializable {
     public Button homebtn;
 
 
-    advisoryapi ad = new advisoryapi();
     //table view
     @FXML
     TableView<Advisory> table;

@@ -56,7 +56,7 @@ public class updateFiles extends Controller implements Runnable {
         }
     }
 
-    public void updateStatestats() throws IOException {
+    private void updateStatestats() throws IOException {
         String data="";
         int code=ob.checkURL("https://api.rootnet.in/covid19-in/stats/latest");
         if(code!=200){
@@ -75,7 +75,7 @@ public class updateFiles extends Controller implements Runnable {
             pw.close();
         }
     }
-    public void updateDistrictstats() throws IOException {
+    private void updateDistrictstats() throws IOException {
         String data="";
         int code=ob.checkURL("https://api.covid19india.org/v2/state_district_wise.json");
         if(code!=200){
@@ -94,7 +94,7 @@ public class updateFiles extends Controller implements Runnable {
             pw.close();
         }
     }
-    public void updateTotalStats() throws IOException {
+    private void updateTotalStats() throws IOException {
         String data="";
         int code=ob.checkURL("https://api.covid19india.org/data.json");
         if(code!=200){
@@ -114,7 +114,7 @@ public class updateFiles extends Controller implements Runnable {
             pw.close();
         }
     }
-    public void updateHelpline() throws IOException {
+    private void updateHelpline() throws IOException {
         String data="";
         int code=ob.checkURL("https://api.rootnet.in/covid19-in/contacts");
         if(code!=200){
@@ -135,7 +135,7 @@ public class updateFiles extends Controller implements Runnable {
     }
 
 
-    public void updateAdvisory() throws IOException {
+    private void updateAdvisory() throws IOException {
         String data="";
         int code=ob.checkURL("https://api.rootnet.in/covid19-in/notifications");
         if(code!=200){
@@ -155,7 +155,7 @@ public class updateFiles extends Controller implements Runnable {
         }
     }
 
-    public void updateWorldstats() throws IOException {
+    private void updateWorldstats() throws IOException {
         String data="";
         int code=ob.checkURL("https://coronavirus-19-api.herokuapp.com/countries");
         if(code!=200){

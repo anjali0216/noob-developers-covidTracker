@@ -3,8 +3,8 @@ package statFiles;
 
 //a class that designs the framework to display the district-wise stats of a particular state in a table
 public class District {
-    int sno;
-    String district,confirmed,active,recovered,deceased;
+    private int sno;
+    private String district,confirmed,active,recovered,deceased;
 
     public District(int sno, String district, String confirmed, String active, String recovered, String deceased) {
         this.sno = sno;
