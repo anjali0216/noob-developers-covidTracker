@@ -11,7 +11,6 @@ import java.util.Scanner;
 
 // class to update all the files
 public class updateFiles extends Controller implements Runnable {
-    driver ob=new driver();
     static int check=0;
     DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
     LocalDateTime now;
@@ -41,7 +40,7 @@ public class updateFiles extends Controller implements Runnable {
             }
         } catch (Exception e) {
             if(check==1){
-                ob.displayDialog("You are not connected to the internet! Reconnect and try again.");
+                driver.getInstance().displayDialog("You are not connected to the internet! Reconnect and try again.");
 
             }
             Platform.runLater(new Runnable() {
@@ -58,7 +57,7 @@ public class updateFiles extends Controller implements Runnable {
 
     private void updateStatestats() throws IOException {
         String data="";
-        int code=ob.checkURL("https://api.rootnet.in/covid19-in/stats/latest");
+        int code=driver.getInstance().checkURL("https://api.rootnet.in/covid19-in/stats/latest");
         if(code!=200){
             throw new RuntimeException();
         }
@@ -69,7 +68,7 @@ public class updateFiles extends Controller implements Runnable {
                 inLine.append(sc.nextLine());
             }
             data=inLine.toString();
-            String path=ob.path+"\\stateStats.txt";
+            String path=driver.getInstance().path+"\\stateStats.txt";
             PrintWriter pw = new PrintWriter(new File(path));
             pw.write(data);
             pw.close();
@@ -77,7 +76,7 @@ public class updateFiles extends Controller implements Runnable {
     }
     private void updateDistrictstats() throws IOException {
         String data="";
-        int code=ob.checkURL("https://api.covid19india.org/v2/state_district_wise.json");
+        int code=driver.getInstance().checkURL("https://api.covid19india.org/v2/state_district_wise.json");
         if(code!=200){
             throw new RuntimeException();
         }
@@ -88,7 +87,7 @@ public class updateFiles extends Controller implements Runnable {
                 inLine.append(sc.nextLine());
             }
             data=inLine.toString();
-            String path=ob.path+"\\districtStats.txt";
+            String path=driver.getInstance().path+"\\districtStats.txt";
             PrintWriter pw = new PrintWriter(new File(path));
             pw.write(data);
             pw.close();
@@ -96,7 +95,7 @@ public class updateFiles extends Controller implements Runnable {
     }
     private void updateTotalStats() throws IOException {
         String data="";
-        int code=ob.checkURL("https://api.covid19india.org/data.json");
+        int code=driver.getInstance().checkURL("https://api.covid19india.org/data.json");
         if(code!=200){
 
             throw new RuntimeException();
@@ -108,7 +107,7 @@ public class updateFiles extends Controller implements Runnable {
                 inLine.append(sc.nextLine());
             }
             data=inLine.toString();
-            String path=ob.path+"\\totalStats.txt";
+            String path=driver.getInstance().path+"\\totalStats.txt";
             FileWriter pw = new FileWriter(new File(path));
             pw.write(data);
             pw.close();
@@ -116,7 +115,7 @@ public class updateFiles extends Controller implements Runnable {
     }
     private void updateHelpline() throws IOException {
         String data="";
-        int code=ob.checkURL("https://api.rootnet.in/covid19-in/contacts");
+        int code=driver.getInstance().checkURL("https://api.rootnet.in/covid19-in/contacts");
         if(code!=200){
             throw new RuntimeException();
         }
@@ -127,7 +126,7 @@ public class updateFiles extends Controller implements Runnable {
                 inLine.append(sc.nextLine());
             }
             data=inLine.toString();
-            String path=ob.path+"\\Helpline.txt";
+            String path=driver.getInstance().path+"\\Helpline.txt";
             PrintWriter pw = new PrintWriter(new File(path));
             pw.write(data);
             pw.close();
@@ -137,7 +136,7 @@ public class updateFiles extends Controller implements Runnable {
 
     private void updateAdvisory() throws IOException {
         String data="";
-        int code=ob.checkURL("https://api.rootnet.in/covid19-in/notifications");
+        int code=driver.getInstance().checkURL("https://api.rootnet.in/covid19-in/notifications");
         if(code!=200){
             throw new RuntimeException();
         }
@@ -148,7 +147,7 @@ public class updateFiles extends Controller implements Runnable {
                 inLine.append(sc.nextLine());
             }
             data=inLine.toString();
-            String path=ob.path+"\\advisory.txt";
+            String path=driver.getInstance().path+"\\advisory.txt";
             PrintWriter pw = new PrintWriter(new File(path));
             pw.write(data);
             pw.close();
@@ -157,7 +156,7 @@ public class updateFiles extends Controller implements Runnable {
 
     private void updateWorldstats() throws IOException {
         String data="";
-        int code=ob.checkURL("https://coronavirus-19-api.herokuapp.com/countries");
+        int code=driver.getInstance().checkURL("https://coronavirus-19-api.herokuapp.com/countries");
         if(code!=200){
             throw new RuntimeException("HttpResponseCode:" + code);
         }
@@ -168,7 +167,7 @@ public class updateFiles extends Controller implements Runnable {
                 inLine.append(sc.nextLine());
             }
             data=inLine.toString();
-            String path=ob.path+"\\worldStats.txt";
+            String path=driver.getInstance().path+"\\worldStats.txt";
             PrintWriter pw = new PrintWriter(new File(path));
             pw.write(data);
             pw.close();

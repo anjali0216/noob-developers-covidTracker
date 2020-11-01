@@ -28,7 +28,6 @@ import java.util.ResourceBundle;
 //class to display the country-wise stats for world in a table
 public class DisplayWorldStats implements Initializable {
     public Button prevbtn1;
-    driver obj=new driver();
     @FXML
     TableView<World> table;
     @FXML
@@ -70,7 +69,7 @@ public class DisplayWorldStats implements Initializable {
     private ObservableList<World> createlist() throws FileNotFoundException, ParseException {
 
         ObservableList<World> list= FXCollections.observableArrayList();
-        String inLine = obj.JsonToString(obj.path + "\\worldStats.txt");
+        String inLine = driver.getInstance().JsonToString(driver.getInstance().path + "\\worldStats.txt");
 
         JSONParser parse = new JSONParser();
 

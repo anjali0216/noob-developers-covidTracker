@@ -21,11 +21,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class Result implements Initializable  {
+public class Result extends Questions implements Initializable  {
     public TextArea textresult;
     public TextArea textpercent;
     public Button home;
-    Questions ques=new Questions();
     BackgroundFill red=new BackgroundFill(Color.RED, CornerRadii.EMPTY, Insets.EMPTY);
     BackgroundFill green=new BackgroundFill(Color.GREEN, CornerRadii.EMPTY, Insets.EMPTY);
     Background bgred=new Background(red);
@@ -37,9 +36,9 @@ public class Result implements Initializable  {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         Quiz.index=0;
-        String s=String.format("%.2g",ques.getpercentage());
+        String s=String.format("%.2g",getpercentage());
         textpercent.setText("Your score is "+s+"%\n");
-        textresult.setText(ques.getscore());
+        textresult.setText(getscore());
         textresult.setEditable(false);
     }
 

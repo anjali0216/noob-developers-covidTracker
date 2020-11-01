@@ -3,8 +3,8 @@ package adHelp;
 public class Helpline {//class corresponding to the table view of helplines in helplinepage
     private int sno;//members of class
     private String loc,cno;//string location(state) and corresponding contact number
-    //constructor for class
-    public Helpline(int sno, String loc, String cno) {
+
+    public Helpline(int sno, String loc, String cno) {              //constructor for class
         this.sno = sno;
         this.loc = loc;
         this.cno = cno;

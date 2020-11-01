@@ -22,11 +22,11 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class Shownews implements Initializable {
-    driver ob=new driver();
+public class Shownews extends Newsgson implements  Initializable {
+
     public Button gohome1;
     public Button addbookmarks;
-    Newsgson news=new Newsgson();
+
     @FXML
     TableView<Getnews> newstable;
     @FXML
@@ -44,10 +44,10 @@ public class Shownews implements Initializable {
         article.setCellValueFactory(new PropertyValueFactory<Getnews, String>("description"));  //creating news article column
         actionbookmark.setCellValueFactory(new PropertyValueFactory<Getnews, Button>("button"));  //creating bookmark event column .
         try {
-            list=news.newsList();
+            list=newsList();
             newstable.setItems(list);                               //setting the items into the table
         } catch (Exception e) {
-            ob.displayDialog("You are not connected to the internet.");
+            driver.getInstance().displayDialog("You are not connected to the internet.");
         }
 
 
@@ -76,7 +76,7 @@ public class Shownews implements Initializable {
     Function for adding bookmarked news  to a file.
      */
     public  void addBookmarks(ActionEvent event) throws IOException {
-        FileWriter fw=new FileWriter(new File(ob.path+"\\bookmarks.txt"));
+        FileWriter fw=new FileWriter(new File(driver.getInstance().path+"\\bookmarks.txt"));
         StringBuilder s1=new StringBuilder();
         for(var obj:list)
         {

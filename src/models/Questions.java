@@ -97,8 +97,8 @@ public class Questions {
     /*function for returning the percentage obtained in self analysis test*/
     public double getpercentage()
     {
-        double ans=percentage*100;
-        return ans;
+
+        return percentage*100;
     }
 
 

@@ -10,14 +10,12 @@ import java.io.FileNotFoundException;
 
 
 public class Searchstat {
-    driver ob=new driver();
     //creating a function to search for a particular state
      String searchst(String state){
         String stats="";
         boolean found=false;
         try {
-
-            String inLine=ob.JsonToString(ob.path+"\\stateStats.txt");
+            String inLine=driver.getInstance().JsonToString(driver.getInstance().path+"\\stateStats.txt");
             var gson = new Gson();
 
             stateRoot root = gson.fromJson(inLine, stateRoot.class);
@@ -40,7 +38,7 @@ public class Searchstat {
             }
 
         } catch (FileNotFoundException e) {
-            ob.displayDialog("Something went wrong. Refresh, and try again!");
+            driver.getInstance().displayDialog("Something went wrong. Refresh, and try again!");
         }
         return stats;
     }
@@ -50,7 +48,7 @@ public class Searchstat {
         String stats="";
         boolean found=false;
         try{
-            String inLine=ob.JsonToString(ob.path+"\\districtStats.txt");
+            String inLine=driver.getInstance().JsonToString(driver.getInstance().path+"\\districtStats.txt");
             JSONParser parse = new JSONParser();
             JSONArray jsonarr1 = (JSONArray) parse.parse(inLine);
             for (Object o : jsonarr1) {
@@ -75,7 +73,7 @@ public class Searchstat {
 
         }catch(Exception e){
             stats=null;
-            ob.displayDialog("Something went wrong. Refresh, and try again!");
+            driver.getInstance().displayDialog("Something went wrong. Refresh, and try again!");
         }
         return stats;
     }

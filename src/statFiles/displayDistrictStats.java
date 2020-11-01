@@ -28,7 +28,6 @@ import java.util.ResourceBundle;
 //class to display the district-wise stats of a particular state
 public class displayDistrictStats implements Initializable {
     static String state;
-    driver obj=new driver();
     public Button prev;
     public Label statel;
     boolean found;
@@ -79,7 +78,7 @@ public class displayDistrictStats implements Initializable {
 
         boolean Search(){
             try {
-                inLine = obj.JsonToString(obj.path + "\\districtStats.txt");
+                inLine = driver.getInstance().JsonToString(driver.getInstance().path + "\\districtStats.txt");
                 JSONParser parse = new JSONParser();
                 JSONArray jsonarr1 = (JSONArray) parse.parse(inLine);
                 for (Object o : jsonarr1) {
@@ -91,11 +90,11 @@ public class displayDistrictStats implements Initializable {
                     }
                 }
             }catch (FileNotFoundException | ParseException e) {
-                obj.displayDialog("Something went wrong. Refresh, and try again!");
+                driver.getInstance().displayDialog("Something went wrong. Refresh, and try again!");
                 return found;
             }
             if(found==false){
-                obj.displayDialog("No record found!");
+                driver.getInstance().displayDialog("No record found!");
                 return found;
             }
             return found;
