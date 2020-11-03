@@ -111,7 +111,7 @@ public class Advisoriespage implements Initializable {
     }
 
     //button to take back to home page
-    public void takemehome(ActionEvent actionEvent) throws IOException {
+    public void takeMeHome(ActionEvent actionEvent) throws IOException {
 
         Stage stage = (Stage) homebtn.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));

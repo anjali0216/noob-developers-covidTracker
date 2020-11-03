@@ -6,7 +6,7 @@ public class World {
     private int sno;
     private String country;
     private String cases,active,recovered,critical,deaths;
-
+//parametrized constructor
     public World(int sno, String country, String cases, String active, String recovered, String critical, String deaths) {
         this.sno = sno;
         this.country = country;
@@ -16,7 +16,7 @@ public class World {
         this.critical = critical;
         this.deaths = deaths;
     }
-
+//getter functions
     public int getSno() {
         return sno;
     }
@@ -44,7 +44,7 @@ public class World {
     public String getDeaths() {
         return deaths;
     }
-
+//setter functions
     public void setSno(int sno) {
         this.sno = sno;
     }

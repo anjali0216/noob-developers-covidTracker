@@ -13,7 +13,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 //a controller class to display the covid-19 stats for india
-
+//class implements the Initializable interface
 public class IndiaStats implements Initializable{
     public Button btn4;
     public Button btn5;
@@ -32,7 +32,7 @@ public class IndiaStats implements Initializable{
 
 
     //function for state-wise stats
-    public void showstate(ActionEvent actionEvent) throws IOException {
+    public void showState(ActionEvent actionEvent) throws IOException {
         Stage stage=(Stage)btn4.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("statewise.fxml"));
         stage.setScene(new Scene(root, 500, 500));
@@ -42,7 +42,7 @@ public class IndiaStats implements Initializable{
 
 
     //function for distric-wise stats
-    public void showdistrict(ActionEvent actionEvent) throws IOException {
+    public void showDistrict(ActionEvent actionEvent) throws IOException {
         Stage stage=(Stage)btn4.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("districtwise.fxml"));
         stage.setScene(new Scene(root, 500, 500));
@@ -60,7 +60,7 @@ public class IndiaStats implements Initializable{
 
     }
 
-
+//function corresponding to onclick of go Back to home button
     public void goBackHome(ActionEvent actionEvent) throws IOException {
         Stage stage=(Stage)homebtn.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("stats.fxml"));

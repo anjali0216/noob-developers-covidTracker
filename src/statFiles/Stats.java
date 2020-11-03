@@ -20,39 +20,39 @@ public class Stats implements Initializable {
     public Button countrybtn;
     public Button indiabtn;
     public Button hmbtn5;
-
+//override the initialize function to set world stats on the label
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         totalcase objc=new totalcase();
         try {
             worldtextarea.setText(objc.displayworldtotal());
         } catch (FileNotFoundException e) {
-            System.out.println("HELLO");
+            //System.out.println("HELLO");
             e.printStackTrace();
         } catch (ParseException e) {
-            System.out.println("yello");
+           // System.out.println("yello");
             e.printStackTrace();
         }
 
     }
 
     //function to display country-wise stats
-    public void showcountrytable(ActionEvent actionEvent) throws IOException {
+    public void showCountryTable(ActionEvent actionEvent) throws IOException {
         Stage stage = (Stage)countrybtn.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("displayWorldStats.fxml"));
-        stage.setScene(new Scene(root, 500, 500));
+        stage.setScene(new Scene(root, 500, 500));//setting scene to stage
         stage.show();
     }
 
     //function to display stats for india
-    public void showindianstats(ActionEvent actionEvent) throws IOException {
+    public void showIndianStats(ActionEvent actionEvent) throws IOException {
         Stage stage = (Stage)indiabtn.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("indiastats.fxml"));
         stage.setScene(new Scene(root, 500, 500));
         stage.show();
     }
-
-    public void takehome5(ActionEvent actionEvent) throws IOException {
+//function takes us back to home page
+    public void takeHome(ActionEvent actionEvent) throws IOException {
         Stage stage=(Stage)hmbtn5.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         stage.setScene(new Scene(root, 500, 500));

@@ -31,29 +31,29 @@ public class DisplayWorldStats implements Initializable {
     @FXML
     TableView<World> table;
     @FXML
-    TableColumn<World, Integer> sno;
+    TableColumn<World, Integer> serialno;
     @FXML
-    TableColumn<World, String> coun;
+    TableColumn<World, String> country;
     @FXML
-    TableColumn<World, String> con;
+    TableColumn<World, String> confirmed;
     @FXML
-    TableColumn<World, String> act;
+    TableColumn<World, String> active;
     @FXML
-    TableColumn<World, String> rec;
+    TableColumn<World, String> recovered;
     @FXML
-    TableColumn<World, String> crit;
+    TableColumn<World, String> critical;
     @FXML
     TableColumn<World, String> death;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        sno.setCellValueFactory(new PropertyValueFactory<World, Integer>("sno"));
-        coun.setCellValueFactory(new PropertyValueFactory<World, String>("country"));
-        con.setCellValueFactory(new PropertyValueFactory<World, String>("cases"));
-        act.setCellValueFactory(new PropertyValueFactory<World, String>("active"));
-        rec.setCellValueFactory(new PropertyValueFactory<World, String>("recovered"));
-        crit.setCellValueFactory(new PropertyValueFactory<World, String>("critical"));
+        serialno.setCellValueFactory(new PropertyValueFactory<World, Integer>("sno"));
+        country.setCellValueFactory(new PropertyValueFactory<World, String>("country"));
+        confirmed.setCellValueFactory(new PropertyValueFactory<World, String>("cases"));
+        active.setCellValueFactory(new PropertyValueFactory<World, String>("active"));
+        recovered.setCellValueFactory(new PropertyValueFactory<World, String>("recovered"));
+        critical.setCellValueFactory(new PropertyValueFactory<World, String>("critical"));
         death.setCellValueFactory(new PropertyValueFactory<World, String>("deaths"));
         try {
             table.setItems(createlist());
@@ -113,7 +113,7 @@ public class DisplayWorldStats implements Initializable {
         return list;
     }
 
-    public void goprev1(ActionEvent actionEvent) throws IOException {
+    public void goPrevious(ActionEvent actionEvent) throws IOException {
         Stage stage=(Stage)prevbtn1.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("stats.fxml"));
         stage.setScene(new Scene(root, 500, 500));

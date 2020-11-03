@@ -28,7 +28,7 @@ public class Calendar {
     with date from totalstats.txt and showing corresponding data
     according to it.
      */
-    public void displaydate(ActionEvent actionEvent)
+    public void displayDate(ActionEvent actionEvent)
     {
         LocalDate localDate=picker.getValue();
         String str1=localDate.toString();
@@ -63,7 +63,7 @@ public class Calendar {
         }
     }
 
-    public void prevPg(ActionEvent actionEvent) throws IOException {
+    public void prevPage(ActionEvent actionEvent) throws IOException {
         Stage stage=(Stage)prev.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("stats.fxml"));
         stage.setScene(new Scene(root, 500, 500));

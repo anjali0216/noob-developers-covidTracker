@@ -18,7 +18,7 @@ import java.awt.Desktop;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
-
+//class that displays the urls for covid-19
 public class Showsites {
     public SplitPane splitpane;
     public AnchorPane anchorpane1;
@@ -40,9 +40,9 @@ public class Showsites {
     public Button testbutton;
     public Button homebutton;
     Desktop d=Desktop.getDesktop();
-
+//function that displays the link for who
     public void clickWHO(ActionEvent actionEvent) throws URISyntaxException, IOException {
-
+//to open the link in a new browser
         d.browse(new URI("https://www.who.int/"));
     }
   public void clickmygov(ActionEvent actionEvent) throws URISyntaxException, IOException {
@@ -75,7 +75,7 @@ public class Showsites {
 
         d.browse(new URI("https://covid19.who.int/"));
     }
-
+//function that takes back to the home page
     public void gotohome(ActionEvent actionEvent) throws IOException {
         Stage stage=(Stage)homebutton.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));

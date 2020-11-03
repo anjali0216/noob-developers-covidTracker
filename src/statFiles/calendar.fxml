@@ -11,7 +11,7 @@
             <Font name="Bell MT Bold" size="16.0" />
          </font></Label>
       <DatePicker fx:id="picker" layoutX="88.0" layoutY="103.0" prefHeight="32.0" prefWidth="324.0" promptText="Pick a date" />
-      <Button fx:id="showdate" layoutX="213.0" layoutY="157.0" mnemonicParsing="false" onAction="#displaydate" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="Show Stats">
+      <Button fx:id="showdate" layoutX="213.0" layoutY="157.0" mnemonicParsing="false" onAction="#displayDate" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="Show Stats">
          <font>
             <Font name="Arial Rounded MT Bold" size="14.0" />
          </font></Button>
@@ -20,7 +20,7 @@
             <Font name="Algerian" size="36.0" />
          </font>
       </Label>
-      <Button fx:id="prev" layoutX="346.0" layoutY="417.0" mnemonicParsing="false" onAction="#prevPg" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="&lt;- Previous Page">
+      <Button fx:id="prev" layoutX="346.0" layoutY="417.0" mnemonicParsing="false" onAction="#prevPage" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="&lt;- Previous Page">
          <font>
             <Font name="Arial Rounded MT Bold" size="14.0" />
          </font></Button>

@@ -27,7 +27,7 @@ public class Statewise {
         String stats=obj.searchst(state);
         recordDisplay.setText(stats);
     }
-
+//function to go back to previous page corresponds to the back button
     public void goPrevpg(ActionEvent actionEvent) throws IOException {
         Stage stage=(Stage)prevpg.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("indiastats.fxml"));

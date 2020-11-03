@@ -4,16 +4,13 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="500.0" prefWidth="500.0" style="-fx-background-color:
-linear-gradient(to right top, #1703e5, #0069ff, #0099ff, #00c0f7, #57e1e7);"
-            xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="statFiles.IndiaStats">
+<AnchorPane prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: linear-gradient(to right top, #1703e5, #0069ff, #0099ff, #00c0f7, #57e1e7);" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="statFiles.IndiaStats">
    <children>
-      <Button fx:id="btn4" layoutX="104.0" layoutY="331.0" mnemonicParsing="false" onAction="#showstate" prefHeight="37.0" prefWidth="283.0" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="STATE-WISE DATA">
+      <Button fx:id="btn4" layoutX="104.0" layoutY="331.0" mnemonicParsing="false" onAction="#showState" prefHeight="37.0" prefWidth="283.0" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="STATE-WISE DATA">
          <font>
             <Font name="Algerian" size="14.0" />
          </font></Button>
-      <Button fx:id="btn5" layoutX="104.0" layoutY="386.0" mnemonicParsing="false" onAction="#showdistrict" prefHeight="37.0" prefWidth="283.0" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="DISTRICT-WISE DATA">
+      <Button fx:id="btn5" layoutX="104.0" layoutY="386.0" mnemonicParsing="false" onAction="#showDistrict" prefHeight="37.0" prefWidth="283.0" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="DISTRICT-WISE DATA">
       <font>
          <Font name="Algerian" size="14.0" />
       </font></Button>

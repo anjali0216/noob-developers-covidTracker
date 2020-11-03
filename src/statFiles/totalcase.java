@@ -52,7 +52,7 @@ class totalcase{
         String inLine = "";
         String stats2="";
         inLine = driver.getInstance().JsonToString(driver.getInstance().path + "\\worldStats.txt");
-        JSONParser parse = new JSONParser();
+        JSONParser parse = new JSONParser();//parsing json data
 
         JSONArray arr1 = (JSONArray) parse.parse(inLine);
         JSONObject jsonobj = (JSONObject) arr1.get(0);

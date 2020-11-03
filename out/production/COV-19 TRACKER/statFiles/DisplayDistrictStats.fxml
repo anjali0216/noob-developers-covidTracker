@@ -21,7 +21,7 @@
             <TableColumn fx:id="deceased" prefWidth="80.66668701171875" text="DEATHS" />
          </columns>
       </TableView>
-      <Button fx:id="prev" layoutX="338.0" layoutY="467.0" mnemonicParsing="false" onAction="#prevPg" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="&lt;-Back To Previous Page">
+      <Button fx:id="prev" layoutX="338.0" layoutY="467.0" mnemonicParsing="false" onAction="#prevPage" style="-fx-background-color: linear-gradient(to right top, #16da30, #21d82c, #2ad527, #30d323, #36d11e);" text="&lt;-Back To Previous Page">
          <font>
             <Font name="Arial Rounded MT Bold" size="12.0" />
          </font></Button>

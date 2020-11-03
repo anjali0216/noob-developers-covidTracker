@@ -16,7 +16,7 @@ public class Searchstat {
         boolean found=false;
         try {
             String inLine=driver.getInstance().JsonToString(driver.getInstance().path+"\\stateStats.txt");
-            var gson = new Gson();
+            var gson = new Gson();//object of gson class to convert json data to java object form
 
             stateRoot root = gson.fromJson(inLine, stateRoot.class);
 
@@ -49,14 +49,14 @@ public class Searchstat {
         boolean found=false;
         try{
             String inLine=driver.getInstance().JsonToString(driver.getInstance().path+"\\districtStats.txt");
-            JSONParser parse = new JSONParser();
+            JSONParser parse = new JSONParser();//parsing the json data
             JSONArray jsonarr1 = (JSONArray) parse.parse(inLine);
             for (Object o : jsonarr1) {
                 JSONObject jobj1 = (JSONObject) o;
                 if (((String) jobj1.get("state")).equalsIgnoreCase(state)) {
                 JSONArray jsonarr2 = (JSONArray) jobj1.get("districtData");
                 for (Object value : jsonarr2) {
-                    JSONObject jobj2 = (JSONObject) value;
+                    JSONObject jobj2 = (JSONObject) value;//checking if record found
                         if (((String) jobj2.get("district")).equalsIgnoreCase(district)) {
                             found=true;
                             stats="Confirmed: " + jobj2.get("confirmed") + "\nActive: " + jobj2.get("active") + "\ndeceased: " + jobj2.get("deceased") + "\nrecovered: " + jobj2.get("recovered");
@@ -71,7 +71,7 @@ public class Searchstat {
                 }
             }
 
-        }catch(Exception e){
+        }catch(Exception e){//exception handling
             stats=null;
             driver.getInstance().displayDialog("Something went wrong. Refresh, and try again!");
         }

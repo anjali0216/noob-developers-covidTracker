@@ -7,7 +7,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library" exported="">
+    <orderEntry type="module-library">
       <library>
         <CLASSES>
           <root url="jar://$USER_HOME$/Downloads/gson-2.3.1.jar!/" />
@@ -16,7 +16,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library" exported="">
+    <orderEntry type="module-library">
       <library>
         <CLASSES>
           <root url="jar://$USER_HOME$/Downloads/json-simple-1.1.jar!/" />
@@ -25,7 +25,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" exported="" name="javafx.controls" level="project" />
+    <orderEntry type="library" name="javafx.controls" level="project" />
     <orderEntry type="library" name="javafx-swt" level="project" />
     <orderEntry type="module-library" exported="">
       <library>
@@ -45,7 +45,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library" exported="">
+    <orderEntry type="module-library">
       <library>
         <CLASSES>
           <root url="jar://$USER_HOME$/Downloads/gson-2.8.6.jar!/" />
@@ -55,5 +55,6 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="javafx-swt1" level="project" />
+    <orderEntry type="library" name="javafx-swt2" level="project" />
   </component>
 </module>

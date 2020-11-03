@@ -99,8 +99,8 @@ public class displayDistrictStats implements Initializable {
             }
             return found;
         }
-
-    public void prevPg(ActionEvent actionEvent) throws IOException {
+//function takes back to previous page
+    public void prevPage(ActionEvent actionEvent) throws IOException {
         Stage stage=(Stage)prev.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("districtwise.fxml"));
         stage.setScene(new Scene(root, 500, 500));

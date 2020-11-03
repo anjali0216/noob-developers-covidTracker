@@ -31,7 +31,7 @@ public class displayStateStats implements Initializable {
     @FXML
      TableColumn<State, Integer> sno;
     @FXML
-    TableColumn<State, String> loc;
+    TableColumn<State, String> location;
     @FXML
     TableColumn<State, String> totalConfirmed;
     @FXML
@@ -43,7 +43,7 @@ public class displayStateStats implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         sno.setCellValueFactory(new PropertyValueFactory<State, Integer>("sno"));
-        loc.setCellValueFactory(new PropertyValueFactory<State, String>("loc"));
+        location.setCellValueFactory(new PropertyValueFactory<State, String>("loc"));
         totalConfirmed.setCellValueFactory(new PropertyValueFactory<State, String>("totalConfirmed"));
         discharged.setCellValueFactory(new PropertyValueFactory<State, String>("discharged"));
         deaths.setCellValueFactory(new PropertyValueFactory<State, String>("deaths"));
@@ -68,7 +68,7 @@ public class displayStateStats implements Initializable {
     }
 
 
-    public void prevPg(ActionEvent actionEvent) throws IOException {
+    public void prevPage(ActionEvent actionEvent) throws IOException {
         Stage stage=(Stage)prev.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("statewise.fxml"));
         stage.setScene(new Scene(root, 500, 500));
